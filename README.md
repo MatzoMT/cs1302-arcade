@@ -29,15 +29,27 @@ are provided [here](#getting-updates-from-skeleton-project).
 
 ## Project Description
 
-Your goal is to implement a GUI application in Java using JavaFX 8 that provides
-an arcade with multiple, playable games.
+Your goal is to implement a single GUI application in Java using JavaFX 8 that 
+provides an arcade with your own Java+JavaFX implementations of at least two 
+playable games. Your team must choose one game from each of the following groups:
+
+* **Group 1**
+  * [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game))
+  * [Tetris](https://en.wikipedia.org/wiki/Tetris) 
+  * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
+* **Group 2**
+  * [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper)
+  * [Reversi](https://en.wikipedia.org/wiki/Reversi)
+  * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
+
+General functional requirements for each group are provided later in this document
 
 Part of software development is being given a goal but not necessarily being 
 given instruction on all of the details needed to accomplish that goal. For example,
 even though working with things like keyoard and mouse-related events 
-haven't been covered in class, you are going to need to lookup how to do these things 
-in order to complete this project. Starter code and a generously helpful [FAQ](#faq) 
-are provided.
+haven't been explicitly covered in class, you are going to need to lookup how to do 
+these things in order to complete this project. Starter code and a generously 
+helpful [FAQ](#faq) are provided.
 
 This project is also designed to help you better understand the usefulness of good
 class design. While you can technically write your entire JavaFX-based
@@ -57,11 +69,27 @@ for this project.
 
 ### Functional Requirements
 
-* **Main Requirements (100 points):** TODO
+* **Main Application Requirements (10 points):**
 
-* **Extra Credit 1 (5 points):** TODO
+* **Group 1 Game Requirements (45 points):** TODO
 
-* **Extra Credit 2 (5 points):** TODO
+* **Group 2 Game Requirements (45 points):** TODO
+
+* **Extra Credit 1 (5 points):** Add some kind of animated intro to your application.
+  One potential way to accomplish this is by using a separate scene for your intro.
+  This intro should include, in addition to some kind of animated element, the 
+  application title (i.e., `cs1302-arcade`), your team name, and the name of each
+  team member. If you want the grader to check for this requirement, then please
+  make sure it is included in your last update to `REFLECTION.md`.
+
+* **Extra Credit 2 (5 points):** Add a [high score table](https://en.wikipedia.org/wiki/Score_(game)#High_score)
+  to your application, accessible via your application's menu (menu bar or otherwise).
+  The table needs to actually keep track of the high scores for each game and include
+  player initials. This may involve modifications in other areas of your application to
+  accomodate this. In order to receive full credit for this extra credit functional
+  requirement, the high score table must persist over time and over separate executions
+  of your application. If you want the grader to check for this requirement, then please
+  make sure it is included in your last update to `REFLECTION.md`.
 
 ### Non-Functional Requirements
 
