@@ -11,8 +11,8 @@ beginning your project.**
 
 * Team Application is due by **SUN 2017-11-12 @ 11:55 PM EST**.
 * Team Push due by **FRI 2017-11-17 @ 11:55 PM EST**.
-* Team Push due by **FRI 2017-12-01 @ 11:55 PM EST**.
-* Team Push due by **FRI 2017-12-08 @ 11:55 PM EST**.
+* Team Push due by **TUE 2017-11-28 @ 11:55 PM EST**.
+* Team Push due by **TUE 2017-12-05 @ 11:55 PM EST**.
 * Final Team Push and Nike Submission by **DUE TUE 2017-12-12 @ 08:00 AM EST**. 
 
 ## Academic Honesty
@@ -69,7 +69,12 @@ for this project.
 
 ### Learning Outcomes
 
-* TODO
+* Plan, design, implement, test, debug, and deploy a complete object-oriented
+  software solution in Linux/Unix environment (1302-LO1)
+* Utilitze inheritance and polymorphism in a software project (1302-LO3-LO4).
+* Develop a GUI for a software project (1302-LO7).
+* Implement exception-handling in a software project (1302-LO8).
+* Understand and apply langauge basics using an OOP language (1302-LO11).
 
 ### Functional Requirements
 
