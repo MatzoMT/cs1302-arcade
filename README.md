@@ -42,7 +42,11 @@ playable games. Your team must choose one game from each of the following groups
   * [Reversi](https://en.wikipedia.org/wiki/Reversi)
   * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
 
-General functional requirements for each group are provided later in this document
+You have a lot of flexibility with regard to the visuals of your games. As long
+as the functional requirements are met and the game mechanics are easily
+recognizable, you are free to make each game look and feel however you want
+(please keep it appropriate).
+The general functional requirements for each group are provided later in this document
 
 Part of software development is being given a goal but not necessarily being 
 given instruction on all of the details needed to accomplish that goal. For example,
@@ -69,11 +73,51 @@ for this project.
 
 ### Functional Requirements
 
-* **Main Application Requirements (10 points):**
+* **Main Application Requirements (10 points):** The main part of your 
+  application needs to fulfill the following functional requirements:
 
-* **Group 1 Game Requirements (45 points):** TODO
+  * *Game List (5 points):* Your application should present
+  the user with a visual list of available games. Starting a game should either
+  swap the scene in the current stage or create an application modal stage on
+  which to display the game's scene graph.
+  
+  * *Multiple Games per Execution (5 points):* Your application should allow
+  users to exit one game (without exiting the entire application) and start
+  the same game again (with its state reset) or start the other game. 
 
-* **Group 2 Game Requirements (45 points):** TODO
+* **Group 1 Game Requirements (45 points):** Your Group 1 game implementation
+  needs to fulfill the following functional requirements:
+
+  * UI, Mechanics, and Scoring (40 points):* The user interface and game mechanics
+    must be easily recognizable and consistent with traditional implementations of
+    the game you chose (see the Wikipedia link for more information). Your game
+    must provide a consistent scoring mechanism and display the score or scores to
+    the user somewhere in the user interface. Furthermore, a game in this category
+    must support multiple levels of difficulty that a user will encounter as they
+    play the game. The first level should be designed so that it is easily attainable
+    by the grader. The current level of difficulty should always be visible to
+    the user somewhere in the user interface.
+
+  * *Controls (5 points):* You are required to provide keyboard controls 
+    for a game in this group. If anything is not intuitive, then you need to let
+    the user know before the game starts. 
+
+* **Group 2 Game Requirements (45 points):** Your Group 2 game implementation
+  needs to fulfill the following functional requirements:
+
+  * *UI, Mechanics, and Scoring (40 points):* The user interface and game mechanics
+    must be easily recognizable and consistent with traditional implementations of
+    the game you chose (see the Wikipedia link for more information). Your game
+    must provide a consistent scoring mechanism and display the score or scores to
+    the users somewhere in the user interface. 
+
+  * *Controls (5 points):* You are required to provide intuitive mouse controls 
+    for a game in this group. If anything is not intuitive, then you need to let
+    the user know before the game starts. 
+    
+  * *Note:* You are only required to provide a human player vs. human player 
+    mode for a game in this category. Feel free to add support for computer 
+    players, however, such support will not contribute to your grade. 
 
 * **Extra Credit 1 (5 points):** Add some kind of animated intro to your application.
   One potential way to accomplish this is by using a separate scene for your intro.
