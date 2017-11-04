@@ -179,7 +179,8 @@ if satisfied but are subtracted from the grade total if not satisfied.
 
 ### Grading
 
-The graders will compile and run your code on Nike using Maven. They will test
+The graders will compile and run your code on Nike using Maven (likely via
+the provided `Makefile`). They will test
 each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
 an additional 10 points via extra credit. 
