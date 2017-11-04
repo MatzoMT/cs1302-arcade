@@ -25,9 +25,7 @@ the copyright notice and licensing information at the bottom of this document.
 
 Updates to the skeleton project will be posted here. Please check this section 
 periodically. Instructions to incorporate changes into your local repository
-are provided [here]().
-
-* TODO 
+are provided [here](#getting-updates-from-skeleton-project).
 
 ## Project Description
 
