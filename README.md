@@ -93,7 +93,7 @@ for this project.
 * **Group 1 Game Requirements (45 points):** Your Group 1 game implementation
   needs to fulfill the following functional requirements:
 
-  * UI, Mechanics, and Scoring (40 points):* The user interface and game mechanics
+  * *UI, Mechanics, and Scoring (40 points):* The user interface and game mechanics
     must be easily recognizable and consistent with traditional implementations of
     the game you chose (see the Wikipedia link for more information). Your game
     must provide a consistent scoring mechanism and display the score or scores to
