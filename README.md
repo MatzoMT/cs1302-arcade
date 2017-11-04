@@ -168,7 +168,14 @@ if satisfied but are subtracted from the grade total if not satisfied.
   section describing: i) what work has been done; ii) what work do you plan
   to complete before the next deadline; and what problems, if any, you have
   encountered related to this project. These changes must be committed and pushed 
-  to your team repository before each deadline for them to count.  
+  to your team repository before each deadline for them to count.
+  
+* **Team Application Agreement Adherance (50 points):** You must adhere to the
+  agreement in the Pair Programming Team Application you submitted for this
+  project. Deviations will very likely result in this non-functional requirement
+  being unsatisfied. If you have any problems with regard to this requirement, 
+  then please contact the CSCI 1302 Support Team by sending a private post to 
+  "Instructors" via the course Piazza as soon as possible.
 
 ### Grading
 
@@ -287,7 +294,71 @@ Piazza as soon as possible.
 
 Below are some frequently asked questions related to this project.
 
-1. **TODO**
+1. **How do I make a code snippet execute repeatedly with a delay between executions?**
+
+   The easiest way to accomplish this in a JavaFX application is using the
+   [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html) 
+   and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html) 
+   classes. Here is an example that prints the current time (using 
+   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to 
+   standard output every two (2) seconds (specified using
+   [`Duration`](https://docs.oracle.com/javase/8/javafx/api/javafx/util/Duration.html)), indefinitely:
+   ```java
+   EventHandler<ActionEvent> handler = event -> System.out.println(LocalTime.now());
+   KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), handler);
+   TimeLine timeline = new Timeline();
+   timeline.setCycleCount(Timeline.INDEFINITE);
+   timeline.getKeyFrames().add(keyFrame);
+   timeline.play();
+   ```
+   The `Timeline` object also has a `pause` method to pause the execution of the timeline.
+
+2. **What is a good GUI container for games?**
+
+   You already know that you can setup your scene graph however you want by using and nesting
+   different types of layour panes. If you need explicit control over the `x` and `y` positions
+   of some nodes, then I reccommend using the 
+   [`Group`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Group.html) class.
+   Since `Group` is subsumed by `Node`, you should be able to add a `Group` object anywhere in
+   your scene graph just like any other node.
+   
+3. **How do I setup event handlers related to mouse and keyboard events?**
+
+   Look at the Javadoc documentation for the 
+   [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class,
+   specifically the methods that start with `setOnMouse` and `setOnKey`, to see the 
+   different types of mouse and keyboard events you can handle. Here is a simple example 
+   that prints the current time (using 
+   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to 
+   standard output when a user clicks on an `ImageView` object (referenced by `iv`) that 
+   is assumed to be visible within the current scene graph:
+   ```java
+   iv.setOnMouseClicked(event -> System.out.println(LocalTime.now()));
+   ```
+   Remember, you can setup these event handlers for any node in the scene graph, including
+   the containers.
+   
+4. **How can I detect if two nodes in my scene collide?**
+
+   Look at the "Bounding Rectangles" section in the Javadoc documentation for the 
+   [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class.
+   The getter methods described in that section return references to 
+   [`Bounds`](https://docs.oracle.com/javase/8/javafx/api/javafx/geometry/Bounds.html)
+   objects, which likely contain useful information regarding the whereabouts of
+   node. I would reccommend taking a very close look at the methods in that class.
+   
+5. **How do I add sound?**
+
+   While JavaFX does support audio playback of various formats, this feature is not
+   currently available over X11 forwarding from Nike. If you incorporate audio into
+   your application, then take measures to properly deal with the unchecked exceptions
+   that might get thrown if audio playback is not available. 
+   
+6. **How do I make basic shapes appear?**
+
+   Look at the classes in the 
+   [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
+   package. 
 
 Have a question? Please post it on the course Piazza.
 
