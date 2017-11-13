@@ -222,7 +222,7 @@ within your present working directory:
 3. Set the upstream for your local `master` branch to `team/master` so that `push`, 
    `fetch`, and `pull` connect with your team repository by default:
    ```
-   $ git branch --set-upstream master team/master
+   $ git branch --set-upstream master team
    ```
    
 4. Explicitly `pull` skeleton code from `skeleton/master`:
