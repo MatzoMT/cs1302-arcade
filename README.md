@@ -319,7 +319,7 @@ Below are some frequently asked questions related to this project.
    ```
    The `Timeline` object also has a `pause` method to pause the execution of the timeline.
 
-2. **How do I make my game rune at *x* frames per second (e.g., 60 FPS)?**
+2. **How do I make my game run at *x* frames per second (e.g., 60 FPS)?**
 
    If you are using a single `Timeline` object for your main game loop, then duration of all
    key frames in the main game loop should sum to exactly `1000 / x` ms (e.g., 
