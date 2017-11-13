@@ -219,16 +219,18 @@ within your present working directory:
    $ git remote add team TEAM_REPO_URL
    ```
    
-3. Set the upstream for your local `master` branch to `team/master` so that `push`, 
-   `fetch`, and `pull` connect with your team repository by default:
-   ```
-   $ git branch --set-upstream master team
-   ```
-   
-4. Explicitly `pull` skeleton code from `skeleton/master`:
+3. Explicitly `pull` skeleton code from `skeleton/master`:
    ```
    $ git pull skeleton master
    ```
+   
+4. *NOTE*: To set the upstream for your local `master` branch to `team/master` so that 
+   `push`, `fetch`, and `pull` connect with your team repository by default, make sure 
+   that you use `-u` the first time you call the command (after grabbing the skeleton
+   code). For example:
+   ```
+   $ git push -u team master
+   ```   
 
 5. At this point, you should be good to go! Changes won't appear on your team's
    GitHub repository website until you our your partner `push` to it. 
