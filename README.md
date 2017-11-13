@@ -43,7 +43,7 @@ Your team must choose one game from each of the following groups:
   * [Tetris](https://en.wikipedia.org/wiki/Tetris) 
   * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
 * **Group 2**
-  * [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper) *(requires recursion)*
+  * [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)) *(requires recursion)*
   * [Reversi](https://en.wikipedia.org/wiki/Reversi)
   * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
 
