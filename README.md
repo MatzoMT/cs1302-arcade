@@ -319,7 +319,14 @@ Below are some frequently asked questions related to this project.
    ```
    The `Timeline` object also has a `pause` method to pause the execution of the timeline.
 
-2. **What is a good GUI container for games?**
+2. **How do I make my game rune at *x* frames per second (e.g., 60 FPS)?**
+
+   If you are using a single `Timeline` object for your main game loop, then duration of all
+   key frames in the main game loop should sum to exactly `1000 / x` ms (e.g., 
+   `Duration.ofMillis(1000 / 60)`). 
+   The easiest way to ensure this is to have only one key frame with that duration.
+
+3. **What is a good GUI container for games?**
 
    You already know that you can setup your scene graph however you want by using and nesting
    different types of layour panes. If you need explicit control over the `x` and `y` positions
@@ -328,7 +335,7 @@ Below are some frequently asked questions related to this project.
    Since `Group` is subsumed by `Node`, you should be able to add a `Group` object anywhere in
    your scene graph just like any other node.
    
-3. **How do I setup event handlers related to mouse and keyboard events?**
+4. **How do I setup event handlers related to mouse and keyboard events?**
 
    Look at the Javadoc documentation for the 
    [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class,
@@ -344,7 +351,7 @@ Below are some frequently asked questions related to this project.
    Remember, you can setup these event handlers for any node in the scene graph, including
    the containers.
    
-4. **How can I detect if two nodes in my scene collide?**
+5. **How can I detect if two nodes in my scene collide?**
 
    Look at the "Bounding Rectangles" section in the Javadoc documentation for the 
    [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class.
@@ -353,14 +360,14 @@ Below are some frequently asked questions related to this project.
    objects, which likely contain useful information regarding the whereabouts of
    node. I would reccommend taking a very close look at the methods in that class.
    
-5. **How do I add sound?**
+6. **How do I add sound?**
 
    While JavaFX does support audio playback of various formats, this feature is not
    currently available over X11 forwarding from Nike. If you incorporate audio into
    your application, then take measures to properly deal with the unchecked exceptions
    that might get thrown if audio playback is not available. 
    
-6. **How do I make basic shapes appear?**
+7. **How do I make basic shapes appear?**
 
    Look at the classes in the 
    [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
