@@ -9,7 +9,7 @@ beginning your project.**
 
 ## Due Dates
 
-* Team Application is due by **WED 2018-04-18 @ 11:55 PM EST**.
+* Team Application ([link](https://goo.gl/forms/WWjerktKOJqTQua43)] is due by **WED 2018-04-18 @ 11:55 PM EST**.
 * Partial Submision due by **FRI 2018-04-20 @ 11:55 PM EST**.
 * Partial Submision due by **TUE 2018-04-27 @ 11:55 PM EST**.
 * Final Submision due by **TUE 2018-05-03 @ 06:00 PM EST**.
