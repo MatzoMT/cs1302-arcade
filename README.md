@@ -1,7 +1,7 @@
 # CSCI 1302 - Arcade
 
 This document contains the description for the `cs1302-arcade` project
-assigned to the students in the Fall 2017 CSCI 1302 classes
+assigned to the students in the Spring 2018 CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
@@ -9,11 +9,10 @@ beginning your project.**
 
 ## Due Dates
 
-* Team Application is due by **SUN 2017-11-12 @ 11:55 PM EST**.
-* Team Push due by **FRI 2017-11-17 @ 11:55 PM EST**.
-* Team Push due by **TUE 2017-11-28 @ 11:55 PM EST**.
-* Team Push due by **TUE 2017-12-05 @ 11:55 PM EST**.
-* Final Team Push and Nike Submission by **DUE TUE 2017-12-12 @ 08:00 AM EST**. 
+* Team Application is due by **WED 2018-04-18 @ 11:55 PM EST**.
+* Partial Submision due by **FRI 2018-04-20 @ 11:55 PM EST**.
+* Partial Submision due by **TUE 2018-04-27 @ 11:55 PM EST**.
+* Final Submision due by **TUE 2018-05-03 @ 06:00 PM EST**.
 
 ## Academic Honesty
 
