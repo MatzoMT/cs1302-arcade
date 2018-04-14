@@ -178,13 +178,14 @@ if satisfied but are subtracted from the grade total if not satisfied.
   using in-line comments. This is especially necessary when a block of code
   is not immediately understood by a reader (e.g., the grader). 
   
-* **Reflection Updates (20 points; 5 points each):** Before each deadline mentioned
-  towards the beginning of this document (except the application deadline), you
+* **Reflection Updates (50 points; 25 points each):** Before eachpartial submission
+  deadline mentioned towards the beginning of this document, you
   will need to update your project's `REFLECTION.md` file to include a new 
   section describing: i) what work has been done; ii) what work do you plan
   to complete before the next deadline; and what problems, if any, you have
-  encountered related to this project. These changes must be committed and pushed 
-  to your team repository before each deadline for them to count.
+  encountered related to this project. These changes, including your work
+  in progress, must be submitted according to the submission instructions
+  before each deadline for them to count.
   
 * **Team Application Agreement Adherance (50 points):** You must adhere to the
   agreement in the Pair Programming Team Application you submitted for this
