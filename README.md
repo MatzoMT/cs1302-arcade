@@ -213,7 +213,7 @@ files into sub-directory within your present working directory:
 $ git clone https://github.com/cs1302uga/cs1302-arcade.git
 ```
 
-This should create a directory called <code>cs1302-lists</code> in
+This should create a directory called <code>cs1302-arcade</code> in
 your present working directory that contains the project files.
 
 If any updates to the project files are announced by your instructor, you can
