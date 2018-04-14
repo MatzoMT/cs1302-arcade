@@ -199,78 +199,28 @@ an additional 10 points via extra credit.
 
 ## Setup and Submission
 
-### Setting up Your Local Repository
+### Getting/Updating Skeleton Code
 
-Each team member will need to perform the following instructions on their
-Nike account. You will need the following information to get started:
+On Nike, execute the following terminal command in order to download the project
+files into sub-directory within your present working directory:
 
-* **`SKELETON_REPO_URL`:** `git@github.com:cs1302uga/cs1302-arcade.git`
-* **`TEAM_REPO_URL`:** *provided to you by the support team.*
-
-On Nike, execute the following commands to create an empty, local repository for 
-your poject and connect it with the two remote repositories mentioned above.
-These instructions will place the files into sub-directory called `cs1302-arcade` 
-within your present working directory:
-
-1. Create a new local repository:
-   ```
-   $ mkdir cs1302-arcade
-   $ cd cs1302-arcade
-   $ git init
-   ```
-
-2. Add the remote repositories (replace `SKELETON_REPO_URL` and `TEAM_REPO_URL` 
-   appropriately):
-   ```
-   $ git remote add skeleton SKELETON_REPO_URL
-   $ git remote add team TEAM_REPO_URL
-   ```
-   
-3. Explicitly `pull` skeleton code from `skeleton/master`:
-   ```
-   $ git pull skeleton master
-   ```
-   
-4. *NOTE*: To set the upstream for your local `master` branch to `team/master` so that 
-   `push`, `fetch`, and `pull` connect with your team repository by default, make sure 
-   that you use `-u` the first time you call the command (after grabbing the skeleton
-   code). For example:
-   ```
-   $ git push -u team master
-   ```   
-
-5. At this point, you should be good to go! Changes won't appear on your team's
-   GitHub repository website until you our your partner `push` to it. 
-   
-If you have any problems with any of these procedures, then please contact the CSCI
-1302 Support Team by sending a private post to "Instructors" via the course 
-Piazza as soon as possible.
-
-### Getting Updates from Skeleton Project
-
-If any updates to the skeleton project are announced by your instructor, you can
-`fetch` those changes into your local repository by changing into your project 
-directory on Nike and issuing the following command:
 ```
-$ git fetch skeleton master
+$ git clone https://github.com/cs1302uga/cs1302-arcade.git
 ```
 
-Once you're ready to merge the fetched skeleton project changes into your local 
-`master` branch, you might issue the following commands:
+This should create a directory called <code>cs1302-lists</code> in
+your present working directory that contains the project files.
+
+If any updates to the project files are announced by your instructor, you can
+merge those changes into your copy by changing into your project's directory
+on Nike and issuing the following terminal command:
+
 ```
-$ git checkout master
-$ git merge skeleton/master
+$ git pull
 ```
 
-Remember, you can comine `fetch` and `merge` using `pull`, if desired:
-```
-$ git checkout master
-$ git pull skeleton master
-```
-
-If you have any problems with any of these procedures, then please contact the CSCI
-1302 Support Team by sending a private post to "Instructors" via the course 
-Piazza as soon as possible.
+If you have any problems with any of these procedures, then please contact
+your instructor.
 
 ### Submission Instructions
 
