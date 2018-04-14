@@ -14,9 +14,13 @@ beginning your project.**
 * Partial Submision due by **TUE 2018-04-27 @ 11:55 PM EST**.
 * Final Submision due by **TUE 2018-05-03 @ 06:00 PM EST**.
 
-Please note that due to the day and time of the final submission, no late submissions will be accepted for grading.
-This is a firm policy and will not be ammended. 
-Exceptions will not be granted. 
+Please note that due to the day and time of the final submission, 
+no late submissions will be accepted for grading.
+Please also note that submissions from teams who did not submit 
+a team application before the application deadline will not be 
+accepted for grading.
+These are firm policies and will not be ammended. 
+Exceptions will not be granted.
 
 ## Academic Honesty
 
