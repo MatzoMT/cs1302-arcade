@@ -47,8 +47,12 @@ Your team must choose one game from each of the following groups:
   * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
 * **Group 2**
   * [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)) *(requires recursion)*
-  * [Reversi](https://en.wikipedia.org/wiki/Reversi)
+  * [Go](https://en.wikipedia.org/wiki/Go_(game))
   * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
+  
+If you choose to implement Minesweeper, then implementing recursive reveals is
+required. That is, if you reveal a location with zero adjacent mines, then the
+game must recursively reveal all of the adjacent locations. 
 
 You have a lot of flexibility with regard to the visuals of your games. As long
 as the functional requirements are met and the game mechanics are easily
