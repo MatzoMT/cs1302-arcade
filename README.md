@@ -11,8 +11,8 @@ beginning your project.**
 
 * Team Application ([link](https://goo.gl/forms/WWjerktKOJqTQua43)) is due by **WED 2018-04-18 @ 11:55 PM EST**.
 * Partial Submision due by **FRI 2018-04-20 @ 11:55 PM EST**.
-* Partial Submision due by **TUE 2018-04-27 @ 11:55 PM EST**.
-* Final Submision due by **TUE 2018-05-03 @ 06:00 PM EST**.
+* Partial Submision due by **FRI 2018-04-27 @ 11:55 PM EST**.
+* Final Submision due by **THU 2018-05-03 @ 06:00 PM EST**.
 
 Please note that due to the day and time of the final submission, 
 no late submissions will be accepted for grading.
