@@ -1,4 +1,4 @@
-# CSCI 1302 - Arcade v2018.fa
+# CSCI 1302 - Arcade App v2018.fa
 
 This document contains the description for the `cs1302-arcade` project
 assigned to the students in the Fall 2018 CSCI 1302 classes
