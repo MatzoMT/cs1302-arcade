@@ -143,9 +143,10 @@ for this project.
     for a game in this group. If anything is not intuitive, then you need to let
     the user know before the game starts. 
     
-  * *Note:* You are only required to provide a human player vs. human player 
-    mode for a game in this category. Feel free to add support for computer 
-    players, however, such support will not contribute to your grade. 
+  * *Note:* You are only required to provide a 
+    human player vs. human player mode for for a multiplayer game in this category. 
+    Feel free to add support for computer players, however, such support will not 
+    contribute to your grade. 
 
 * **Extra Credit 1 (5 points):** Add some kind of animated intro to your application.
   One potential way to accomplish this is by using a separate scene for your intro.
