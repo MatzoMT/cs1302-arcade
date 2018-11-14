@@ -1,7 +1,7 @@
 # CSCI 1302 - Arcade
 
 This document contains the description for the `cs1302-arcade` project
-assigned to the students in the Spring 2018 CSCI 1302 classes
+assigned to the students in the Fall 2018 CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
@@ -9,10 +9,10 @@ beginning your project.**
 
 ## Due Dates
 
-* Team Application ([link](https://goo.gl/forms/WWjerktKOJqTQua43)) is due by **WED 2018-04-18 @ 11:55 PM EST**.
-* Partial Submision due by **FRI 2018-04-20 @ 11:55 PM EST**.
-* Partial Submision due by **FRI 2018-04-27 @ 11:55 PM EST**.
-* Final Submision due by **THU 2018-05-03 @ 06:00 PM EST**.
+* Team Application ([link](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_29LGjGh45Ei6OEd)) is due by **FRI 2018-11-16 @ 11:55 PM**.
+* Partial Submision due by **FRI 2018-11-30 @ 11:55 PM**.
+* Partial Submision due by **FRI 2018-12-07 @ 11:55 PM**.
+* Final Submision due by **TUE 2018-12-11 @ 03:30 PM**.
 
 Please note that due to the day and time of the final submission, 
 no late submissions will be accepted for grading.
@@ -21,6 +21,18 @@ a team application before the application deadline will not be
 accepted for grading.
 These are firm policies and will not be ammended. 
 Exceptions will not be granted.
+
+## Table of Contents
+
+* [Academic Honesty](#academic-honesty)
+* [Updates](#updates)
+* [Project Description](#project-description)
+* [Project Requirements & Grading](#project-requirements--grading)
+  * [Functional Requirements](#functional-requirements)
+  * [Non-Functional Requirements](#non-functional-requirements)
+* [How to Download the Project](#how-to-download-the-project)
+* [Submission Instructions](#submission-instructions)
+* [Appendix - FAQ](#appendix---faq)
 
 ## Academic Honesty
 
@@ -46,17 +58,13 @@ when it first launches:
 Your team must choose one game from each of the following groups:
 
 * **Group 1**
-  * [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game))
+  * [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
   * [Tetris](https://en.wikipedia.org/wiki/Tetris) 
   * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
 * **Group 2**
-  * [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)) *(requires recursion)*
+  * [Sudoku](https://en.wikipedia.org/wiki/Sudoku)
   * [Go](https://en.wikipedia.org/wiki/Go_(game))
   * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
-  
-If you choose to implement Minesweeper, then implementing recursive reveals is
-required. That is, if you reveal a location with zero adjacent mines, then the
-game must recursively reveal all of the adjacent locations. 
 
 You have a lot of flexibility with regard to the visuals of your games. As long
 as the functional requirements are met and the game mechanics are easily
@@ -69,7 +77,7 @@ given instruction on all of the details needed to accomplish that goal. For exam
 even though working with things like keyoard and mouse-related events 
 haven't been explicitly covered in class, you are going to need to lookup how to do 
 these things in order to complete this project. Starter code and a generously 
-helpful [FAQ](#faq) are provided.
+helpful [FAQ](#appendix---faq) are provided.
 
 This project is also designed to help you better understand the usefulness of good
 class design. While you can technically write your entire JavaFX-based
@@ -158,41 +166,163 @@ for this project.
 
 ### Non-Functional Requirements
 
-Points indicated for non-functional requirements are not added to the grade total
-if satisfied but are subtracted from the grade total if not satisfied.
+A non-functional requirement is *subtracted* from your point total if
+not satisfied. In order to emphasize the importance of these requirements,
+non-compliance results in the full point amount being subtracted from your
+point total. That is, they are all or nothing. 
 
-* **User-Friendly (5 points):** Except for reasonable delays resulting from X forwarding, 
-  your application should not hang/freeze or crash during execution.
-  
-* **Attribution (5 points):** Proper attribution should be given for all assets (e.g.,
-  art, sound, music, etc.) that is not authored by members of your project team. 
-  You may consider making an `ATTRIBUTIONS.md` file that contains this information. 
-
-* **Javadoc Documentation (5 points):** Each method and class needs to be documented
-  using Javadoc comments. If a method overrides an inheritted method that is
-  already documented, then that method only needs a Javadoc comment if the
-  implementation differs from the existing documentation. In such cases, the use of
-  `@inheritDoc` is encouraged. 
-
-* **In-line Documentation (5 points):** Code blocks should be adequately documented
-  using in-line comments. This is especially necessary when a block of code
-  is not immediately understood by a reader (e.g., the grader). 
-  
-* **Reflection Updates (50 points; 25 points each):** Before eachpartial submission
-  deadline mentioned towards the beginning of this document, you
-  will need to update your project's `REFLECTION.md` file to include a new 
-  section describing: i) what work has been done; ii) what work do you plan
-  to complete before the next deadline; and what problems, if any, you have
-  encountered related to this project. These changes, including your work
-  in progress, must be submitted according to the submission instructions
-  before each deadline for them to count.
-  
-* **Team Application Agreement Adherance (50 points):** You must adhere to the
-  agreement in the Pair Programming Team Application you submitted for this
-  project. Deviations will very likely result in this non-functional requirement
+* **(100 points) Team Application:** Team membership before the team application
+  deadline is required. Furthermore, you must adhere to the policies outlined
+  in the team application. Deviations will very likely result in this non-functional requirement
   being unsatisfied. If you have any problems with regard to this requirement, 
   then please contact the CSCI 1302 Support Team by sending a private post to 
   "Instructors" via the course Piazza as soon as possible.
+  
+* **(100 points) Project Structure:** The location of the default
+  package for the source code should be a direct subdirectory called `src/main/java`.
+  When the project is compiled using Maven, the the default package for compiled 
+  code should be `target/classes`. 
+  
+  If you follow this structure, then you might type the following to compile 
+  your code, assuming you are in the top-level project directory:
+  ```
+  $ mvn compile
+  ```
+  
+  The driver class should be `cs1302.calc.CalcApp`.
+
+  The three math implementations (one is provided) should be:
+
+  * `cs1302.calc.BasicMathOps` (basic implementation; provided)
+  * `cs1302.calc.RecursiveMathOps` (recursive implementation)
+  * `cs1302.calc.IterativeMathOps` (iterative implementation)
+
+  If you modify the following, then your project will not be graded:
+
+  * `cs1302.calc.MathOps` (interface)
+  * `cs1302.calc.MathOpsEvaluator` (class)
+
+* **(100 points) Implementation Restrictions:** Use of the following operators
+  is not allowed in student implementations of the `MathOps` interface:
+  
+  * `+`
+  * `-`
+  * `*`
+  * `/`
+  * `<<`
+  * `>>`
+  
+  Instead of using the operators above, student implementations should 
+  call the default methods `succ` (successor) and `pred` (predecessor) 
+  as well as other methods from the interface, as neeeded. Please note
+  that this may have a cascading effect on the test cases for each
+  method. Alternatives to the `succ` (successor) and `pred` (predecessor) default 
+  methods are provided by the `inc` (increment) and `dec` (decrement) default
+  methods for those who prefer to use them.
+  
+  Use of `java.lang.Math` is also prohibited. 
+
+* **(100 points) Development Environment:** This project must be implemented 
+  in Java 8, and it *must compile and run* correctly on Nike using the specific
+  version of Java 8 that is setup according to the instructions provided
+  by your instructor (usually provided in the first homework assignment).
+  
+* **(100 points) No Static Variables:** Use of static variables is 
+  not allowed for this assignment. Static constants are allowed. 
+  
+* **(100 points) No FXML or use of Scene Builder:** FXML and SceneBuilder
+  are advanced tools that are not currently covered in this course. Use of
+  either for this project is prohibited. Please note that the project is
+  not easier with these tools. In most cases, they actually make the
+  project harder, especially since those topics have not been covered.
+  
+* **(25 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding, 
+  your application should not hang/freeze or crash during execution.
+  
+* **(25 points) Code Style Guidelines:** You should be consistent with the style 
+  aspect of your code in order to promote readability. Besides consistency, the
+  following conventions will be enforced:
+  
+  * **Reference type names are written in _UpperCamelCase_.** Class names are  
+    typically nouns or noun phrases. For example, `Character` or `ImmutableList`. 
+    Interface names may also be nouns or noun phrases (for example, `List`), but 
+    may sometimes be adjectives or adjective phrases instead (for example, 
+    `Readable`).
+  
+  * **Method names are written in _lowerCamelCase_.** Method names are also 
+    typically verbs or verb phrases. For example, `sendMessage` or `stop`.
+  
+  * **Braces are always used where optional.** Braces should be used with `if`, 
+    `else`, `for`, `do`, and `while` statements, even when the body is empty or 
+    contains only a single statement. Single line lambda expressions are
+    permitted. 
+    
+  * **Column limit: 100.** You should limit the number of characters, including
+    whitespace, on any given line to 100 characters. Except as noted below, any 
+    line that would exceed this limit must be manually line-wrapped in a
+    consistent manner. Exceptions to the column limit include:
+    
+    * Lines where obeying the column limit is not possible (for example, a long 
+      URL in Javadoc, or a long JSNI method reference).
+    * In `package` and `import` statements.
+    * Command line input examples in a comment that may be cut-and-pasted into 
+      a shell.
+      
+  * **Method height <= window height.** You should limit the number of lines for
+    a method so that the entire method can be seen on the screen at once. This
+    includes the line(s) with the method's signature and opening curly brace, all
+    lines in the body of the mthod (including blank lines), and the line with
+    the method's ending curly brace. 
+    
+    Of all the style guidelines, this is the probably the most subjective and 
+    hardest to grade because everyone might have a different window size due
+    to different terminal emulator and physical screen size configurations. 
+    Therefore, graders will be checking for compliance with the spirit
+    of this guideline, which is: methods that are too big and/or repetitive 
+    should be refactored to include proper looping constructs and/or broken
+    up into smaller methods to improve readability. 
+
+* **(25 points) Javadoc Documentation:** Each method and class needs to be fully
+  documented using Javadoc comments. Your comment should provide a description
+  of the method's functionality in the first sentence of the comment.  This sentence
+  needs to be a gramatically correct English sentence with proper punctuation. Further 
+  description can be provided in subsequent sentence. The basic formatting of Javadoc 
+  blocks is as seen in this example:
+  ```java
+  /**
+   * Multiple lines of Javadoc text are written here,
+   * wrapped normally...
+   */
+  public int method(String p1) { ... }
+  ```
+  ... or in this single-line example:
+  ```java
+  /** An especially short bit of Javadoc. */
+  ```
+  All method parameters and exceptions need to be documented.
+  More information about Javadoc can be found
+  [here](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javadoc.html).
+
+* **(25 points) In-line Documentation:** Code blocks should be adequately documented
+  using in-line comments. This is especially necessary when a block of code
+  is not immediately understood by a reader (e.g., yourself or the grader).
+  
+* **(25 points) User-Friendly:** Except for reasonable delays resulting from X forwarding, 
+  your application should not hang/freeze or crash during execution.
+  
+* **(25 points) Attribution:** Proper attribution should be given for all assets (e.g.,
+  art, sound, music, etc.) that is not authored by members of your project team. 
+  You may consider making an `ATTRIBUTIONS.md` file that contains this information.  
+  
+* **(30 points; 10 points each) Reflection Updates:** Before each submission
+  deadline mentioned towards the beginning of this document, you
+  will need to update your project's `REFLECTION.md` file to include a new 
+  section describing: i) what work has been done; ii) what work do you plan
+  to complete before the next deadline (except for the last submission); and 
+  what problems, if any, you have encountered related to this project. 
+  These changes, including your work in progress, must be submitted 
+  according to the submission instructions before each deadline for them 
+  to count.
 
 ### Grading
 
@@ -344,7 +474,7 @@ Have a question? Please post it on the course Piazza.
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 <small>
-Copyright &copy; 2017 Michael E. Cotterell and the University of Georgia.
+Copyright &copy; Michael E. Cotterell and the University of Georgia.
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a> to students and the public.
 The content and opinions expressed on this Web page do not necessarily reflect the views of nor are they endorsed by the University of Georgia or the University System of Georgia.
 </small>
