@@ -69,11 +69,11 @@ You have a lot of flexibility with regard to the visuals of your games. As long
 as the functional requirements are met and the game mechanics are easily
 recognizable, you are free to make each game look and feel however you want
 (please keep it appropriate).
-The general functional requirements for each group are provided later in this document
+The general functional requirements for each group are provided later in this document.
 
 Part of software development is being given a goal but not necessarily being 
 given instruction on all of the details needed to accomplish that goal. For example,
-even though working with things like keyoard and mouse-related events 
+even though working with things like keyboard and mouse-related events 
 haven't been explicitly covered in class, you are going to need to lookup how to do 
 these things in order to complete this project. Starter code and a generously 
 helpful [FAQ](#appendix---faq) are provided.
