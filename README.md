@@ -32,6 +32,7 @@ Exceptions will not be granted.
   * [Non-Functional Requirements](#non-functional-requirements)
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
+* [Appendix - Useful Links](#appendix---useful-links)
 * [Appendix - FAQ](#appendix---faq)
 
 ## Academic Honesty
@@ -186,38 +187,7 @@ point total. That is, they are all or nothing.
   $ mvn compile
   ```
   
-  The driver class should be `cs1302.calc.CalcApp`.
-
-  The three math implementations (one is provided) should be:
-
-  * `cs1302.calc.BasicMathOps` (basic implementation; provided)
-  * `cs1302.calc.RecursiveMathOps` (recursive implementation)
-  * `cs1302.calc.IterativeMathOps` (iterative implementation)
-
-  If you modify the following, then your project will not be graded:
-
-  * `cs1302.calc.MathOps` (interface)
-  * `cs1302.calc.MathOpsEvaluator` (class)
-
-* **(100 points) Implementation Restrictions:** Use of the following operators
-  is not allowed in student implementations of the `MathOps` interface:
-  
-  * `+`
-  * `-`
-  * `*`
-  * `/`
-  * `<<`
-  * `>>`
-  
-  Instead of using the operators above, student implementations should 
-  call the default methods `succ` (successor) and `pred` (predecessor) 
-  as well as other methods from the interface, as neeeded. Please note
-  that this may have a cascading effect on the test cases for each
-  method. Alternatives to the `succ` (successor) and `pred` (predecessor) default 
-  methods are provided by the `inc` (increment) and `dec` (decrement) default
-  methods for those who prefer to use them.
-  
-  Use of `java.lang.Math` is also prohibited. 
+  The driver class should be `cs1302/arcade/ArcadeApp`. 
 
 * **(100 points) Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
@@ -230,7 +200,7 @@ point total. That is, they are all or nothing.
 * **(100 points) No FXML or use of Scene Builder:** FXML and SceneBuilder
   are advanced tools that are not currently covered in this course. Use of
   either for this project is prohibited. Please note that the project is
-  not easier with these tools. In most cases, they actually make the
+  not necesarily easier with these tools. In most cases, they actually make the
   project harder, especially since those topics have not been covered.
   
 * **(25 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding, 
@@ -304,9 +274,6 @@ point total. That is, they are all or nothing.
   using in-line comments. This is especially necessary when a block of code
   is not immediately understood by a reader (e.g., yourself or the grader).
   
-* **(25 points) User-Friendly:** Except for reasonable delays resulting from X forwarding, 
-  your application should not hang/freeze or crash during execution.
-  
 * **(25 points) Attribution:** Proper attribution should be given for all assets (e.g.,
   art, sound, music, etc.) that is not authored by members of your project team. 
   You may consider making an `ATTRIBUTIONS.md` file that contains this information.  
@@ -316,7 +283,7 @@ point total. That is, they are all or nothing.
   will need to update your project's `REFLECTION.md` file to include a new 
   section describing: i) what work has been done; ii) what work do you plan
   to complete before the next deadline (except for the last submission); and 
-  what problems, if any, you have encountered related to this project. 
+  what problems, if any, you have encountered related to this project.
   These changes, including your work in progress, must be submitted 
   according to the submission instructions before each deadline for them 
   to count.
@@ -329,9 +296,7 @@ each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
 an additional 10 points via extra credit. 
 
-## Setup and Submission
-
-### Getting/Updating Skeleton Code
+## How to Download the Project
 
 On Nike, execute the following terminal command in order to download the project
 files into sub-directory within your present working directory:
@@ -354,7 +319,7 @@ $ git pull
 If you have any problems with any of these procedures, then please contact
 your instructor.
 
-### Submission Instructions
+## Submission Instructions
 
 You will be submitting your project via Nike before the deadline indicated
 near the top of this document. Make sure your project files are on 
@@ -377,17 +342,15 @@ If you have any problems submitting your project, then please contact the CSCI
 1302 Support Team by sending a private post to "Instructors" via the course 
 Piazza as soon as possible. 
 
-# Supplement
+# Appendix - Useful Links
 
-## Useful Links
-
-### JavaFX 8
+## JavaFX 8
 
 * [Package: `javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
 * [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html)
 * [Styling UI Controls with CSS](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/apply-css.htm)
 
-## FAQ
+# Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
 
