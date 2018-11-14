@@ -43,9 +43,10 @@ the copyright notice and licensing information at the bottom of this document.
 
 ## Updates
 
-Updates to the skeleton project will be posted here. Please check this section 
-periodically. Instructions to incorporate changes into your local repository
-are provided [here](#getting-updates-from-skeleton-project).
+Updates will be posted here.
+If there has been an update and you have already cloned the project to Nike, 
+then you can update your copy of the project using the <code>$ git pull</code>
+command while inside of your project directory.
 
 ## Project Description
 
