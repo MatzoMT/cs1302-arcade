@@ -50,10 +50,7 @@ are provided [here](#getting-updates-from-skeleton-project).
 
 Your goal is to implement a single GUI application in Java using JavaFX 8 that 
 provides an arcade with your own Java+JavaFX implementations of at least two 
-playable games. Here is an example of what your program might look like
-when it first launches:
-
-![screenshot1](https://i.imgur.com/JSLOIpF.png)
+playable games.
 
 Your team must choose one game from each of the following groups:
 
