@@ -9,7 +9,7 @@ beginning your project.**
 
 ## Due Dates
 
-* Team Application ([link](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_29LGjGh45Ei6OEd)) deadline extended to **MON 2018-11-26**.
+* Team Application ([link](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_29LGjGh45Ei6OEd)) deadline extended to **MON 2018-11-26 @ 11:55 PM**.
   * _Note: originally due **FRI 2018-11-16 @ 11:55 PM**._
   * _Please see [Updates](#updates) below._
 * Partial Submision due by **FRI 2018-11-30 @ 11:55 PM**.
