@@ -9,7 +9,8 @@ beginning your project.**
 
 ## Due Dates
 
-* Team Application ([link](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_29LGjGh45Ei6OEd)) is due by **FRI 2018-11-16 @ 11:55 PM**.
+* Team Application ([link](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_29LGjGh45Ei6OEd)) deadline extended to **MON 2018-11-26.*
+  * _Note: originally due **FRI 2018-11-16 @ 11:55 PM**. Please see [Updates](#updates) below._
 * Partial Submision due by **FRI 2018-11-30 @ 11:55 PM**.
 * Partial Submision due by **FRI 2018-12-07 @ 11:55 PM**.
 * Final Submision due by **TUE 2018-12-11 @ 03:30 PM**.
@@ -47,6 +48,10 @@ Updates will be posted here.
 If there has been an update and you have already cloned the project to Nike, 
 then you can update your copy of the project using the <code>$ git pull</code>
 command while inside of your project directory.
+
+* **2018-11-07:** Extended the team application deadline and added an additional
+  extra credit opportunity for those who submitted their applications before
+  the original deadline.
 
 ## Project Description
 
@@ -163,6 +168,13 @@ for this project.
   requirement, the high score table must persist over time and over separate executions
   of your application. If you want the grader to check for this requirement, then please
   make sure it is included in your last update to `REFLECTION.md`.
+  
+* **Extra Credit 3 (5 points):** Submitted team application before the original
+  deadline of **FRI 2018-11-16 @ 11:55 PM**. If you want the grader to check for 
+  this requirement, then please make sure it is included in your last update to 
+  `REFLECTION.md`. Just to be clear: we will only check our records to confirm
+  your team application submission date/time if you mention it in your 
+  `REFLECTION.md`.
 
 ### Non-Functional Requirements
 
@@ -296,7 +308,7 @@ The graders will compile and run your code on Nike using Maven (likely via
 the provided `Makefile`). They will test
 each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
-an additional 10 points via extra credit. 
+an additional 15 points via extra credit. 
 
 ## How to Download the Project
 
