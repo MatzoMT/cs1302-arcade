@@ -1,4 +1,4 @@
-MAIN_CLASS = cs1302.gallery.ArcadeDriver
+MAIN_CLASS = cs1302.arcade.ArcadeDriver
 
 run: compile
 	export MAVEN_OPTS=-Dprism.order=sw; \
