@@ -510,14 +510,12 @@ on Nike and GitHub.
    while minimizing basic merge conflicts.
 
 1. The other team member should now be able to perform the same sequence of steps,
-   omitting the `git pull` for the `skeleton` repository (since it's already been
-   merged into the team's repository):
+   omitting the last two steps:
 
    ```
    $ git clone TEAM_REPO_SSH cs1302-arcade
    $ cd cs1302-arcade
    $ git remote add skeleton https://github.com/cs1302uga/cs1302-arcade.git
-   $ git push origin master
    ```
 
    This team member should now be good to go. A pair programming workflow is provided
