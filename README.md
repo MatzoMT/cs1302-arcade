@@ -504,6 +504,9 @@ made to modify your submission to evaluate other requirements.
   * [`mepcotterell`](https://github.com/mepcotterell) -- Dr. Cotterell
   * [`bjb211`](https://github.com/bjb211) -- Dr. Barnes
 
+  Your instructors will have access to your private repository's history. This
+  means that they can see who did what and when based on the log.
+
 * **Development Environment:** This project must be implemented
   in Java 8, and it *must compile and run* correctly on Nike using the specific
   version of Java 8 that is setup according to the instructions provided
