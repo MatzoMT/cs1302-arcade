@@ -138,7 +138,11 @@ for this project.
     must be easily recognizable and consistent with traditional implementations of
     the game you chose (see the Wikipedia links for more information). Your game
     must provide a consistent scoring mechanism and display the score(s) to
-    the user somewhere in the user interface.
+    the user somewhere in the user interface. Additionally, games in this group
+    must provide a leveling mechanism by which the game's level of difficulty
+    increases over time as the "level" increases. A minimum of three levels is
+    required, however, there is no maximum level requirement. The first level
+    should be easy enough for most players familiar with the game to complete.
 
   * *Controls (5 points):* You are required to provide keyboard controls
     for a game in this group. If anything is not intuitive, then you need to let
