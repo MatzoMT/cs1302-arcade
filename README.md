@@ -10,17 +10,17 @@ beginning your project.**
 ## Due Dates
 
 * [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_8InWmd5qffHZ2Bv) due by **FRI 2019-04-12 @ 11:55 PM**.
-* Partial Submision 1 due by **TUE 2019-04-16 @ 11:55 PM**.
-* Partial Submision 2 due by **TUE 2019-04-23 @ 11:55 PM**.
-* Partial Submision 3 due by **FRI 2018-04-30 @ 11:55 PM**.
-* Final Submision due by **TUE 2019-05-07 @ 3:30 PM**.
+* Partial Submission 1 due by **TUE 2019-04-16 @ 11:55 PM**.
+* Partial Submission 2 due by **TUE 2019-04-23 @ 11:55 PM**.
+* Partial Submission 3 due by **FRI 2018-04-30 @ 11:55 PM**.
+* Final Submission due by **TUE 2019-05-07 @ 3:30 PM**.
 
 ## Important Final Project Policies
 
-* Please note the Final Submision date/time.
+* Please note the Final Submission date/time.
   For this project, **no late submissions will be accepted after 11:55PM on TUE 2019-05-07**.
   Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on TUE 2019-05-07**,
-  which will incur the standard penalty for one dat late.
+  which will incur the standard penalty for one day late.
 
 * Submissions from teams who do not submit a completed team application on time will
   not be accepted for grading. Exceptions will only be made under extenuating circumstances,
@@ -92,7 +92,7 @@ group are provided later in this document.
 Part of software development is being given a goal but not necessarily being
 given instruction on all of the details needed to accomplish that goal. For example,
 even though working with things like keyboard and mouse-related events
-haven't been explicitly covered in class, you are going to need to lookup how to do
+haven't been explicitly covered in class, you are going to need to look up how to do
 these things in order to complete this project. Starter code and a generously
 helpful [FAQ](#appendix---faq) are provided.
 
@@ -112,10 +112,10 @@ for this project.
 
 * Plan, design, implement, test, debug, and deploy a complete object-oriented
   software solution in Linux/Unix environment (1302-LO1)
-* Utilitze inheritance and polymorphism in a software project (1302-LO3-LO4).
+* Utilize inheritance and polymorphism in a software project (1302-LO3-LO4).
 * Develop a GUI for a software project (1302-LO7).
 * Implement exception-handling in a software project (1302-LO8).
-* Understand and apply langauge basics using an OOP language (1302-LO11).
+* Understand and apply language basics using an OOP language (1302-LO11).
 
 ### Functional Requirements
 
@@ -175,7 +175,7 @@ for this project.
   to your application, accessible via your application's menu (menu bar or otherwise).
   The table needs to actually keep track of the high scores for each game and include
   player initials. This may involve modifications in other areas of your application to
-  accomodate this. In order to receive full credit for this extra credit functional
+  accommodate this. In order to receive full credit for this extra credit functional
   requirement, the high score table must persist over time and over separate executions
   of your application. This will involve reading and writing to a file.
   If you want the grader to check for this requirement, then you must
@@ -234,9 +234,9 @@ point total. That is, they are all or nothing.
     and use `M-x untabify` to convert all of the tabs to spaces.
 
     Undoubtedly, many of you will encounter block indentation issues with lambda
-    expressions. Our reccomendation is that any multi-line lambda be assigned
+    expressions. Our recommendation is that any multi-line lambda be assigned
     to a variable of its corresponding interface type instead of being used
-    directly in a method call. Here is an examble of a before and after:
+    directly in a method call. Here is an example of a before and after:
 
     ```java
     // incorrect block indentation with lambda
@@ -299,7 +299,7 @@ point total. That is, they are all or nothing.
   * **Method height <= window height.** You should limit the number of lines for
     a method so that the entire method can be seen on the screen at once. This
     includes the line(s) with the method's signature and opening curly brace, all
-    lines in the body of the mthod (including blank lines), and the line with
+    lines in the body of the method (including blank lines), and the line with
     the method's ending curly brace. The method height does not include a
     method's Javadoc comment, however, it does include any comments contained
     within the body of the method.
@@ -387,7 +387,7 @@ point total. That is, they are all or nothing.
   repository. The commit should also be tagged using Git. For example:
 
   ```
-  $ git tag -am "Partial Submision 1" deadline1
+  $ git tag -am "Partial Submission 1" deadline1
   $ git push team --tags
   ```
 
@@ -489,7 +489,7 @@ on Nike and GitHub.
    free GitHub-hosted private Git repository for your project under one of your GitHub
    accounts called `cs1302-arcade` and add `mepcotterell`, `bjb211`, and the second team
    member as collaborators to that private repository. **In the remaining instructions,**
-   **`TEAM_REPO_SSH` will refer to the SSH URL for that respository as provided by GitHub.**
+   **`TEAM_REPO_SSH` will refer to the SSH URL for that repository as provided by GitHub.**
 
 1. One team member should clone their empty team repository to their Nike account and
    setup a link to the remote skeleton repository provided by your instructor. A sequence
@@ -566,7 +566,7 @@ Piazza as soon as possible.
 
 # Appendix - Workflow
 
-**NOTE:** We reccommend that you read
+**NOTE:** We recommend that you read
 [Pro Git Ch. 3.4](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
 before reading our suggested pair programming workflow below.
 
@@ -595,7 +595,7 @@ in a Piazza post to the rest of the class.
 
 1. Decide whose turn it is to **drive**. That person should login to
    their Nike account and change into the local working copy of their
-   project's repository. The rest of these steps assum this person
+   project's repository. The rest of these steps assume this person
    is executing the commands. When it comes time to change who is
    driving, that person should follow these steps from the beginning.
 
@@ -611,7 +611,7 @@ in a Piazza post to the rest of the class.
 
    1. If the branch that you are currently on is not `master`, then
       checkout `master` and repeat the previous sub-step to make
-      sure everything is committed in `master.
+      sure everything is committed in `master`.
 
       ```
       $ git checkout master
@@ -634,7 +634,7 @@ in a Piazza post to the rest of the class.
       The source code should be clean and free of special `diff` syntax
       before you save. Once an affected file is saved, you should
       stage and commit it. The merge conflict is not technically resolved
-      untill all affected files are fixed, staged, and committed -- these
+      until all affected files are fixed, staged, and committed -- these
       can be individual commits or one single commit with all affected files
       on the stage.
 
@@ -674,7 +674,7 @@ in a Piazza post to the rest of the class.
    following:
 
    1. Stage and commit tracked files. Also ensure that new files that
-      you added recently are staged and commited. Remember, you can use
+      you added recently are staged and committed. Remember, you can use
       `git status` to see what's going on.
 
    1. Checkout the `master` branch, merge `driver` into `master`, resolve
@@ -821,7 +821,7 @@ Below are some frequently asked questions related to this project.
    Therefore, I will try to use "task" throughout the remainder of this
    response.
 
-   To create a new thread, you need to instatiate a
+   To create a new thread, you need to instantiate a
    [`Thread`](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) object
    with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
    implementation for your task. Since `Runnable` is a functional interface,
@@ -949,13 +949,13 @@ Below are some frequently asked questions related to this project.
    timeline.getKeyFrames().add(keyFrame);
    timeline.play();
    ```
-   The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
+   The `Timeline` object also has a `pause` method to pause the execution of the timeline.
 
 1. **How do I pass around objects effectively?**
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
-   of reference variales around, perhaps through constructors. If it were one or two variables,
+   of reference variables around, perhaps through constructors. If it were one or two variables,
    then it would not be a big deal. However, you are likely reading this question because you
    are passing a lot of variables around. Your first thought might be to make those variables
    static, but that is not good for a couple different reasons--recall what it means for
@@ -964,7 +964,7 @@ Below are some frequently asked questions related to this project.
    common response to a recurring problem that is usually ineffective and risks being highly
    counterproductive.
 
-   The reccommended strategy is to add all those variables to your `Application` subclass as
+   The recommended strategy is to add all those variables to your `Application` subclass as
    instance variables, then create getters / setters and higher level methods that interact
    with groups of variables in a controlled way. This will make the application object easier
    to work with, promote encapsulation, and help enforce self-governance of the object.
@@ -987,8 +987,8 @@ Below are some frequently asked questions related to this project.
 1. **What is a good GUI container for games?**
 
    You already know that you can setup your scene graph however you want by using and nesting
-   different types of layour panes. If you need explicit control over the `x` and `y` positions
-   of some nodes, then I reccommend using the
+   different types of layout panes. If you need explicit control over the `x` and `y` positions
+   of some nodes, then I recommend using the
    [`Group`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Group.html) class.
    Since `Group` is a sub-class of `Node`, you should be able to add a `Group` object anywhere in
    your scene graph just like any other node.
@@ -1016,7 +1016,7 @@ Below are some frequently asked questions related to this project.
    The getter methods described in that section return references to
    [`Bounds`](https://docs.oracle.com/javase/8/javafx/api/javafx/geometry/Bounds.html)
    objects, which likely contain useful information regarding the whereabouts of
-   node. I would reccommend taking a very close look at the methods in that class.
+   node. I would recommend taking a very close look at the methods in that class.
 
 6. **How do I add sound?**
 
