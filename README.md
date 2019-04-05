@@ -700,6 +700,10 @@ in a Piazza post to the rest of the class.
       $ git branch -f driver
       ```
 
+      If you encounter a merge conflict, then see the **"MERGE CONFLICT?"**
+      note provided earlier in this workflow.
+
+
    1. Finally, push your changes up to your team's GitHub repository.
 
       ```
