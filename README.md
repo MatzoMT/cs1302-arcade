@@ -63,7 +63,7 @@ author(s) of any creative works you incorporate into your submission.
 
 Updates will be posted here.
 If there has been an update and you have already cloned the project to Nike, 
-then you can update your copy of the project using the <code>$ git pull</code>
+then you can update your copy of the project using the `$ git pull skeleton master`
 command while inside of your project directory.
 
 ## Project Description
