@@ -1079,6 +1079,8 @@ Below are some frequently asked questions related to this project.
    Look at the classes in the
    [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
    package.
+   
+1. 
 
 1.
 Have a question? Please post it on the course Piazza.
