@@ -220,11 +220,12 @@ point total. That is, they are all or nothing.
 
     ```
     (setq-default indent-tabs-mode nil)
-	   (setq-default c-default-style "linux"
-                  c-basic-offset 4)
-	   (setq-default tab-width 4)
-	   (setq indent-line-function 'insert-tab)
-	   ```
+    (setq-default
+     c-default-style "linux"
+     c-basic-offset 4)
+    (setq-default tab-width 4)
+    (setq indent-line-function 'insert-tab)
+    ```
     
     If you use Emacs and are unsure if you still have tab characters in your code, 
     then you can use `M-x whitespace-mode` to toggle on / off markers for special 
