@@ -523,22 +523,10 @@ on Nike and GitHub.
    overview of one way to send / receive changes from team member to team member
    while minimizing basic merge conflicts.
 
-If you followed these instructions correctly, then the steps above should created a
-directory called `cs1302-arcade` in your present working directory that contains the
-project files as well as a local copy of the repository. If any updates to the project
-files are announced by your instructor, you can merge those changes into *your local copy*
-by first staging and committing any tracked files, checking out the `master` branch, then
-performing a `pull` for the `skeleton` repository:
-
-```
-$ git commit -am "some good log message"
-$ git checkout master
-$ git pull skeleton master
-```
-
-If you were on a separate branch when an update was applied, then you can
-probably `merge` or `rebase` to incorporate those updates into your
-branch. If you have any problems with any of these procedures, then please
+If you followed these instructions correctly, then the steps above should have
+created a directory called `cs1302-arcade` in your present working directory that
+contains the project files as well as a local copy of the repository.
+If you have any problems with any of these procedures, then please
 ask about them on Piazza.
 
 ## Submission Instructions
