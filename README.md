@@ -191,6 +191,25 @@ point total. That is, they are all or nothing.
 * **(10 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding,
   your application should not hang/freeze or crash during execution.
 
+* **(10 points) Local Assets / Resources:** All assets (e.g., images) need to
+  be pre-downloaded and placed under `src/main/resources`. You are not allowed
+  to load assets directly from the web. This will help make your app faster.
+
+  If you place your assets under `src/main/resources`, then you can refer to
+  them in your code directly using a relative path that is assumed to be
+  relative to `src/main/resources` itself. For example, you might have the
+  following two images:
+
+  * `src/main/resources/brad.jpg`
+  * `src/main/resources/frogger/supa.png`
+
+  You can create `Image` objects from these as follows:
+
+  ```java
+  Image brad = new Image("brad.jpg");
+  Image brad = new Image("frogger/supa.png");
+  ```
+
 * **(10 points) Code Style Guidelines:** You should be consistent with the style
   aspect of your code in order to promote readability. All of the individual code
   style guidelines listed below are part of a single non-functional requirement
@@ -409,16 +428,20 @@ made to modify your submission to evaluate other requirements.
 
   If you follow this structure, then you might type the following to clean, compile,
   and run your code using Maven, assuming you are in the top-level project directory:
+
   ```
   $ mvn clean
   ```
+
   ```
-  $ mvn compile
+  $ mvn -e compile
   ```
+
   ```
   $ export MAVEN_OPTS=-Dprism.order=sw;
-  $ mvn exec:java -Dexec.mainClass="cs1302.arcade.ArcadeDriver"
+  $ mvn -e exec:java -Dexec.mainClass="cs1302.arcade.ArcadeDriver"
   ```
+
   If you get a `mvn: command not found` error when attempting to execute
   the `mvn` command, then please see the first question in the
   [FAQ](#appendix---faq).
@@ -440,7 +463,7 @@ made to modify your submission to evaluate other requirements.
   ```
 
   Using `make run` will automatically add the `-Dprism.order=sw` when running
-  `mvn exec:java`.
+  `mvn -e exec:java`.
 
   Your main application class should be `cs1302.arcade.ArcadeApp`.
   The driver class should be `cs1302.arcade.ArcadeDriver`.
