@@ -202,10 +202,11 @@ not satisfied. In order to emphasize the importance of these requirements,
 non-compliance results in the full point amount being subtracted from your
 point total. That is, they are all or nothing.
 
-* **(10 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding,
-  your application should not hang/freeze or crash during execution.
+* **User-Friendly Experience (10 points):** Except for reasonable delays resulting
+  from X forwarding, your application should not hang/freeze or crash during
+  execution.
 
-* **(10 points) Local Assets / Resources:** All assets (e.g., images) need to
+* **Local Assets / Resources (10 points):** All assets (e.g., images) need to
   be pre-downloaded and placed under `src/main/resources`. You are not allowed
   to load assets directly from the web. This will help make your app faster.
 
@@ -224,7 +225,7 @@ point total. That is, they are all or nothing.
   Image brad = new Image("frogger/supa.png");
   ```
 
-* **(10 points) Code Style Guidelines:** You should be consistent with the style
+* **Code Style Guidelines (10 points):** You should be consistent with the style
   aspect of your code in order to promote readability. All of the individual code
   style guidelines listed below are part of a single non-functional requirement
   that, like the others, is all or nothing. Besides consistency, the
@@ -388,7 +389,7 @@ point total. That is, they are all or nothing.
 
 * **Attribution (10 points):** Proper attribution should be given for all assets (e.g.,
   art, sound, music, etc.) that is not authored by members of your project team.
-  You should make an `ATTRIBUTIONS.md` file that contains this information. For each
+  You should make an `ATTRIBUTION.md` file that contains this information. For each
   asset, please provide the following information:
 
   * Asset Name
@@ -397,7 +398,7 @@ point total. That is, they are all or nothing.
   * URL
   * License
 
-  Here is an example of an entry in an `ATTRIBUTIONS.md` file:
+  Here is an example of an entry in an `ATTRIBUTION.md` file:
 
   ```
   ## Alien
