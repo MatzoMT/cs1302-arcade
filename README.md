@@ -5,7 +5,7 @@ assigned to the students in the Spring 2019 CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
-beginning your project.** 
+beginning your project.**
 
 ## Due Dates
 
@@ -17,18 +17,18 @@ beginning your project.**
 
 ## Important Final Project Policies
 
-* Please note the Final Submision date/time. 
+* Please note the Final Submision date/time.
   For this project, **no late submissions will be accepted after 11:55PM on TUE 2019-05-07**.
   Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on TUE 2019-05-07**,
   which will incur the standard penalty for one dat late.
-  
+
 * Submissions from teams who do not submit a completed team application on time will
-  not be accepted for grading. Exceptions will only be made under extenuating circumstances, 
+  not be accepted for grading. Exceptions will only be made under extenuating circumstances,
   such as family or medical emergencies, and must be approved by the instructor.
-  
-* Teams are required to add the following users as collaborators to the private 
+
+* Teams are required to add the following users as collaborators to the private
   GitHub-hosted Git repository that they setup for their project:
-  
+
   * [`mepcotterell`](https://github.com/mepcotterell) -- Dr. Cotterell
   * [`bjb211`](https://github.com/bjb211) -- Dr. Barnes
 
@@ -49,64 +49,64 @@ beginning your project.**
 
 ## Academic Honesty
 
-You agree to the Academic Honesty policy as outlined in the course syllabus, 
+You agree to the Academic Honesty policy as outlined in the course syllabus,
 course website, and your team application. Furthermore, you must adhere to
 the copyright notice and licensing information at the bottom of this document.
 
 Additionally, we recognize that free and open-source software implementations
 of the games described in this project are available. You are expected to write
-your games from scratch. The only exception to this is the use of existing 
+your games from scratch. The only exception to this is the use of existing
 art / visual assets, provided that you include proper attribution to the
 author(s) of any creative works you incorporate into your submission.
 
 ## Updates
 
 Updates will be posted here.
-If there has been an update and you have already cloned the project to Nike, 
+If there has been an update and you have already cloned the project to Nike,
 then you can update your copy of the project using the `$ git pull skeleton master`
 command while inside of your project directory.
 
 ## Project Description
 
-Your goal is to implement, from scratch, a single GUI application in Java 8 using 
-JavaFX 8 that provides an arcade with your own Java + JavaFX implementations of at 
+Your goal is to implement, from scratch, a single GUI application in Java 8 using
+JavaFX 8 that provides an arcade with your own Java + JavaFX implementations of at
 least two playable games.
 
 Your team must choose one game from each of the following groups:
 
 * **Group 1**
   * [Frogger](https://en.wikipedia.org/wiki/Frogger)
-  * [Tetris](https://en.wikipedia.org/wiki/Tetris) 
-  * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders) 
+  * [Tetris](https://en.wikipedia.org/wiki/Tetris)
+  * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
 * **Group 2**
   * [2048](https://en.wikipedia.org/wiki/2048_(video_game))
   * [Go](https://en.wikipedia.org/wiki/Go_(game))
   * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
 
-You have a lot of flexibility with regard to the visuals of your games. 
+You have a lot of flexibility with regard to the visuals of your games.
 As long as the functional requirements are met and the game mechanics are easily
 recognizable, you are free to make each game look and feel however you want
 (please keep it appropriate). The general functional requirements for each game
 group are provided later in this document.
 
-Part of software development is being given a goal but not necessarily being 
+Part of software development is being given a goal but not necessarily being
 given instruction on all of the details needed to accomplish that goal. For example,
-even though working with things like keyboard and mouse-related events 
-haven't been explicitly covered in class, you are going to need to lookup how to do 
-these things in order to complete this project. Starter code and a generously 
+even though working with things like keyboard and mouse-related events
+haven't been explicitly covered in class, you are going to need to lookup how to do
+these things in order to complete this project. Starter code and a generously
 helpful [FAQ](#appendix---faq) are provided.
 
 This project is also designed to help you better understand the usefulness of good
 class design. While you can technically write your entire JavaFX-based
-GUI application entirely in the `start` method, this will make your code messy, 
+GUI application entirely in the `start` method, this will make your code messy,
 hard to read, possibly redundant, and likely more prone to errors.
 Before you write any code, you should plan out your application's scene graph
 (i.e., the containment hierarchy), and design custom components as needed.
 If you find that you are writing a lot of code related to a specific component
-(e.g., setting styling, adding event handlers, etc.), then it's probably 
+(e.g., setting styling, adding event handlers, etc.), then it's probably
 a good idea to make a custom version of that component in order to reduce
 clutter. You are strongly encouraged to consider swapping out multiple scenes
-for this project. 
+for this project.
 
 ### Learning Outcomes
 
@@ -119,17 +119,17 @@ for this project.
 
 ### Functional Requirements
 
-* **Main Application Requirements (10 points):** The main part of your 
+* **Main Application Requirements (10 points):** The main part of your
   application needs to fulfill the following functional requirements:
 
   * *Game List (5 points):* Your application should present
-    the user with a visual / graphical list of available games. Starting a game should 
-    either swap the scene in the current stage or create a new application modal stage 
+    the user with a visual / graphical list of available games. Starting a game should
+    either swap the scene in the current stage or create a new application modal stage
     on which to display the game's scene graph.
-  
+
   * *Multiple Games per Execution (5 points):* Your application should allow
     users to exit one game (without exiting the entire application) and start
-    the same game again (with its state reset) or start the other game. 
+    the same game again (with its state reset) or start the other game.
 
 * **Group 1 Game Requirements (45 points):** Your Group 1 game implementation
   needs to fulfill the following functional requirements:
@@ -140,9 +140,9 @@ for this project.
     must provide a consistent scoring mechanism and display the score(s) to
     the user somewhere in the user interface.
 
-  * *Controls (5 points):* You are required to provide keyboard controls 
+  * *Controls (5 points):* You are required to provide keyboard controls
     for a game in this group. If anything is not intuitive, then you need to let
-    the user know before the game starts. 
+    the user know before the game starts.
 
 * **Group 2 Game Requirements (45 points):** Your Group 2 game implementation
   needs to fulfill the following functional requirements:
@@ -151,24 +151,24 @@ for this project.
     must be easily recognizable and consistent with traditional implementations of
     the game you chose (see the Wikipedia link for more information). Your game
     must provide a consistent scoring mechanism and display the score or scores to
-    the users somewhere in the user interface. 
+    the users somewhere in the user interface.
 
   * *Controls (5 points):* You are required to provide intuitive mouse or
-    keyboard controls for a game in this group. If anything is not intuitive, 
-    then you need to let the user know before the game starts. 
-    
-  * *Note:* You are only required to provide a 
-    human player vs. human player mode for for a multiplayer game in this category. 
-    Feel free to add support for computer players, however, such support will not 
-    contribute to your grade. 
+    keyboard controls for a game in this group. If anything is not intuitive,
+    then you need to let the user know before the game starts.
+
+  * *Note:* You are only required to provide a
+    human player vs. human player mode for for a multiplayer game in this category.
+    Feel free to add support for computer players, however, such support will not
+    contribute to your grade.
 
 * **Extra Credit 1 (5 points):** Add some kind of animated intro to your application.
   One potential way to accomplish this is by using a separate scene for your intro.
-  This intro should include, in addition to some kind of animated element, the 
+  This intro should include, in addition to some kind of animated element, the
   application title (i.e., `cs1302-arcade`), your team name, and the name of each
   team member. An animated GIF, by itself, does not meet this requirement. We
-  want one or more nodes in the scene to move around. If you want the grader to 
-  check for this requirement, then you must make sure it is included in your 
+  want one or more nodes in the scene to move around. If you want the grader to
+  check for this requirement, then you must make sure it is included in your
   last update to `REFLECTION.md`.
 
 * **Extra Credit 2 (5 points):** Add a [high score table](https://en.wikipedia.org/wiki/Score_(game)#High_score)
@@ -186,36 +186,36 @@ for this project.
 A non-functional requirement is *subtracted* from your point total if
 not satisfied. In order to emphasize the importance of these requirements,
 non-compliance results in the full point amount being subtracted from your
-point total. That is, they are all or nothing. 
-  
-* **(10 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding, 
+point total. That is, they are all or nothing.
+
+* **(10 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding,
   your application should not hang/freeze or crash during execution.
-  
-* **(10 points) Code Style Guidelines:** You should be consistent with the style 
+
+* **(10 points) Code Style Guidelines:** You should be consistent with the style
   aspect of your code in order to promote readability. All of the individual code
   style guidelines listed below are part of a single non-functional requirement
   that, like the others, is all or nothing. Besides consistency, the
   following conventions will be enforced:
-  
-  * **Reference type names are written in _UpperCamelCase_.** Class names are  
-    typically nouns or noun phrases. For example, `Character` or `ImmutableList`. 
-    Interface names may also be nouns or noun phrases (for example, `List`), but 
-    may sometimes be adjectives or adjective phrases instead (for example, 
+
+  * **Reference type names are written in _UpperCamelCase_.** Class names are
+    typically nouns or noun phrases. For example, `Character` or `ImmutableList`.
+    Interface names may also be nouns or noun phrases (for example, `List`), but
+    may sometimes be adjectives or adjective phrases instead (for example,
     `Readable`).
-  
-  * **Method names are written in _lowerCamelCase_.** Method names are also 
+
+  * **Method names are written in _lowerCamelCase_.** Method names are also
     typically verbs or verb phrases. For example, `sendMessage` or `stop`.
-  
-  * **Braces are always used where optional.** Braces should be used with `if`, 
-    `else`, `for`, `do`, and `while` statements, even when the body is empty or 
+
+  * **Braces are always used where optional.** Braces should be used with `if`,
+    `else`, `for`, `do`, and `while` statements, even when the body is empty or
     contains only a single statement.
-	
-  * **Block Indentation: 4 spaces.** Each time a new block or block-like construct 
-	   is opened, the indent increases by four spaces. When the block ends, the indent 
-	   returns to the previous indent level. The indent level applies to both code 
-	   and comments throughout the block. 
-	
-    If you use Emacs, you can add the following lines to your `~/.emacs` file to 
+
+  * **Block Indentation: 4 spaces.** Each time a new block or block-like construct
+       is opened, the indent increases by four spaces. When the block ends, the indent
+       returns to the previous indent level. The indent level applies to both code
+       and comments throughout the block.
+
+    If you use Emacs, you can add the following lines to your `~/.emacs` file to
     make tabs for _new_ files comply with this requirement:
 
     ```
@@ -226,18 +226,18 @@ point total. That is, they are all or nothing.
     (setq-default tab-width 4)
     (setq indent-line-function 'insert-tab)
     ```
-    
-    If you use Emacs and are unsure if you still have tab characters in your code, 
-    then you can use `M-x whitespace-mode` to toggle on / off markers for special 
+
+    If you use Emacs and are unsure if you still have tab characters in your code,
+    then you can use `M-x whitespace-mode` to toggle on / off markers for special
     whitespace characters (e.g., `\t` will show as `»`, `\n` will show as `$`, etc.).
     If you identify an tab characters, then you can select the affected region
-    and use `M-x untabify` to convert all of the tabs to spaces. 
-    
+    and use `M-x untabify` to convert all of the tabs to spaces.
+
     Undoubtedly, many of you will encounter block indentation issues with lambda
     expressions. Our reccomendation is that any multi-line lambda be assigned
     to a variable of its corresponding interface type instead of being used
     directly in a method call. Here is an examble of a before and after:
-    
+
     ```java
     // incorrect block indentation with lambda
     button.setOnAction(event -> {
@@ -245,7 +245,7 @@ point total. That is, they are all or nothing.
             bar();
         });
     ```
-    
+
     ```java
     // correct block indentation with lambda
     EventHandler<ActionEvent> handler = event -> {
@@ -254,21 +254,21 @@ point total. That is, they are all or nothing.
     };
     button.setOnAction(handler);
     ```
-    
+
   * **Column limit: 100.** You should limit the number of characters, including
-    whitespace, on any given line to 100 characters. Except as noted below, any 
+    whitespace, on any given line to 100 characters. Except as noted below, any
     line that would exceed this limit must be manually line-wrapped in a
     consistent manner. Exceptions to the column limit include:
-    
-    * Lines where obeying the column limit is not possible (for example, a long 
+
+    * Lines where obeying the column limit is not possible (for example, a long
       URL in Javadoc, or a long JSNI method reference).
     * In `package` and `import` statements.
-    * Command line input examples in a comment that may be cut-and-pasted into 
+    * Command line input examples in a comment that may be cut-and-pasted into
       a shell.
-      
-    If you use Emacs, then you can add the following lines to your `~/.emacs` file to 
+
+    If you use Emacs, then you can add the following lines to your `~/.emacs` file to
     highlight characters that exceed the column limit:
-    
+
     ```
     ;; check for lines that exceed some column limit
     (setq-default
@@ -276,10 +276,10 @@ point total. That is, they are all or nothing.
      whitespace-style '(face lines-tail))
     (add-hook 'prog-mode-hook #'whitespace-mode)
     ```
-    
+
     If you would rather have Emacs highlight entire lines that exceed the column
     limit, then use the following instead (not in addition to):
-    
+
     ```
     ;; check for lines that exceed some column limit
     (setq-default
@@ -287,83 +287,85 @@ point total. That is, they are all or nothing.
      whitespace-style '(face lines))
     (add-hook 'prog-mode-hook #'whitespace-mode)
     ```
-    
+
     You can create the `~/.emacs` file if it does not exist. If you have
-    an `~/.emacs.el` or `~/.emacs.d/init.el` file, then you can place the lines 
-    in that file instead of `~/.emacs`. 
-    
+    an `~/.emacs.el` or `~/.emacs.d/init.el` file, then you can place the lines
+    in that file instead of `~/.emacs`.
+
     If, after adding the configuration lines above, you still have trouble finding
     lines that exceed the column limit, then you can ask Emacs to mark newlines with
-    a `$` by typing `M-x whitespace-newline-mode` then `RET` (return). 
-      
+    a `$` by typing `M-x whitespace-newline-mode` then `RET` (return).
+
   * **Method height <= window height.** You should limit the number of lines for
     a method so that the entire method can be seen on the screen at once. This
     includes the line(s) with the method's signature and opening curly brace, all
     lines in the body of the mthod (including blank lines), and the line with
     the method's ending curly brace. The method height does not include a
     method's Javadoc comment, however, it does include any comments contained
-    within the body of the method. 
-    
-    Of all the style guidelines, this is the probably the most subjective and 
+    within the body of the method.
+
+    Of all the style guidelines, this is the probably the most subjective and
     hardest to grade because everyone might have a different window size due
-    to different terminal emulator and physical screen size configurations. 
+    to different terminal emulator and physical screen size configurations.
     Therefore, graders will be checking for compliance with the spirit
-    of this guideline, which is: methods that are too big and/or repetitive 
+    of this guideline, which is: methods that are too big and/or repetitive
     should be refactored to include proper looping constructs and/or broken
     up into smaller methods to improve readability.
-    
-    If you use Emacs, you can add the following lines to your `~/.emacs` file to 
+
+    If you use Emacs, you can add the following lines to your `~/.emacs` file to
     enable line numbers:
+
     ```
     ;; add line numbers
     (global-linum-mode 1)
-    
+
     ;; display line numbers and column numbers
     (setq line-number-mode t)
     (setq column-number-mode t)
-    
+
     ;; make sure the line numbers don't touch the text
     (setq linum-format "%d ")
     ```
+
     You can create the `~/.emacs` file if it does not exist. If you have
-    an `~/.emacs.el` or `~/.emacs.d/init.el` file, then you can place the lines 
-    in that file instead of `~/.emacs`. 
+    an `~/.emacs.el` or `~/.emacs.d/init.el` file, then you can place the lines
+    in that file instead of `~/.emacs`.
 
 * **Javadoc Documentation (10 points):** All methods and classes needs to be __fully documented__
-  using Javadoc comments and appropriate Javadoc tags. Each comment should provide a description 
+  using Javadoc comments and appropriate Javadoc tags. Each comment should provide a description
   of the method's functionality in the first sentence of the comment. This sentence needs to be
-  a grammatically correct English sentence with proper punctuation. Further description can be 
-  provided in subsequent sentence. 
-  
-  Even if documentation is inherited from an interface, you must explicitly include a 
+  a grammatically correct English sentence with proper punctuation. Further description can be
+  provided in subsequent sentence.
+
+  Even if documentation is inherited from an interface, you must explicitly include a
   Javadoc comment with either a new description (if that makes sense) or make proper use
   of the `{@inheritDoc}` tag.
 
   It should be noted that we do expect you to provide a Javadoc comment for each class
   in addition to a comment for each method within a class. The Javadoc comment
   for a class is placed directly above the class declaration as seen in the examples
-  provided in the link referenced earlier. 
+  provided in the link referenced earlier.
 
 * **In-line Documentation (10 points):** Code blocks should be adequately documented
   using in-line comments. This is especially necessary when a block of code
   is not immediately understood by a reader (e.g., yourself or the grader).
 
-* **No Static Variables (10 points):** Use of static variables is not allowed for this assignment. 
+* **No Static Variables (10 points):** Use of static variables is not allowed for this assignment.
   However, static constants and methods are permitted.
-  
+
 * **Attribution (10 points):** Proper attribution should be given for all assets (e.g.,
-  art, sound, music, etc.) that is not authored by members of your project team. 
+  art, sound, music, etc.) that is not authored by members of your project team.
   You should make an `ATTRIBUTIONS.md` file that contains this information. For each
   asset, please provide the following information:
-  
+
   * Asset Name
   * Path within your project
   * Author citation
   * URL
   * License
-  
+
   Here is an example of an entry in an `ATTRIBUTIONS.md` file:
-  
+
   ```
   ## Alien
   * `src/main/resources/alien.png`
@@ -374,21 +376,21 @@ point total. That is, they are all or nothing.
 
 * **(40 points; 10 points each) Reflection Updates:** Before each submission
   deadline mentioned towards the beginning of this document, you
-  will need to update your project's `REFLECTION.md` file to include a new 
-  section describing: 
-  
-  1. That work that has been done since the last update (you may summarize your Git log); 
+  will need to update your project's `REFLECTION.md` file to include a new
+  section describing:
+
+  1. That work that has been done since the last update (you may summarize your Git log);
   2. The work you plan to complete before the next deadline (except for the last submission); and
   3. What problems, if any, you have encountered related to this project.
-  
+
   These changes, including your work in progress, must be committed to your
   repository. The commit should also be tagged using Git. For example:
-  
+
   ```
   $ git tag -am "Partial Submision 1" deadline1
   $ git push team --tags
   ```
-  
+
   For each reflection update, you will be graded on the existence of the related
   Git tag and the germaneness of the content included in your `REFLECTION.md`
   file.
@@ -402,10 +404,10 @@ made to modify your submission to evaluate other requirements.
 
 * **Project Structure:** The location of the default
   package for the source code should be a direct subdirectory called `src/main/java`.
-  When the project is compiled using Maven, the the default package for compiled 
-  code should be `target/classes`. 
-  
-  If you follow this structure, then you might type the following to clean, compile, 
+  When the project is compiled using Maven, the the default package for compiled
+  code should be `target/classes`.
+
+  If you follow this structure, then you might type the following to clean, compile,
   and run your code using Maven, assuming you are in the top-level project directory:
   ```
   $ mvn clean
@@ -420,46 +422,50 @@ made to modify your submission to evaluate other requirements.
   If you get a `mvn: command not found` error when attempting to execute
   the `mvn` command, then please see the first question in the
   [FAQ](#appendix---faq).
-  
+
   Additionally, a `Makefile` is provided so that you can type the following to
-  easily clean, compile, and run your code using the 
+  easily clean, compile, and run your code using the
   [Make utility](https://www.gnu.org/software/make/):
+
   ```
   $ make clean
   ```
+
   ```
   $ make compile
   ```
+
   ```
   $ make run
   ```
+
   Using `make run` will automatically add the `-Dprism.order=sw` when running
   `mvn exec:java`.
-  
-  Your main application class should be `cs1302.arcade.ArcadeApp`.
-  The driver class should be `cs1302.arcade.ArcadeDriver`. 
-  Any additional `.java` files in your project are expected to fulfill all 
-  non-functional and absolute requirements, even if the main parts of the 
-  project do not use them. You may assume graders will compile your source 
-  code in an order that satisfies compilation dependencies. 
-  You should remove any `.java` files that you do not need before submission. 
 
-* **Team Membership:** Formalized team membership via a team application 
-  submission made before the team application deadline is required. Furthermore, 
-  you must adhere to the policies outlined in the syllabus and the team application. 
+  Your main application class should be `cs1302.arcade.ArcadeApp`.
+  The driver class should be `cs1302.arcade.ArcadeDriver`.
+  Any additional `.java` files in your project are expected to fulfill all
+  non-functional and absolute requirements, even if the main parts of the
+  project do not use them. You may assume graders will compile your source
+  code in an order that satisfies compilation dependencies.
+  You should remove any `.java` files that you do not need before submission.
+
+* **Team Membership:** Formalized team membership via a team application
+  submission made before the team application deadline is required. Furthermore,
+  you must adhere to the policies outlined in the syllabus and the team application.
   Deviations will likely result in zero on the assignment for both team members.
   Except for extenuating circumstances, such as family or medical emergencies, that are
-  approved by the instructor, team issues such as scheduling and coordination are the 
-  responsibility of each team member. If you identify a team issue early on (first week), 
+  approved by the instructor, team issues such as scheduling and coordination are the
+  responsibility of each team member. If you identify a team issue early on (first week),
   then we encourage you to contact your instructor by sending a private post to \
-  "Instructors" via the course Piazza as soon as possible. 
+  "Instructors" via the course Piazza as soon as possible.
 
-* **Development Environment:** This project must be implemented 
+* **Development Environment:** This project must be implemented
   in Java 8, and it *must compile and run* correctly on Nike using the specific
   version of Java 8 that is setup according to the instructions provided
   by your instructor. For Spring 2019, these instructions were posted on
   Piazza [@29](https://piazza.com/class/jpupoaxnvvs497?cid=29).
-  
+
 * **No FXML or use of Scene Builder:** FXML and SceneBuilder
   are advanced tools that are not currently covered in this course. Use of
   either for this project is prohibited. Please note that the project is
@@ -471,25 +477,25 @@ made to modify your submission to evaluate other requirements.
 The graders will compile and run your code on Nike using Maven (likely via
 the provided `Makefile`). They will test each of the requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
-an additional 10 points via extra credit. 
+an additional 10 points via extra credit.
 
 ## How to Download the Project
 
-These instructions assume that both team members have 
+These instructions assume that both team members have
 [setup their SSH keys](https://git.io/fjLzB#setting-up-ssh-keys)
 on Nike and GitHub.
 
-1. If you have not done so already, you or your partner should create a 
+1. If you have not done so already, you or your partner should create a
    free GitHub-hosted private Git repository for your project under one of your GitHub
-   accounts called `cs1302-arcade` and add `mepcotterell`, `bjb211`, and the second team 
+   accounts called `cs1302-arcade` and add `mepcotterell`, `bjb211`, and the second team
    member as collaborators to that private repository. **In the remaining instructions,**
    **`TEAM_REPO_SSH` will refer to the SSH URL for that respository as provided by GitHub.**
-   
+
 1. One team member should clone their empty team repository to their Nike account and
    setup a link to the remote skeleton repository provided by your instructor. A sequence
    of commands is provided below. You should make every effort to understand what
    each command is doing *before* you execute the command.
-   
+
    ```
    $ git clone TEAM_REPO_SSH cs1302-arcade
    $ cd cs1302-arcade
@@ -497,32 +503,32 @@ on Nike and GitHub.
    $ git pull --depth 1 skeleton master
    $ git push origin master
    ```
-   
+
    This team member should now be good to go. A pair programming workflow is provided
    in the [Appendix - Workflow](#appendix---workflow) section, which provides an
    overview of one way to send / receive changes from team member to team member
    while minimizing basic merge conflicts.
-   
+
 1. The other team member should now be able to perform the same sequence of steps,
    omitting the `git pull` for the `skeleton` repository (since it's already been
    merged into the team's repository):
-   
+
    ```
    $ git clone TEAM_REPO_SSH cs1302-arcade
    $ cd cs1302-arcade
    $ git remote add skeleton https://github.com/cs1302uga/cs1302-arcade.git
    $ git push origin master
    ```
-   
+
    This team member should now be good to go. A pair programming workflow is provided
    in the [Appendix - Workflow](#appendix---workflow) section, which provides an
    overview of one way to send / receive changes from team member to team member
-   while minimizing basic merge conflicts. 
+   while minimizing basic merge conflicts.
 
-If you followed these instructions correctly, then the steps above should created a 
-directory called `cs1302-arcade` in your present working directory that contains the 
-project files as well as a local copy of the repository. If any updates to the project 
-files are announced by your instructor, you can merge those changes into *your local copy* 
+If you followed these instructions correctly, then the steps above should created a
+directory called `cs1302-arcade` in your present working directory that contains the
+project files as well as a local copy of the repository. If any updates to the project
+files are announced by your instructor, you can merge those changes into *your local copy*
 by first staging and committing any tracked files, checking out the `master` branch, then
 performing a `pull` for the `skeleton` repository:
 
@@ -532,10 +538,10 @@ $ git checkout master
 $ git pull skeleton master
 ```
 
-If you were on a separate branch when an update was applied, then you can 
+If you were on a separate branch when an update was applied, then you can
 probably `merge` or `rebase` to incorporate those updates into your
-branch. If you have any problems with any of these procedures, then please 
-ask about them on Piazza. 
+branch. If you have any problems with any of these procedures, then please
+ask about them on Piazza.
 
 ## Submission Instructions
 
@@ -546,7 +552,7 @@ You will be submitting your project via Nike before the final deadline.
    a good log message and that the `master` branch is checked out. Take special
    care to ensure that your fully-committed `master` branch reflects the project
    you wish to submit. Using `git status` should not indicate any untracked files.
-   
+
 1. Change into the parent directory of your local copy of the repository and
    submit it using the `submit` command:
 
@@ -555,8 +561,8 @@ You will be submitting your project via Nike before the final deadline.
    ```
 
 If you have any problems submitting your project, then please contact the CSCI
-1302 Support Team by sending a private post to "Instructors" via the course 
-Piazza as soon as possible. 
+1302 Support Team by sending a private post to "Instructors" via the course
+Piazza as soon as possible.
 
 # Appendix - Useful Links
 
@@ -566,7 +572,144 @@ Piazza as soon as possible.
 * [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html)
 * [Styling UI Controls with CSS](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/apply-css.htm)
 
+## Resources
+
+* [Reference Manual](https://git-scm.com/docs) - alternative to the manual pages for `git`
+* [Pro Git (Book)](https://git-scm.com/book/en/v2) - contains a lot of good examples
+* [Version Control by Example (Book)](http://ericsink.com/vcbe/) - excellent introduction to version control by Eric Sink
+
 # Appendix - Workflow
+
+**NOTE:** We reccommend that you read
+[Pro Git Ch. 3.4](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
+before reading our suggested pair programming workflow below.
+
+For this group-based project, you and your partner are required to do
+**pair programming**. According to [Williams & Kessler](https://t.uga.edu/4S0):
+
+> Pair programming is a practice in which two programmers work side-by-side
+> at one computer, continuously collaborating on the same design, algorithm,
+> code, or test. [...] one person drives (has control of the keyboard or is
+> recording design ideas) while the other is continuously reviewing the work.
+
+If you've followed the instructions included
+[earlier in this project description](#how-to-download-the-project),
+then you and your partner already have a GitHub-hosted private Git repository
+as well as local working copies of that repository on your respective Nike
+accounts. The challenge now is how to effectively collaborate using these
+three distributed copies of the repository. That is where the workflow
+below comes into play. In this context, a workflow describes a sequence of
+steps that you and your partner can take to effectively collaborate on the
+project and avoid simple merge conflicts.
+
+**The steps we provide in this workflow are suggested, however, they are not required.**
+If you and your partner decide on a better workflow, then feel free to
+use that instead. If it works really well, then I encourage you to describe it
+in a Piazza post to the rest of the class.
+
+1. Decide whose turn it is to **drive**. That person should login to
+   their Nike account and change into the local working copy of their
+   project's repository. The rest of these steps assum this person
+   is executing the commands. When it comes time to change who is
+   driving, that person should follow these steps from the beginning.
+
+1. Use `git status` to see the state of the current branch.
+
+   1. Regardless of what branch you are on, stage and commit all tracked files.
+      If you manually added any new files, then you should add them and
+      commit them.
+
+      ```
+      $ git status
+      ```
+
+   1. If the branch that you are currently on is not `master`, then
+      checkout `master` and repeat the previous sub-step to make
+      sure everything is committed in `master.
+
+      ```
+      $ git checkout master
+      ```
+
+      If you want / need to, merge the changes from the other branch
+      into `master`, then delete the other branch.
+
+      ```
+      $ git merge branch_name
+      $ git branch -d branch_name
+      ```
+
+      **MERGE CONFLICT?** If you merge, then you may encounter a merge conflict.
+      In this scenario, Git's output will tell you what files are affected. You
+      must then edit those files using your text editor of choice to
+      manually resolve the conflict. Git will mark lines in the affected files
+      with a special `diff` syntax so that you can easily identify them, then make
+      edits to either pick one version or combine them in a desired way.
+      The source code should be clean and free of special `diff` syntax
+      before you save. Once an affected file is saved, you should
+      stage and commit it. The merge conflict is not technically resolved
+      untill all affected files are fixed, staged, and committed -- these
+      can be individual commits or one single commit with all affected files
+      on the stage.
+
+1. Now that your local working copy is cleaned up, you should pull
+   changes from your team repository into your local working copy.
+
+   ```
+   $ git pull origin master
+   ```
+
+   If you encounter a merge conflict, then see the **"MERGE CONFLICT?"**
+   note provided earlier in this workflow.
+
+1. Instead of working on your project directly in the `master` branch,
+   create a branch for this programming session based on the most
+   recent commit:
+
+   ```
+   $ git branch driver
+   $ git checkout driver
+   ```
+
+   Alternatively, you can use:
+
+   ```
+   $ git checkout -b driver
+   ```
+
+1. Work on the project. As often as is reasonable, you should stage and
+   commit tracked files in this branch. If you add new source code files
+   or visual assets (e.g., images in `src/main/resources`), then be
+   sure to add and commit them. Liberal use of `git status` is highly
+   recommended.
+
+1. Once you are done with this programming session, perhaps for the day
+   or because you want to switch who is driving, you should do the
+   following:
+
+   1. Stage and commit tracked files. Also ensure that new files that
+      you added recently are staged and commited. Remember, you can use
+	  `git status` to see what's going on.
+
+   1. Checkout the `master` branch, merge `driver` into `master`, resolve
+      conflicts if necessary, then delete the `driver` branch.
+
+	  ```
+	  $ git checkout master
+	  $ git merge driver
+	  $ git branch -f driver
+	  ```
+
+   1. Finally, push your changes up to your team's GitHub repository.
+
+      ```
+	  $ git push origin master
+	  ```
+	  If your partner worked on the project while you were also working
+	  on the project, then it's possible that you don't have the most
+	  recent changes. In this scenario, return to the first step and
+	  quickly repeat -- much of the work is usually minimal in this
+	  scenario, assuming you both espouse the same workflow.
 
 # Appendix - FAQ
 
@@ -575,7 +718,7 @@ Below are some frequently asked questions related to this project.
 1. **Maven doesn't work!?**
 
    You need to add the executable for Maven to your `PATH` environmental variable.
-   Add the following lines to the end of your `~/.bash_profile` file on Nike, then logout and login: 
+   Add the following lines to the end of your `~/.bash_profile` file on Nike, then logout and login:
    ```
    export MAVEN_HOME=/home/grads/mec/maven
    export PATH=$MAVEN_HOME/bin:$PATH
@@ -584,8 +727,8 @@ Below are some frequently asked questions related to this project.
 
 1. **What does "local variables referenced from a lambda expression must**
    **be final or effectively final" and how do I fix it?**
-   
-   Like local and anonymous classes, a lambda expression can only access local 
+
+   Like local and anonymous classes, a lambda expression can only access local
    variables of the enclosing block that are `final` or effectively `final`.
    That is, a variable local to method can only be involved in the body of
    a lambda expression if it is either explicitly declared as `final` or if
@@ -594,17 +737,17 @@ Below are some frequently asked questions related to this project.
    if it's declared inside of the method or if it's a parameter to the method.
    Please note that this restriction applies to the variables themselves and
    presents an interesting scenario in the case of local reference variables.
-   A local reference variable may remain effectively `final` even if the 
+   A local reference variable may remain effectively `final` even if the
    internal state of the object being referenced is changed so long as the
    variable itself (i.e., the reference value) does not change.
-   
-   This problem can be usually be fixed by effectively making use of 
+
+   This problem can be usually be fixed by effectively making use of
    instance variables and/or writing methods that return an instance
    of the interface being implemented via the lambda. For example,
    consider the following scenario that results in the compile-time
    error message "local variables referenced from a lambda expression must
    be final or effectively final":
-   
+
    ```java
    void someMethod() {
        for (int i = 0; i < 10; ++i) {
@@ -615,7 +758,7 @@ Below are some frequently asked questions related to this project.
        } // for
    } // someMethod
    ```
-   
+
    The variable `i` is local to `someMethod` and neither `final` nor
    effectively `final` because its value changes after each iteration
    of the for-loop. In this scenario, an instance variable is unlikely
@@ -626,7 +769,7 @@ Below are some frequently asked questions related to this project.
    `i` is effectively final in that method. Then, we can call that
    method in `someMethod` instead of creating the lambda there directly.
    For example:
-   
+
    ```java
    EventHandler<ActionEvent> createHandler(int i) {
        EventHandler<ActionEvent> handler = e -> {
@@ -636,7 +779,7 @@ Below are some frequently asked questions related to this project.
        return handler;
    } // createHandler
    ```
-   
+
    ```java
    void someMethod() {
        for (int i = 0; i < 10; ++i) {
@@ -644,11 +787,11 @@ Below are some frequently asked questions related to this project.
        } // for
    } // someMethod
    ```
-   
+
    In this new scenario, the variable `i` is an effectively final local variable
    in the block enclosing the lambda in `createHandler`, thus avoiding the
-   problem described by the compiler. 
-   
+   problem described by the compiler.
+
    Why is this an issue? Well, the big reason is that the language does not support it.
    Why doesn't the language support it? I speculate that the reason has to do with
    how local variables are managed internally in memory. As methods get called and
@@ -656,43 +799,43 @@ Below are some frequently asked questions related to this project.
    very likely that the region of memory used by the method that created the lambda
    is freed up before the object created by the lambda is used. If the body of the
    lambda expression attempts to change the value of the variable, then what does
-   that mean if the variable is not longer there!? 
+   that mean if the variable is not longer there!?
 
 1. **How do I make my application not freeze/hang when executing long running event handlers?**
 
-   For the most part, your GUI application is just like any other 
+   For the most part, your GUI application is just like any other
    Java application you have ever written. If a line of code takes a long time to
    execute, then there is a delay before the next line of code is executed.
-   This can be problematic in GUI applications since the underlying GUI 
+   This can be problematic in GUI applications since the underlying GUI
    framework, essentially, pauses what it is doing in order to do what you
    ask it to do. This can cause your GUI to hang/freeze (i.e., become unresponsive)
-   when you have code blocks that take more than a few milliseconds. 
+   when you have code blocks that take more than a few milliseconds.
 
    The way to solve this problem is through a basic use of threads.
    The term *thread* refers to a single thread of execution, in which
    code is executed in sequential order. When you start a Java program,
    you usually start with one thread that starts executing the `main`
-   method. This thread is usually called the "main" thread. When you launch 
-   your JavaFX application using the `Application.launch` method, part of 
-   the application life-cycle is the creation of a thread for your GUI 
-   called the "JavaFX Event Dispatch" thread. By default, any code 
-   executed by or in response to your GUI components (e.g., the code for an 
-   event handler) takes place in the JavaFX Event Dispatch Thread. If you 
-   do not want your program to hang, then you will need to create a 
-   separate thread for your problematic code snippets. This works because 
-   a Java program can have multiple threads executing concurrently. 
+   method. This thread is usually called the "main" thread. When you launch
+   your JavaFX application using the `Application.launch` method, part of
+   the application life-cycle is the creation of a thread for your GUI
+   called the "JavaFX Event Dispatch" thread. By default, any code
+   executed by or in response to your GUI components (e.g., the code for an
+   event handler) takes place in the JavaFX Event Dispatch Thread. If you
+   do not want your program to hang, then you will need to create a
+   separate thread for your problematic code snippets. This works because
+   a Java program can have multiple threads executing concurrently.
 
-   Although we have been using "problematic code" to describe the code 
-   snippet causing the problem, such a code snippet really represents some 
-   "task" that you want your application to perform without hanging. 
-   Therefore, I will try to use "task" throughout the remainder of this 
+   Although we have been using "problematic code" to describe the code
+   snippet causing the problem, such a code snippet really represents some
+   "task" that you want your application to perform without hanging.
+   Therefore, I will try to use "task" throughout the remainder of this
    response.
 
-   To create a new thread, you need to instatiate a 
+   To create a new thread, you need to instatiate a
    [`Thread`](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) object
-   with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) 
-   implementation for your task. Since `Runnable` is a functional interface, 
-   this process is simplified using a lambda expression or method reference. 
+   with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
+   implementation for your task. Since `Runnable` is a functional interface,
+   this process is simplified using a lambda expression or method reference.
    Here is an example idiom of how to create and start a new thread for a task:
    ```java
    Runnable r = () -> {
@@ -704,10 +847,10 @@ Below are some frequently asked questions related to this project.
    ```
    The call to `t.setDaemon(true)` prevents this newly created thread from
    delaying program termination in the case where either the main thread
-   or the JavaFX Event Dispatch thread terminate first. After the call to 
-   `t.start()`, both the JavaFX Event Dispatch Thread and the newly created 
-   thread are executing concurrently. You cannot assume that statements in 
-   either thread execute in any predetermined order. When writing an event 
+   or the JavaFX Event Dispatch thread terminate first. After the call to
+   `t.start()`, both the JavaFX Event Dispatch Thread and the newly created
+   thread are executing concurrently. You cannot assume that statements in
+   either thread execute in any predetermined order. When writing an event
    handler that executes a task, you might do something like the following:
    ```java
    EventHandler<ActionEvent> handler = event -> {
@@ -731,14 +874,14 @@ Below are some frequently asked questions related to this project.
        t.start();
    });
    ```
-   
+
    **Advanced:** The solution presented above is probably the simplest.
-   Alternatively, you can make use of some of the classes in the 
-   [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package, 
-   which provide, among other things, the ability to control the execution and 
+   Alternatively, you can make use of some of the classes in the
+   [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package,
+   which provide, among other things, the ability to control the execution and
    track the progress of code that is deferred to another thread. For more information,
    please see the [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/fx_concurrency.htm)
-   tutorial. 
+   tutorial.
 
 1. **What does "Not on FX application thread" mean and how do I fix it?**
 
@@ -748,7 +891,7 @@ Below are some frequently asked questions related to this project.
    in the JavaFX Event Dispatch thread (see Q4 in this FAQ). If you want to fix this, then
    the code snippet that interacts with the scene graph needs to be wrapped
    in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
-   implementation and passed to the static `runLater` method in 
+   implementation and passed to the static `runLater` method in
    [`Platform`](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Platform.html).
    Since `Runnable` is a functional interface, this process is simplified using
    a lambda expression or method reference. Here is a basic example:
@@ -758,8 +901,8 @@ Below are some frequently asked questions related to this project.
    };
    Platform.runLater(r);
    ```
-   The `runLater` method ensures that the code in your `Runnable` implementation 
-   executes in the JavaFX Event Dispatch thread. Here is a more complete example 
+   The `runLater` method ensures that the code in your `Runnable` implementation
+   executes in the JavaFX Event Dispatch thread. Here is a more complete example
    that combines this scenario with the one described in Q4 of this FAQ:
    ```java
    EventHandler<ActionEvent> handler = event -> {
@@ -772,7 +915,7 @@ Below are some frequently asked questions related to this project.
        };
        Thread t = new Thread(r);
        t.setDaemon(true);
-       t.start();       
+       t.start();
    };
    button.setOnAction(handler);
    ```
@@ -788,24 +931,24 @@ Below are some frequently asked questions related to this project.
            /* perhaps even more task code here */
        });
        t.setDaemon(true);
-       t.start();       
+       t.start();
    });
    ```
    While it might be tempting to place all of your task code in the
    `Runnable` implementation provided to `runLater`, that is not a good idea
    because it will be executed on the JavaFX Event Dispatch thread. If you
    already writing code for another thread, it was likely to avoid having it
-   run on the JavaFX Event Dispatch Thread. Multiple calls to the `runLater` 
-   method can be used, as needed, to ensure only the code that interacts with 
+   run on the JavaFX Event Dispatch Thread. Multiple calls to the `runLater`
+   method can be used, as needed, to ensure only the code that interacts with
    the scene graph is executed in the JavaFX Event Dispatch thread.
 
 1. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
    The easiest way to accomplish this in a JavaFX application is using the
-   [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html) 
-   and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html) 
-   classes. Here is an example that prints the current time (using 
-   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to 
+   [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html)
+   and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html)
+   classes. Here is an example that prints the current time (using
+   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to
    standard output every two (2) seconds (specified using
    [`Duration`](https://docs.oracle.com/javase/8/javafx/api/javafx/util/Duration.html)), indefinitely:
    ```java
@@ -817,86 +960,86 @@ Below are some frequently asked questions related to this project.
    timeline.play();
    ```
    The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
-   
+
 1. **How do I pass around objects effectively?**
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
-   of reference variales around, perhaps through constructors. If it were one or two variables, 
+   of reference variales around, perhaps through constructors. If it were one or two variables,
    then it would not be a big deal. However, you are likely reading this question because you
-   are passing a lot of variables around. Your first thought might be to make those variables 
+   are passing a lot of variables around. Your first thought might be to make those variables
    static, but that is not good for a couple different reasons--recall what it means for
    a variable to be static as well as the non-functional requirements for this project.
-   Using static variables as a "go to" solution is an example of an anti-pattern, i.e.,  a 
-   common response to a recurring problem that is usually ineffective and risks being highly 
+   Using static variables as a "go to" solution is an example of an anti-pattern, i.e.,  a
+   common response to a recurring problem that is usually ineffective and risks being highly
    counterproductive.
-   
-   The reccommended strategy is to add all those variables to your `Application` subclass as 
+
+   The reccommended strategy is to add all those variables to your `Application` subclass as
    instance variables, then create getters / setters and higher level methods that interact
-   with groups of variables in a controlled way. This will make the application object easier 
-   to work with, promote encapsulation, and help enforce self-governance of the object. 
+   with groups of variables in a controlled way. This will make the application object easier
+   to work with, promote encapsulation, and help enforce self-governance of the object.
    When employing this strategy, you can then pass a reference to your application object around as needed.
    This way, you are only passing around one variable instead of many! In the other parts of your
-   app (e.g., in custom components), simply call on the application object's methods to access and 
+   app (e.g., in custom components), simply call on the application object's methods to access and
    change the things you were previously passing around.
-   
+
    Remember, if you are currently in your application class's `start` method, then you can pass
    a reference to the current application object into a method using the `this` reference
-   variable. 
+   variable.
 
 1. **How do I make my game run at *x* frames per second (e.g., 60 FPS)?**
 
    If you are using a single `Timeline` object for your main game loop, then duration of all
-   key frames in the main game loop should sum to exactly `1000 / x` ms (e.g., 
-   `Duration.ofMillis(1000 / 60)`). 
+   key frames in the main game loop should sum to exactly `1000 / x` ms (e.g.,
+   `Duration.ofMillis(1000 / 60)`).
    The easiest way to ensure this is to have only one key frame with that duration.
 
 1. **What is a good GUI container for games?**
 
    You already know that you can setup your scene graph however you want by using and nesting
    different types of layour panes. If you need explicit control over the `x` and `y` positions
-   of some nodes, then I reccommend using the 
+   of some nodes, then I reccommend using the
    [`Group`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Group.html) class.
    Since `Group` is a sub-class of `Node`, you should be able to add a `Group` object anywhere in
    your scene graph just like any other node.
-   
+
 4. **How do I setup event handlers related to mouse and keyboard events?**
 
-   Look at the Javadoc documentation for the 
+   Look at the Javadoc documentation for the
    [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class,
-   specifically the methods that start with `setOnMouse` and `setOnKey`, to see the 
-   different types of mouse and keyboard events you can handle. Here is a simple example 
-   that prints the current time (using 
-   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to 
-   standard output when a user clicks on an `ImageView` object (referenced by `iv`) that 
+   specifically the methods that start with `setOnMouse` and `setOnKey`, to see the
+   different types of mouse and keyboard events you can handle. Here is a simple example
+   that prints the current time (using
+   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to
+   standard output when a user clicks on an `ImageView` object (referenced by `iv`) that
    is assumed to be visible within the current scene graph:
    ```java
    iv.setOnMouseClicked(event -> System.out.println(LocalTime.now()));
    ```
    Remember, you can setup these event handlers for any node in the scene graph, including
    the containers.
-   
+
 5. **How can I detect if two nodes in my scene collide?**
 
-   Look at the "Bounding Rectangles" section in the Javadoc documentation for the 
+   Look at the "Bounding Rectangles" section in the Javadoc documentation for the
    [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class.
-   The getter methods described in that section return references to 
+   The getter methods described in that section return references to
    [`Bounds`](https://docs.oracle.com/javase/8/javafx/api/javafx/geometry/Bounds.html)
    objects, which likely contain useful information regarding the whereabouts of
    node. I would reccommend taking a very close look at the methods in that class.
-   
+
 6. **How do I add sound?**
 
    While JavaFX does support audio playback of various formats, this feature is not
    currently available over X11 forwarding from Nike. **If you incorporate audio into**
    **your application, then take measures to properly deal with the unchecked exceptions**
    **that might get thrown if audio playback is not available.**
-   
+
 7. **How do I make basic shapes appear?**
 
-   Look at the classes in the 
+   Look at the classes in the
    [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
-   package. 
+   package.
 
 Have a question? Please post it on the course Piazza.
 
