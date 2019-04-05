@@ -1,6 +1,13 @@
-*.class
-
+bin/
+doc/
 target/
+*.class
+*.jar
+hs_err_pid*
+*~
+\#*\#
+core.*
+
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
