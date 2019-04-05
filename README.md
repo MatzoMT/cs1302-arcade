@@ -689,27 +689,27 @@ in a Piazza post to the rest of the class.
 
    1. Stage and commit tracked files. Also ensure that new files that
       you added recently are staged and commited. Remember, you can use
-	  `git status` to see what's going on.
+      `git status` to see what's going on.
 
    1. Checkout the `master` branch, merge `driver` into `master`, resolve
       conflicts if necessary, then delete the `driver` branch.
 
-	  ```
-	  $ git checkout master
-	  $ git merge driver
-	  $ git branch -f driver
-	  ```
+      ```
+      $ git checkout master
+      $ git merge driver
+      $ git branch -f driver
+      ```
 
    1. Finally, push your changes up to your team's GitHub repository.
 
       ```
-	  $ git push origin master
-	  ```
-	  If your partner worked on the project while you were also working
-	  on the project, then it's possible that you don't have the most
-	  recent changes. In this scenario, return to the first step and
-	  quickly repeat -- much of the work is usually minimal in this
-	  scenario, assuming you both espouse the same workflow.
+      $ git push origin master
+      ```
+      If your partner worked on the project while you were also working
+      on the project, then it's possible that you don't have the most
+      recent changes. In this scenario, return to the first step and
+      quickly repeat -- much of the work is usually minimal in this
+      scenario, assuming you both espouse the same workflow.
 
 # Appendix - FAQ
 
