@@ -579,12 +579,14 @@ ask about them on Piazza.
 ## Submission Instructions
 
 You will be submitting your project via Nike before the final deadline.
-**Both team members are required to submit according to these instructions.*
+**Both team members are required to submit according to these instructions.**
 
 1. **CRITICAL:** Make sure that all tracked files are staged and committed with
    a good log message and that the `master` branch is checked out. Take special
    care to ensure that your fully-committed `master` branch reflects the project
-   you wish to submit. Using `git status` should not indicate any untracked files.
+   you wish to submit. Compare your log to the log on GitHub. If you do not have
+   the most recent version of your team's project, then you may need to do a
+   `git pull`. Finally, Using `git status` should not indicate any untracked files.
 
 1. Change into the parent directory of your local copy of the repository and
    submit it using the `submit` command:
@@ -1040,7 +1042,7 @@ Below are some frequently asked questions related to this project.
    Since `Group` is a sub-class of `Node`, you should be able to add a `Group` object anywhere in
    your scene graph just like any other node.
 
-4. **How do I setup event handlers related to mouse and keyboard events?**
+1. **How do I setup event handlers related to mouse and keyboard events?**
 
    Look at the Javadoc documentation for the
    [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class,
@@ -1056,7 +1058,7 @@ Below are some frequently asked questions related to this project.
    Remember, you can setup these event handlers for any node in the scene graph, including
    the containers.
 
-5. **How can I detect if two nodes in my scene collide?**
+1. **How can I detect if two nodes in my scene collide?**
 
    Look at the "Bounding Rectangles" section in the Javadoc documentation for the
    [`Node`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html) class.
@@ -1065,19 +1067,20 @@ Below are some frequently asked questions related to this project.
    objects, which likely contain useful information regarding the whereabouts of
    node. I would recommend taking a very close look at the methods in that class.
 
-6. **How do I add sound?**
+1. **How do I add sound?**
 
    While JavaFX does support audio playback of various formats, this feature is not
    currently available over X11 forwarding from Nike. **If you incorporate audio into**
    **your application, then take measures to properly deal with the unchecked exceptions**
    **that might get thrown if audio playback is not available.**
 
-7. **How do I make basic shapes appear?**
+1. **How do I make basic shapes appear?**
 
    Look at the classes in the
    [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
    package.
 
+1.
 Have a question? Please post it on the course Piazza.
 
 <hr/>
