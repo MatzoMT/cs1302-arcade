@@ -68,19 +68,26 @@ command while inside of your project directory.
 
 ## Project Description
 
-Your goal is to implement, from scratch, a single GUI application in Java 8 using
-JavaFX 8 that provides an arcade with your own Java + JavaFX implementations of at
-least two playable games.
+Your pair programming team's goal is to implement, from scratch, a single GUI application
+in Java 8 using JavaFX 8 that provides an arcade with your own Java + JavaFX implementations
+of at least two playable games.
 
 Your team must choose one game from each of the following groups:
 
 * **Group 1**
+
   * [Frogger](https://en.wikipedia.org/wiki/Frogger)
+
   * [Tetris](https://en.wikipedia.org/wiki/Tetris)
+
   * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
+
 * **Group 2**
+
   * [2048](https://en.wikipedia.org/wiki/2048_(video_game))
+
   * [Go](https://en.wikipedia.org/wiki/Go_(game))
+
   * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
 
 You have a lot of flexibility with regard to the visuals of your games.
