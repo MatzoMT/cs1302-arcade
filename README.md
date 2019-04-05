@@ -32,6 +32,9 @@ beginning your project.**
   * [`mepcotterell`](https://github.com/mepcotterell) -- Dr. Cotterell
   * [`bjb211`](https://github.com/bjb211) -- Dr. Barnes
 
+  Your instructors will have access to your private repository's history. This
+  means that they can see who did what and when based on the log.
+
 ## Table of Contents
 
 * [Academic Honesty](#academic-honesty)
@@ -418,7 +421,7 @@ point total. That is, they are all or nothing.
 
   ```
   $ git tag -am "Partial Submission 1" deadline1
-  $ git push team --tags
+  $ git push origin --tags
   ```
 
   For each reflection update, you will be graded on the existence of the related
@@ -491,8 +494,14 @@ made to modify your submission to evaluate other requirements.
   Except for extenuating circumstances, such as family or medical emergencies, that are
   approved by the instructor, team issues such as scheduling and coordination are the
   responsibility of each team member. If you identify a team issue early on (first week),
-  then we encourage you to contact your instructor by sending a private post to \
+  then we encourage you to contact your instructor by sending a private post to
   "Instructors" via the course Piazza as soon as possible.
+
+* **GitHub Collaborators:** Teams are required to add the following users as collaborators
+  to the private GitHub-hosted Git repository that they setup for their project:
+
+  * [`mepcotterell`](https://github.com/mepcotterell) -- Dr. Cotterell
+  * [`bjb211`](https://github.com/bjb211) -- Dr. Barnes
 
 * **Development Environment:** This project must be implemented
   in Java 8, and it *must compile and run* correctly on Nike using the specific
