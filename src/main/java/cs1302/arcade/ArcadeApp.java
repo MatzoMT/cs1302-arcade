@@ -13,8 +13,11 @@ import javafx.stage.Stage;
 
 public class ArcadeApp extends Application {
 
+    Group group = new Group();           // main container
     Random rng = new Random();
 
+    private 
+	
     @Override
     public void start(Stage stage) {
 
@@ -24,7 +27,7 @@ public class ArcadeApp extends Application {
          * (rectangle) in a group. 
          */
 	
-        Group group = new Group();           // main container
+        
         Rectangle r = new Rectangle(20, 20); // some rectangle
         r.setX(50);                          // 50px in the x direction (right)
         r.setY(50);                          // 50ps in the y direction (down)
@@ -56,18 +59,6 @@ public class ArcadeApp extends Application {
         group.requestFocus();
 
     } // start
-
-    public static void main(String[] args) {
-        try {
-            Application.launch(args);
-        } catch (UnsupportedOperationException e) {
-            System.out.println(e);
-            System.err.println("If this is a DISPLAY problem, then your X server connection");
-            System.err.println("has likely timed out. This can generally be fixed by logging");
-            System.err.println("out and logging back in.");
-            System.exit(1);
-        } // try
-    } // main
 
 } // ArcadeApp
 
