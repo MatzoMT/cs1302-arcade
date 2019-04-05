@@ -1079,10 +1079,38 @@ Below are some frequently asked questions related to this project.
    Look at the classes in the
    [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
    package.
-   
-1. 
 
-1.
+1. **Git won't let me `git pull` my team's repository!?**
+
+   When you tried to `git push`, you likely received some output similar to following
+
+   ```
+   To git@github.com:username/cs1302-arcade.git
+   ! [rejected]        master -> master (non-fast-forward)
+   error: failed to push some refs to 'git@github.com:username/cs1302-arcade.git'
+   To prevent you from losing history, non-fast-forward updates were rejected
+   Merge the remote changes before pushing again.  See the 'Note about
+   fast-forwards' section of 'git push --help' for details.
+   ```
+
+   Obviously, you already read the "Note about fast-forwards", as suggested by the
+   program output, by referring to:
+
+   ```
+   $ git push --help
+   ```
+
+   To summarize, this error is likely happening because your team partner has
+   recently pushed some commits to your team repository on GitHub. The solution
+   is contained right there in the "Note about fast-forwards":
+
+   > If you do not want to lose your work [..] nor the work by the other person [..],
+   > you would need to first fetch the history from the repository, create a history
+   > that contains changes done by both parties, and push the result back.
+
+   The easiest way to do that is to pull changes from the team repository, resolve
+   merge conflicts if necessary, then push.
+
 Have a question? Please post it on the course Piazza.
 
 <hr/>
