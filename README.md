@@ -547,7 +547,7 @@ on Nike and GitHub.
    $ git clone TEAM_REPO_SSH cs1302-arcade
    $ cd cs1302-arcade
    $ git remote add skeleton https://github.com/cs1302uga/cs1302-arcade.git
-   $ git pull --depth 1 skeleton master
+   $ git pull skeleton master
    $ git push origin master
    ```
 
@@ -611,7 +611,7 @@ Piazza as soon as possible.
 
 * [Reference Manual](https://git-scm.com/docs) - alternative to the manual pages for `git`
 * [Pro Git (Book)](https://git-scm.com/book/en/v2) - contains a lot of good examples
-* [Version Control by Example (Book)](http://ericsink.com/vcbe/) - excellent introduction to version control by Eric Sink
+* [Version Control by Example (Book)](https://ericsink.com/vcbe/index.html) - excellent introduction to version control by Eric Sink
 
 # Appendix - Workflow
 
