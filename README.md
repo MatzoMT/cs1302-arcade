@@ -12,7 +12,7 @@ beginning your project.**
 * [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_8InWmd5qffHZ2Bv) due by **FRI 2019-04-12 @ 11:55 PM**.
 * Partial Submission 1 due by **TUE 2019-04-16 @ 11:55 PM**.
 * Partial Submission 2 due by **TUE 2019-04-23 @ 11:55 PM**.
-* Partial Submission 3 due by **FRI 2018-04-30 @ 11:55 PM**.
+* Partial Submission 3 due by **TUE 2018-04-30 @ 11:55 PM**.
 * Final Submission due by **TUE 2019-05-07 @ 3:30 PM**.
 
 ## Important Final Project Policies
