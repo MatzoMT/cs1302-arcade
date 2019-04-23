@@ -7,6 +7,12 @@ at the University of Georgia.
 **Please read the entirety of this file before
 beginning your project.**
 
+## Updates
+
+* **TUE 019-04-23:** User-Friendly Experience Requirement updated to include information about
+  window dimensions and potential local program execution by TA graders. No changes were made
+  to the skeleton code. 
+
 ## Due Dates
 
 * [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_8InWmd5qffHZ2Bv) due by **FRI 2019-04-12 @ 11:55 PM**.
@@ -202,9 +208,12 @@ not satisfied. In order to emphasize the importance of these requirements,
 non-compliance results in the full point amount being subtracted from your
 point total. That is, they are all or nothing.
 
-* **User-Friendly Experience (10 points):** Except for reasonable delays resulting
-  from X forwarding, your application should not hang/freeze or crash during
-  execution.
+* **User-Friendly Experience (10 points):** The windows of your application
+  should not exceed a pixel dimension of `1280` (width) by `720` (height). 
+  Additionally, except for reasonable delays resulting from X forwarding, your 
+  application should not hang/freeze or crash during execution. If a grader 
+  encounters lag, then they will try to run your application locally using Oracle
+  Java 8.
 
 * **Local Assets / Resources (10 points):** All assets (e.g., images) need to
   be pre-downloaded and placed under `src/main/resources`. You are not allowed
