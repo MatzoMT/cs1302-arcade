@@ -310,24 +310,25 @@ point total. That is, they are all or nothing.
       a shell.
 
     If you use Emacs, then you can add the following lines to your `~/.emacs` file to
-    highlight characters that exceed the column limit:
-
-    ```
-    ;; check for lines that exceed some column limit
-    (setq-default
-     whitespace-line-column 100
-     whitespace-style '(face lines-tail))
-    (add-hook 'prog-mode-hook #'whitespace-mode)
-    ```
-
-    If you would rather have Emacs highlight entire lines that exceed the column
-    limit, then use the following instead (not in addition to):
+    highlight entire lines that exceed the column limit:
 
     ```
     ;; check for lines that exceed some column limit
     (setq-default
      whitespace-line-column 100
      whitespace-style '(face lines))
+    (add-hook 'prog-mode-hook #'whitespace-mode)
+    ```
+    
+    If you would like for Emacs to display a special character for newlines and tabs
+    in addition to highlighting lines that exceed the column limit, then use the
+    following instead (not in addition to):
+
+    ```
+    ;; check for lines that exceed some column limit
+    (setq-default
+     whitespace-line-column 100
+     whitespace-style '(face lines newline tab-mark))
     (add-hook 'prog-mode-hook #'whitespace-mode)
     ```
 
