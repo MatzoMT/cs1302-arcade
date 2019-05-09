@@ -398,7 +398,7 @@ point total. That is, they are all or nothing.
   However, static constants and methods are permitted.
 
 * **Attribution (10 points):** Proper attribution should be given for all assets (e.g.,
-  art, sound, music, etc.) that is not authored by members of your project team.
+  art, sound, music, etc.) that are not authored by members of your project team.
   You should make an `ATTRIBUTION.md` file that contains this information. For each
   asset, please provide the following information:
 
