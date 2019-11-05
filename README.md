@@ -262,6 +262,7 @@ point total. That is, they are all or nothing.
   ```
 
 <a name="reflections"/>
+
 * **(40 points; 10 points each) Reflection Updates:** Before each submission
   deadline mentioned towards the beginning of this document, you
   will need to update your project's `REFLECTION.md` file to include a new
