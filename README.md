@@ -10,10 +10,10 @@ beginning your project.**
 ## Due Dates
 
 * [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_8InWmd5qffHZ2Bv) due by **TUE 2019-11-12 @ 11:55 PM**.
-* Partial Submission 1 (including reflections) due by **TUE 2019-11-19 @ 11:55 PM**.
-* Partial Submission 2 (including reflections) due by **TUE 2019-11-26 @ 11:55 PM**.
-* Partial Submission 3 (including reflections) due by **WED 2019-12-04 @ 11:55 PM**.
-* Final Submission (including reflections) due by **WED 2019-12-11 @ 3:30 PM**.
+* Partial Submission 1 (including [reflections](#reflections)) due by **TUE 2019-11-19 @ 11:55 PM**.
+* Partial Submission 2 (including [reflections](#reflections)) due by **TUE 2019-11-26 @ 11:55 PM**.
+* Partial Submission 3 (including [reflections](#reflections)) due by **WED 2019-12-04 @ 11:55 PM**.
+* Final Submission (including [reflections](#reflections)) due by **WED 2019-12-11 @ 3:30 PM**.
 
 ## Important Final Project Policies
 
