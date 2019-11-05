@@ -1,17 +1,11 @@
-# CSCI 1302 - Arcade App v2019.sp
+# CSCI 1302 - Arcade App v2019.fa
 
 This document contains the description for the `cs1302-arcade` project
-assigned to the students in the Spring 2019 CSCI 1302 classes
+assigned to the students in the Fall 2019 CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
 beginning your project.**
-
-## Updates
-
-* **TUE 019-04-23:** User-Friendly Experience Requirement updated to include information about
-  window dimensions and potential local program execution by TA graders. No changes were made
-  to the skeleton code. 
 
 ## Due Dates
 
@@ -85,19 +79,19 @@ Your team must choose one game from each of the following groups:
 
 * **Group 1**
 
-  * [Frogger](https://en.wikipedia.org/wiki/Frogger)
+  * [Asteroids](https://en.wikipedia.org/wiki/Asteroids_(video_game))
+
+  * [Centipede](https://en.wikipedia.org/wiki/Centipede_(video_game))
 
   * [Tetris](https://en.wikipedia.org/wiki/Tetris)
 
-  * [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders)
-
 * **Group 2**
 
-  * [2048](https://en.wikipedia.org/wiki/2048_(video_game))
+  * [Mancala](https://en.wikipedia.org/wiki/Mancala)
 
-  * [Go](https://en.wikipedia.org/wiki/Go_(game))
+  * [Reversi](https://en.wikipedia.org/wiki/Reversi)
 
-  * [American Checkers](https://en.wikipedia.org/wiki/Draughts)
+  * [Chess](https://en.wikipedia.org/wiki/Chess)
 
 You have a lot of flexibility with regard to the visuals of your games.
 As long as the functional requirements are met and the game mechanics are easily
@@ -216,186 +210,35 @@ point total. That is, they are all or nothing.
   Java 8.
 
 * **Local Assets / Resources (10 points):** All assets (e.g., images) need to
-  be pre-downloaded and placed under `src/main/resources`. You are not allowed
+  be pre-downloaded and placed under `resources`. You are not allowed
   to load assets directly from the web. This will help make your app faster.
 
-  If you place your assets under `src/main/resources`, then you can refer to
-  them in your code directly using a relative path that is assumed to be
-  relative to `src/main/resources` itself. For example, you might have the
-  following two images:
-
-  * `src/main/resources/brad.jpg`
-  * `src/main/resources/frogger/supa.png`
-
-  You can create `Image` objects from these as follows:
-
-  ```java
-  Image brad = new Image("brad.jpg");
-  Image brad = new Image("frogger/supa.png");
-  ```
-
-* **Code Style Guidelines (10 points):** You should be consistent with the style
-  aspect of your code in order to promote readability. All of the individual code
-  style guidelines listed below are part of a single non-functional requirement
-  that, like the others, is all or nothing. Besides consistency, the
-  following conventions will be enforced:
-
-  * **Reference type names are written in _UpperCamelCase_.** Class names are
-    typically nouns or noun phrases. For example, `Character` or `ImmutableList`.
-    Interface names may also be nouns or noun phrases (for example, `List`), but
-    may sometimes be adjectives or adjective phrases instead (for example,
-    `Readable`).
-
-  * **Method names are written in _lowerCamelCase_.** Method names are also
-    typically verbs or verb phrases. For example, `sendMessage` or `stop`.
-
-  * **Braces are always used where optional.** Braces should be used with `if`,
-    `else`, `for`, `do`, and `while` statements, even when the body is empty or
-    contains only a single statement.
-
-  * **Block Indentation: 4 spaces.** Each time a new block or block-like construct
-       is opened, the indent increases by four spaces. When the block ends, the indent
-       returns to the previous indent level. The indent level applies to both code
-       and comments throughout the block.
-
-    If you use Emacs, you can add the following lines to your `~/.emacs` file to
-    make tabs for _new_ files comply with this requirement:
-
-    ```
-    (setq-default indent-tabs-mode nil)
-    (setq-default
-     c-default-style "linux"
-     c-basic-offset 4)
-    (setq-default tab-width 4)
-    (setq indent-line-function 'insert-tab)
-    ```
-
-    If you use Emacs and are unsure if you still have tab characters in your code,
-    then you can use `M-x whitespace-mode` to toggle on / off markers for special
-    whitespace characters (e.g., `\t` will show as `»`, `\n` will show as `$`, etc.).
-    If you identify an tab characters, then you can select the affected region
-    and use `M-x untabify` to convert all of the tabs to spaces.
-
-    Undoubtedly, many of you will encounter block indentation issues with lambda
-    expressions. Our recommendation is that any multi-line lambda be assigned
-    to a variable of its corresponding interface type instead of being used
-    directly in a method call. Here is an example of a before and after:
-
-    ```java
-    // incorrect block indentation with lambda
-    button.setOnAction(event -> {
-            foo();
-            bar();
-        });
-    ```
-
-    ```java
-    // correct block indentation with lambda
-    EventHandler<ActionEvent> handler = event -> {
-        foo();
-        bar();
-    };
-    button.setOnAction(handler);
-    ```
-
-  * **Column limit: 100.** You should limit the number of characters, including
-    whitespace, on any given line to 100 characters. Except as noted below, any
-    line that would exceed this limit must be manually line-wrapped in a
-    consistent manner. Exceptions to the column limit include:
-
-    * Lines where obeying the column limit is not possible (for example, a long
-      URL in Javadoc, or a long JSNI method reference).
-    * In `package` and `import` statements.
-    * Command line input examples in a comment that may be cut-and-pasted into
-      a shell.
-
-    If you use Emacs, then you can add the following lines to your `~/.emacs` file to
-    highlight entire lines that exceed the column limit:
-
-    ```
-    ;; check for lines that exceed some column limit
-    (setq-default
-     whitespace-line-column 100
-     whitespace-style '(face lines))
-    (add-hook 'prog-mode-hook #'whitespace-mode)
-    ```
-    
-    If you would like for Emacs to display a special character for newlines, tab-based
-    indentations, and trailing whitespace in addition to highlighting lines that exceed 
-    the column limit, then use the following instead (not in addition to):
-
-    ```
-    ;; check for lines that exceed some column limit
-    (setq-default
-     whitespace-line-column 100
-     whitespace-style '(face lines newline indentation trailing))
-    (add-hook 'prog-mode-hook #'whitespace-mode)
-    ```
-
-    You can create the `~/.emacs` file if it does not exist. If you have
-    an `~/.emacs.el` or `~/.emacs.d/init.el` file, then you can place the lines
-    in that file instead of `~/.emacs`.
-
-    If, after adding the configuration lines above, you still have trouble finding
-    lines that exceed the column limit, then you can ask Emacs to mark newlines with
-    a `$` by typing `M-x whitespace-newline-mode` then `RET` (return).
-
-  * **Method height <= window height.** You should limit the number of lines for
-    a method so that the entire method can be seen on the screen at once. This
-    includes the line(s) with the method's signature and opening curly brace, all
-    lines in the body of the method (including blank lines), and the line with
-    the method's ending curly brace. The method height does not include a
-    method's Javadoc comment, however, it does include any comments contained
-    within the body of the method.
-
-    Of all the style guidelines, this is the probably the most subjective and
-    hardest to grade because everyone might have a different window size due
-    to different terminal emulator and physical screen size configurations.
-    Therefore, graders will be checking for compliance with the spirit
-    of this guideline, which is: methods that are too big and/or repetitive
-    should be refactored to include proper looping constructs and/or broken
-    up into smaller methods to improve readability.
-
-    If you use Emacs, you can add the following lines to your `~/.emacs` file to
-    enable line numbers:
-
-    ```
-    ;; add line numbers
-    (global-linum-mode 1)
-
-    ;; display line numbers and column numbers
-    (setq line-number-mode t)
-    (setq column-number-mode t)
-
-    ;; make sure the line numbers don't touch the text
-    (setq linum-format "%d ")
-    ```
-
-    You can create the `~/.emacs` file if it does not exist. If you have
-    an `~/.emacs.el` or `~/.emacs.d/init.el` file, then you can place the lines
-    in that file instead of `~/.emacs`.
-
-* **Javadoc Documentation (10 points):** All methods and classes needs to be __fully documented__
-  using Javadoc comments and appropriate Javadoc tags. Each comment should provide a description
-  of the method's functionality in the first sentence of the comment. This sentence needs to be
-  a grammatically correct English sentence with proper punctuation. Further description can be
-  provided in subsequent sentence.
-
-  Even if documentation is inherited from an interface, you must explicitly include a
-  Javadoc comment with either a new description (if that makes sense) or make proper use
-  of the `{@inheritDoc}` tag.
-
-  It should be noted that we do expect you to provide a Javadoc comment for each class
-  in addition to a comment for each method within a class. The Javadoc comment
-  for a class is placed directly above the class declaration as seen in the examples
-  provided in the link referenced earlier.
+  You should place local files under `resources` in your project directory (you may need to
+  create the `resources` directory). URLs prefixed with `file:` should be relative to your
+  project directory. 
+   
+  Example:
+   
+  | Resource                | URL                           |
+  |-------------------------|-------------------------------|
+  | `resources/icon.png`    | `"file:resources/icon.png"`   |
+  | `resources/foo/img.png` | `"file:resourcesfoo/img.png"` |
+  
+* **(20 points) Code Style Guidelines:** You should be consistent with the style 
+  aspect of your code in order to promote readability. Every `.java` file that
+  you include as part of your submission for this project must be in valid style 
+  as defined in the [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide).
+  All of the individual code style guidelines listed in that document are part 
+  of this single non-functional requirement. Like the other non-functional
+  requirements, this requirement is all or nothing. 
+  
+  **NOTE:** The [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide)
+  includes instructions on how to use the `checkstyle` program to check
+  your code for compliance on Nike.
 
 * **In-line Documentation (10 points):** Code blocks should be adequately documented
   using in-line comments. This is especially necessary when a block of code
   is not immediately understood by a reader (e.g., yourself or the grader).
-
-* **No Static Variables (10 points):** Use of static variables is not allowed for this assignment.
-  However, static constants and methods are permitted.
 
 * **Attribution (10 points):** Proper attribution should be given for all assets (e.g.,
   art, sound, music, etc.) that are not authored by members of your project team.
@@ -412,7 +255,7 @@ point total. That is, they are all or nothing.
 
   ```
   ## Alien
-  * `src/main/resources/alien.png`
+  * `resources/alien.png`
   * Carlos Alface. "Alien" November 15, 2014
   * https://opengameart.org/content/alien-1
   * Creative Commons Attribution 3.0 Unported (CC BY 3.0)
@@ -763,278 +606,6 @@ in a Piazza post to the rest of the class.
 # Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
-
-1. **Maven doesn't work!?**
-
-   You need to add the executable for Maven to your `PATH` environmental variable.
-   Add the following lines to the end of your `~/.bash_profile` file on Nike, then logout and login:
-   ```
-   export MAVEN_HOME=/home/grads/mec/maven
-   export PATH=$MAVEN_HOME/bin:$PATH
-   ```
-   If done correctly, these changes should take effect every time you login to Nike.
-
-1. **What does "local variables referenced from a lambda expression must**
-   **be final or effectively final" and how do I fix it?**
-
-   Like local and anonymous classes, a lambda expression can only access local
-   variables of the enclosing block that are `final` or effectively `final`.
-   That is, a variable local to method can only be involved in the body of
-   a lambda expression if it is either explicitly declared as `final` or if
-   its value does not change after initialization over the entire body of
-   the method. A variable is local to a method (i.e., it's a local variable)
-   if it's declared inside of the method or if it's a parameter to the method.
-   Please note that this restriction applies to the variables themselves and
-   presents an interesting scenario in the case of local reference variables.
-   A local reference variable may remain effectively `final` even if the
-   internal state of the object being referenced is changed so long as the
-   variable itself (i.e., the reference value) does not change.
-
-   This problem can be usually be fixed by effectively making use of
-   instance variables and/or writing methods that return an instance
-   of the interface being implemented via the lambda. For example,
-   consider the following scenario that results in the compile-time
-   error message "local variables referenced from a lambda expression must
-   be final or effectively final":
-
-   ```java
-   void someMethod() {
-       for (int i = 0; i < 10; ++i) {
-           EventHandler<ActionEvent> handler = e -> {
-               // something involving i
-               System.out.println(i);
-           };
-       } // for
-   } // someMethod
-   ```
-
-   The variable `i` is local to `someMethod` and neither `final` nor
-   effectively `final` because its value changes after each iteration
-   of the for-loop. In this scenario, an instance variable is unlikely
-   to be appropriate as the value of `i` itself does not need to be
-   accessible to the rest of the methods in the class. A suggested way
-   to fix this is to create a method that returns an object of the
-   interface being implemented by the lambda expression, ensuring that
-   `i` is effectively final in that method. Then, we can call that
-   method in `someMethod` instead of creating the lambda there directly.
-   For example:
-
-   ```java
-   EventHandler<ActionEvent> createHandler(int i) {
-       EventHandler<ActionEvent> handler = e -> {
-           // something involving i
-           System.out.println(i);
-       };
-       return handler;
-   } // createHandler
-   ```
-
-   ```java
-   void someMethod() {
-       for (int i = 0; i < 10; ++i) {
-           EventHandler<ActionEvent> handler = createHandler(i);
-       } // for
-   } // someMethod
-   ```
-
-   In this new scenario, the variable `i` is an effectively final local variable
-   in the block enclosing the lambda in `createHandler`, thus avoiding the
-   problem described by the compiler.
-
-   Why is this an issue? Well, the big reason is that the language does not support it.
-   Why doesn't the language support it? I speculate that the reason has to do with
-   how local variables are managed internally in memory. As methods get called and
-   return they occupy and free up a region of memory called the program stack. It is
-   very likely that the region of memory used by the method that created the lambda
-   is freed up before the object created by the lambda is used. If the body of the
-   lambda expression attempts to change the value of the variable, then what does
-   that mean if the variable is not longer there!?
-
-1. **How do I make my application not freeze/hang when executing long running event handlers?**
-
-   For the most part, your GUI application is just like any other
-   Java application you have ever written. If a line of code takes a long time to
-   execute, then there is a delay before the next line of code is executed.
-   This can be problematic in GUI applications since the underlying GUI
-   framework, essentially, pauses what it is doing in order to do what you
-   ask it to do. This can cause your GUI to hang/freeze (i.e., become unresponsive)
-   when you have code blocks that take more than a few milliseconds.
-
-   The way to solve this problem is through a basic use of threads.
-   The term *thread* refers to a single thread of execution, in which
-   code is executed in sequential order. When you start a Java program,
-   you usually start with one thread that starts executing the `main`
-   method. This thread is usually called the "main" thread. When you launch
-   your JavaFX application using the `Application.launch` method, part of
-   the application life-cycle is the creation of a thread for your GUI
-   called the "JavaFX Event Dispatch" thread. By default, any code
-   executed by or in response to your GUI components (e.g., the code for an
-   event handler) takes place in the JavaFX Event Dispatch Thread. If you
-   do not want your program to hang, then you will need to create a
-   separate thread for your problematic code snippets. This works because
-   a Java program can have multiple threads executing concurrently.
-
-   Although we have been using "problematic code" to describe the code
-   snippet causing the problem, such a code snippet really represents some
-   "task" that you want your application to perform without hanging.
-   Therefore, I will try to use "task" throughout the remainder of this
-   response.
-
-   To create a new thread, you need to instantiate a
-   [`Thread`](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) object
-   with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
-   implementation for your task. Since `Runnable` is a functional interface,
-   this process is simplified using a lambda expression or method reference.
-   Here is an example idiom of how to create and start a new thread for a task:
-   ```java
-   Runnable r = () -> {
-       /* task code here */
-   };
-   Thread t = new Thread(r);
-   t.setDaemon(true);
-   t.start();
-   ```
-   The call to `t.setDaemon(true)` prevents this newly created thread from
-   delaying program termination in the case where either the main thread
-   or the JavaFX Event Dispatch thread terminate first. After the call to
-   `t.start()`, both the JavaFX Event Dispatch Thread and the newly created
-   thread are executing concurrently. You cannot assume that statements in
-   either thread execute in any predetermined order. When writing an event
-   handler that executes a task, you might do something like the following:
-   ```java
-   EventHandler<ActionEvent> handler = event -> {
-       Runnable r = () -> {
-           /* task code here */
-       };
-       Thread t = new Thread(r);
-       t.setDaemon(true);
-       t.start();
-   };
-   button.setOnAction(handler);
-   ```
-   If you understand the code snippet above, then you might instead write it
-   more concisely as follows:
-   ```java
-   button.setOnAction(event -> {
-       Thread t = new Thread(() -> {
-           /* task code here */
-       });
-       t.setDaemon(true);
-       t.start();
-   });
-   ```
-
-   **Advanced:** The solution presented above is probably the simplest.
-   Alternatively, you can make use of some of the classes in the
-   [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package,
-   which provide, among other things, the ability to control the execution and
-   track the progress of code that is deferred to another thread. For more information,
-   please see the [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/fx_concurrency.htm)
-   tutorial.
-
-1. **What does "Not on FX application thread" mean and how do I fix it?**
-
-   Usually an `IllegalStateException` with the message "Not on FX application thread"
-   means that you are trying to access or modify some node (i.e., a component
-   or container) in the scene graph from a code snippet that is not executing
-   in the JavaFX Event Dispatch thread (see Q4 in this FAQ). If you want to fix this, then
-   the code snippet that interacts with the scene graph needs to be wrapped
-   in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
-   implementation and passed to the static `runLater` method in
-   [`Platform`](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Platform.html).
-   Since `Runnable` is a functional interface, this process is simplified using
-   a lambda expression or method reference. Here is a basic example:
-   ```java
-   Runnable r = () -> {
-       /* place code interacting with scene graph here */
-   };
-   Platform.runLater(r);
-   ```
-   The `runLater` method ensures that the code in your `Runnable` implementation
-   executes in the JavaFX Event Dispatch thread. Here is a more complete example
-   that combines this scenario with the one described in Q4 of this FAQ:
-   ```java
-   EventHandler<ActionEvent> handler = event -> {
-       Runnable r = () -> {
-           /* some task code here */
-           Platform.runLater(() -> { /* interact with scene graph */ });
-           /* perhaps more task code here */
-           Platform.runLater(() -> { /* interact with scene graph again */ });
-           /* perhaps even more task code here */
-       };
-       Thread t = new Thread(r);
-       t.setDaemon(true);
-       t.start();
-   };
-   button.setOnAction(handler);
-   ```
-   If you understand the code snippet above, then you might instead write it
-   more concisely as follows:
-   ```java
-   button.setOnAction(event -> {
-       Thread t = new Thread(() -> {
-           /* some task code here */
-           Platform.runLater(() -> { /* interact with scene graph */ });
-           /* perhaps more task code here */
-           Platform.runLater(() -> { /* interact with scene graph again */ });
-           /* perhaps even more task code here */
-       });
-       t.setDaemon(true);
-       t.start();
-   });
-   ```
-   While it might be tempting to place all of your task code in the
-   `Runnable` implementation provided to `runLater`, that is not a good idea
-   because it will be executed on the JavaFX Event Dispatch thread. If you
-   already writing code for another thread, it was likely to avoid having it
-   run on the JavaFX Event Dispatch Thread. Multiple calls to the `runLater`
-   method can be used, as needed, to ensure only the code that interacts with
-   the scene graph is executed in the JavaFX Event Dispatch thread.
-
-1. **How do I make a code snippet execute repeatedly with a delay between executions?**
-
-   The easiest way to accomplish this in a JavaFX application is using the
-   [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html)
-   and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html)
-   classes. Here is an example that prints the current time (using
-   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to
-   standard output every two (2) seconds (specified using
-   [`Duration`](https://docs.oracle.com/javase/8/javafx/api/javafx/util/Duration.html)), indefinitely:
-   ```java
-   EventHandler<ActionEvent> handler = event -> System.out.println(LocalTime.now());
-   KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), handler);
-   Timeline timeline = new Timeline();
-   timeline.setCycleCount(Timeline.INDEFINITE);
-   timeline.getKeyFrames().add(keyFrame);
-   timeline.play();
-   ```
-   The `Timeline` object also has a `pause` method to pause the execution of the timeline.
-
-1. **How do I pass around objects effectively?**
-
-   From time to time, you may need to access one part of your app from another part of your app.
-   You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
-   of reference variables around, perhaps through constructors. If it were one or two variables,
-   then it would not be a big deal. However, you are likely reading this question because you
-   are passing a lot of variables around. Your first thought might be to make those variables
-   static, but that is not good for a couple different reasons--recall what it means for
-   a variable to be static as well as the non-functional requirements for this project.
-   Using static variables as a "go to" solution is an example of an anti-pattern, i.e.,  a
-   common response to a recurring problem that is usually ineffective and risks being highly
-   counterproductive.
-
-   The recommended strategy is to add all those variables to your `Application` subclass as
-   instance variables, then create getters / setters and higher level methods that interact
-   with groups of variables in a controlled way. This will make the application object easier
-   to work with, promote encapsulation, and help enforce self-governance of the object.
-   When employing this strategy, you can then pass a reference to your application object around as needed.
-   This way, you are only passing around one variable instead of many! In the other parts of your
-   app (e.g., in custom components), simply call on the application object's methods to access and
-   change the things you were previously passing around.
-
-   Remember, if you are currently in your application class's `start` method, then you can pass
-   a reference to the current application object into a method using the `this` reference
-   variable.
 
 1. **How do I make my game run at *x* frames per second (e.g., 60 FPS)?**
 
