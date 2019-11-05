@@ -597,6 +597,8 @@ in a Piazza post to the rest of the class.
 # Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
+You may also find the [`cs1302-gallery` FAQ](https://github.com/cs1302uga/cs1302-gallery#appendix---faq)
+a useful resource as well.
 
 1. **How do I make my game run at *x* frames per second (e.g., 60 FPS)?**
 
