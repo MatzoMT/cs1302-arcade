@@ -9,17 +9,17 @@ beginning your project.**
 
 ## Due Dates
 
-* [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_8InWmd5qffHZ2Bv) due by **FRI 2019-04-12 @ 11:55 PM**.
-* Partial Submission 1 due by **TUE 2019-04-16 @ 11:55 PM**.
-* Partial Submission 2 due by **TUE 2019-04-23 @ 11:55 PM**.
-* Partial Submission 3 due by **TUE 2018-04-30 @ 11:55 PM**.
-* Final Submission due by **TUE 2019-05-07 @ 3:30 PM**.
+* [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_8InWmd5qffHZ2Bv) due by **TUE 2019-11-12 @ 11:55 PM**.
+* Partial Submission 1 (including reflections) due by **TUE 2019-11-19 @ 11:55 PM**.
+* Partial Submission 2 (including reflections) due by **TUE 2019-11-26 @ 11:55 PM**.
+* Partial Submission 3 (including reflections) due by **WED 2019-12-04 @ 11:55 PM**.
+* Final Submission (including reflections) due by **WED 2019-12-11 @ 3:30 PM**.
 
 ## Important Final Project Policies
 
 * Please note the Final Submission date/time.
-  For this project, **no late submissions will be accepted after 11:55PM on TUE 2019-05-07**.
-  Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on TUE 2019-05-07**,
+  For this project, **no late submissions will be accepted after 11:55PM on WED 2019-12-11**.
+  Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on WED 2019-12-11**,
   which will incur the standard penalty for one day late.
 
 * Submissions from teams who do not submit a completed team application on time will
@@ -181,9 +181,9 @@ for this project.
   This intro should include, in addition to some kind of animated element, the
   application title (i.e., `cs1302-arcade`), your team name, and the name of each
   team member. An animated GIF, by itself, does not meet this requirement. We
-  want one or more nodes in the scene to move around. If you want the grader to
+  want one or more nodes in the scene to move around. **If you want the grader to
   check for this requirement, then you must make sure it is included in your
-  last update to `REFLECTION.md`.
+  last update to `REFLECTION.md`.**
 
 * **Extra Credit 2 (5 points):** Add a [high score table](https://en.wikipedia.org/wiki/Score_(game)#High_score)
   to your application, accessible via your application's menu (menu bar or otherwise).
@@ -192,8 +192,8 @@ for this project.
   accommodate this. In order to receive full credit for this extra credit functional
   requirement, the high score table must persist over time and over separate executions
   of your application. This will involve reading and writing to a file.
-  If you want the grader to check for this requirement, then you must
-  make sure it is included in your last update to `REFLECTION.md`.
+  **If you want the grader to check for this requirement, then you must
+  make sure it is included in your last update to `REFLECTION.md`.**
 
 ### Non-Functional Requirements
 
@@ -261,6 +261,7 @@ point total. That is, they are all or nothing.
   * Creative Commons Attribution 3.0 Unported (CC BY 3.0)
   ```
 
+<a name="reflections"/>
 * **(40 points; 10 points each) Reflection Updates:** Before each submission
   deadline mentioned towards the beginning of this document, you
   will need to update your project's `REFLECTION.md` file to include a new
@@ -309,29 +310,11 @@ made to modify your submission to evaluate other requirements.
   $ export MAVEN_OPTS=-Dprism.order=sw;
   $ mvn -e exec:java -Dexec.mainClass="cs1302.arcade.ArcadeDriver"
   ```
-
-  If you get a `mvn: command not found` error when attempting to execute
-  the `mvn` command, then please see the first question in the
-  [FAQ](#appendix---faq).
-
-  Additionally, a `Makefile` is provided so that you can type the following to
-  easily clean, compile, and run your code using the
-  [Make utility](https://www.gnu.org/software/make/):
-
+  
+  The following may also work to run the program:
   ```
-  $ make clean
+  $ mvn -e -Dprism.order=sw exec:java -Dexec.mainClass="cs1302.arcade.ArcadeDriver"
   ```
-
-  ```
-  $ make compile
-  ```
-
-  ```
-  $ make run
-  ```
-
-  Using `make run` will automatically add the `-Dprism.order=sw` when running
-  `mvn -e exec:java`.
 
   Your main application class should be `cs1302.arcade.ArcadeApp`.
   The driver class should be `cs1302.arcade.ArcadeDriver`.
@@ -360,11 +343,18 @@ made to modify your submission to evaluate other requirements.
   Your instructors will have access to your private repository's history. This
   means that they can see who did what and when based on the log.
 
-* **Development Environment:** This project must be implemented
+* **Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
   version of Java 8 that is setup according to the instructions provided
-  by your instructor. For Spring 2019, these instructions were posted on
-  Piazza [@29](https://piazza.com/class/jpupoaxnvvs497?cid=29).
+  by your instructor. For this requirement, the term *compile* should be 
+  interpreted as *compile with no errors or warnings*.
+  
+  If you decide to introduce additional `.java` files into your project,
+  then they are expected to fulfill all non-functional and absolute requirements, 
+  even if the main parts of the project do not use them. You may assume
+  graders will compile your source code in an order that satisfies
+  compilation dependencies. You should remove any `.java` files that you
+  do not need before submission.
 
 * **No FXML or use of Scene Builder:** FXML and SceneBuilder
   are advanced tools that are not currently covered in this course. Use of
