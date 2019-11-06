@@ -13,6 +13,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 
+
+/**
+ * Application subclass for {@code ArcadeApp}.
+ * @version 2019.fa
+ */
 public class ArcadeApp extends Application {
 
     Group group = new Group();           // main container
@@ -25,11 +30,11 @@ public class ArcadeApp extends Application {
      * @return the mouse event handler
      */
     private EventHandler<? super MouseEvent> createMouseHandler() {
-	return event -> {
-	    System.out.println(event);
-	    r.setX(rng.nextDouble() * (640 - r.getWidth()));
-	    r.setY(rng.nextDouble() * (480 - r.getHeight()));
-	};
+        return event -> {
+            System.out.println(event);
+            r.setX(rng.nextDouble() * (640 - r.getWidth()));
+            r.setY(rng.nextDouble() * (480 - r.getHeight()));
+        };
     } // createMouseHandler
 
     /**
@@ -39,15 +44,23 @@ public class ArcadeApp extends Application {
      * @return the key event handler
      */
     private EventHandler<? super KeyEvent> createKeyHandler() {
-	return event -> {
-	    System.out.println(event);
-	    if (event.getCode() == KeyCode.LEFT)  r.setX(r.getX() - 10.0);
-	    if (event.getCode() == KeyCode.RIGHT) r.setX(r.getX() + 10.0);
-	    // TODO bounds checking
-	};
+        return event -> {
+            System.out.println(event);
+            switch (event.getCode()) {
+            case LEFT:  // KeyCode.LEFT
+                r.setX(r.getX() - 10.0);
+                break;
+            case RIGHT: // KeyCode.RIGHT
+                r.setX(r.getX() + 10.0);
+                break;
+            default:
+                // do nothing
+            } // switch
+            // TODO bounds checking
+        };
     } // createKeyHandler
 
-    /** {@inheritdoc} */
+    /** {@inheritDoc} */
     @Override
     public void start(Stage stage) {
 
