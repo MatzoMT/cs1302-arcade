@@ -47,6 +47,7 @@ beginning your project.**
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
 * [Appendix - Useful Links](#appendix---useful-links)
+* [Appendix - Starter Code](#appendix---starter-code)
 * [Appendix - Workflow](#appendix---workflow)
 * [Appendix - FAQ](#appendix---faq)
 
@@ -103,8 +104,8 @@ Part of software development is being given a goal but not necessarily being
 given instruction on all of the details needed to accomplish that goal. For example,
 even though working with things like keyboard and mouse-related events
 haven't been explicitly covered in class, you are going to need to look up how to do
-these things in order to complete this project. Starter code and a generously
-helpful [FAQ](#appendix---faq) are provided.
+these things in order to complete this project. **Some [starter code]((#appendix---starter-code))
+and a generously helpful [FAQ](#appendix---faq) are provided.**
 
 This project is also designed to help you better understand the usefulness of good
 class design. While you can technically write your entire JavaFX-based
@@ -115,8 +116,8 @@ Before you write any code, you should plan out your application's scene graph
 If you find that you are writing a lot of code related to a specific component
 (e.g., setting styling, adding event handlers, etc.), then it's probably
 a good idea to make a custom version of that component in order to reduce
-clutter. You are strongly encouraged to consider swapping out multiple scenes
-for this project.
+clutter. **You are strongly encouraged to consider swapping out multiple scenes
+for this project.**
 
 ### Learning Outcomes
 
@@ -456,6 +457,17 @@ Piazza as soon as possible.
 * [Reference Manual](https://git-scm.com/docs) - alternative to the manual pages for `git`
 * [Pro Git (Book)](https://git-scm.com/book/en/v2) - contains a lot of good examples
 * [Version Control by Example (Book)](https://ericsink.com/vcbe/index.html) - excellent introduction to version control by Eric Sink
+
+# Appendix - Starter Code
+
+While you may be comfortable creating a standard desktop application using JavaFX, you
+may be less familiar with how to put together a game. To illustrate some of the graphical
+capabilities of JavaFX, including event handlers for mouse and keyboard input, some
+starter code has been provided. **Please read, compile, and execute the starter code.**
+You are not required to use the starter code as a foundation for your program; however,
+you are required to meet the Project Structure absolute requirement. 
+
+
 
 # Appendix - Workflow
 
