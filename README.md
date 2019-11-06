@@ -421,14 +421,6 @@ contains the project files as well as a local copy of the repository.
 If you have any problems with any of these procedures, then please
 ask about them on Piazza.
 
-Here is a video that demonstrates the executation of the starter code:
-
-https://www.youtube.com/watch?v=mwdF5eZoCHc
-
-<a href="https://www.youtube.com/watch?v=mwdF5eZoCHc">
-<img src="https://img.youtube.com/vi/mwdF5eZoCHc/0.jpg?20191106" alt="ArcadeApp Starter Code">
-</a>
-
 ## Submission Instructions
 
 You will be submitting your project via Nike before the final deadline.
@@ -475,7 +467,13 @@ starter code has been provided. **Please read, compile, and execute the starter 
 You are not required to use the starter code as a foundation for your program; however,
 you are required to meet the Project Structure absolute requirement. 
 
+Here is a video that demonstrates the executation of the starter code:
 
+https://www.youtube.com/watch?v=mwdF5eZoCHc
+
+<a href="https://www.youtube.com/watch?v=mwdF5eZoCHc">
+<img src="https://img.youtube.com/vi/mwdF5eZoCHc/0.jpg?20191106" alt="ArcadeApp Starter Code">
+</a>
 
 # Appendix - Workflow
 
