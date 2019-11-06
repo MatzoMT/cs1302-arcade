@@ -475,8 +475,14 @@ Here is a video that demonstrates the executation of the starter code
 Here are some links to the API documentation for some of the keyboard-related and
 mouse-related classes used in the starter code:
 
-* [`javafx.scene.input.KeyEvent`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyEvent.html)
-  - used as a lower bound for the input parameter type for the `handle` method in an `EventHandler<? super KeyEvent>`
+* [`javafx.scene.input.KeyEvent`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyEvent.html):
+  used as a lower bound for the input parameter type for the `handle` method in a keyboard-related event handler.
+  
+* [`javafx.scene.input.KeyCode`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/KeyCode.html):
+  an enumeration that describes the possible outputs of calling `getCode()` on a `KeyEvent` object.
+  
+* [`javafx.scene.input.MouseEvent`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/MouseEvent.html):
+  used as a lower bound for the input parameter type for the `handle` method in a mouse-related event handler.
 
 # Appendix - Workflow
 
