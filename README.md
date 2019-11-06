@@ -467,9 +467,8 @@ starter code has been provided. **Please read, compile, and execute the starter 
 You are not required to use the starter code as a foundation for your program; however,
 you are required to meet the Project Structure absolute requirement. 
 
-Here is a video that demonstrates the executation of the starter code:
-
-https://www.youtube.com/watch?v=mwdF5eZoCHc
+Here is a video that demonstrates the executation of the starter code 
+(click [here](https://www.youtube.com/watch?v=mwdF5eZoCHc) or the image below):
 
 [![ArcadeApp Starter Code](starter-code.png)](https://www.youtube.com/watch?v=mwdF5eZoCHc)
 
