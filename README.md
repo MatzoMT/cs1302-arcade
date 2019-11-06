@@ -484,8 +484,9 @@ mouse-related classes used in the starter code:
 * [`javafx.scene.input.MouseEvent`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/MouseEvent.html):
   used as the input parameter type for the `handle` method in a mouse-related event handler.
   
-Plese note that the datatype for a keyboard-related event handler needs to be `EventHandler<? super KeyEvent>` and
-not merely `EventHandler<KeyEvent>`. Likewise, the the datatype for a mouse-related event handler needs to be `EventHandler<? super MouseEvent>` and not `EventHandler<MouseEvent>`.
+Please note that the datatype for a keyboard-related event handler needs to be `EventHandler<? super KeyEvent>` and
+not merely `EventHandler<KeyEvent>`. Likewise, the the datatype for a mouse-related event handler needs to be 
+`EventHandler<? super MouseEvent>` and not `EventHandler<MouseEvent>`.
 
 # Appendix - Workflow
 
