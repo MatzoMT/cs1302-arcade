@@ -9,6 +9,7 @@
   <url>https://github.com/cs1302uga/cs1302-arcade</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <exec.mainClass>cs1302.arcade.ArcadeDriver</exec.mainClass>
     <java.version>1.8</java.version>
     <junit.jupiter.version>5.0.0</junit.jupiter.version>
     <junit.platform.version>1.0.0</junit.platform.version>
@@ -29,6 +30,9 @@
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
+          <compilerArgs>
+            <arg>-Xlint:all</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
       <plugin>
