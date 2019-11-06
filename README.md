@@ -471,9 +471,7 @@ Here is a video that demonstrates the executation of the starter code:
 
 https://www.youtube.com/watch?v=mwdF5eZoCHc
 
-<a href="https://www.youtube.com/watch?v=mwdF5eZoCHc">
-<img src="https://img.youtube.com/vi/mwdF5eZoCHc/0.jpg?20191106" alt="ArcadeApp Starter Code">
-</a>
+[![ArcadeApp Starter Code](starter-code.png)](https://www.youtube.com/watch?v=mwdF5eZoCHc)
 
 # Appendix - Workflow
 
