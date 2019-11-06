@@ -220,10 +220,10 @@ point total. That is, they are all or nothing.
    
   Example:
    
-  | Resource                | URL                           |
-  |-------------------------|-------------------------------|
-  | `resources/icon.png`    | `"file:resources/icon.png"`   |
-  | `resources/foo/img.png` | `"file:resourcesfoo/img.png"` |
+  | Resource                | URL                            |
+  |-------------------------|--------------------------------|
+  | `resources/icon.png`    | `"file:resources/icon.png"`    |
+  | `resources/foo/img.png` | `"file:resources/foo/img.png"` |
   
 * **(20 points) Code Style Guidelines:** You should be consistent with the style 
   aspect of your code in order to promote readability. Every `.java` file that
