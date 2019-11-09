@@ -716,13 +716,16 @@ a useful resource as well.
    The easiest way to do that is to pull changes from the team repository, resolve
    merge conflicts if necessary, then push.
    
+   <a id="delegate"/>
+   
 1. **Is there an easier way to delegate code to threads?**
 
    Keeping track of what code is running on a new thread and what code is running on
    the JavaFX Application Thread can be challenging at first. One of the reasons for this
-   is perhaps due to the different way that we send `Runnable` object references to each.
-   To simplify this, I recommend that you use the methods described below (or something 
-   similar):
+   is perhaps due to the different ways that we send `Runnable` object references around
+   in each scenario. To simplify this, I recommend that you use the methods described 
+   below (or something similar); they will make it easier for you to identify where the
+   code in your `Runnable` is being executed.
    
    ```java
    /** 
