@@ -726,12 +726,13 @@ a useful resource as well.
    
    ```java
    /** 
-    * Creates and immediately starts a new thread that executes {@code r.run()}.
+    * Creates and immediately starts a new thread that executes {@code target.run()}.
     * This method, which may be called from any thread, will return immediately to the
     * caller.
     *
     * @param daemon if true, marks the new thread as a daemon thread
-    * @param target the object whose run method is invoked when this thread is started
+    * @param target the object whose {@code run} method is invoked when this thread is
+    *               started
     */
    public static void runOnNewThread(boolean daemon, Runnable target) {
        Thread t = new Thread(target);
@@ -742,12 +743,13 @@ a useful resource as well.
    
    ```java
    /** 
-    * Executes {@code r.run()} on the JavaFX Application Thread at some unspecified time 
-    * in the future. This method, which may be called from any thread, will return 
-    * immediately to the caller.
+    * Executes {@code target.run()} on the JavaFX Application Thread at some unspecified
+    * time in the future. This method, which may be called from any thread, will return 
+    * immediately to the caller. If this method is called more than once, then the
+    * `Runnable` objects are executed in the order they are posted. 
     *
-    * @param daemon if true, marks the new thread as a daemon thread
-    * @param target the object whose run method is invoked when this thread is started
+    * @param target the object whose {@code run} method is invoked on the JavaFX 
+    *               Application Thread
     */
    public static void runOnFxThread(Runnable target) {
        Platform.runLater(target);
