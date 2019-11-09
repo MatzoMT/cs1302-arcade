@@ -749,7 +749,7 @@ a useful resource as well.
     * Executes {@code target.run()} on the JavaFX Application Thread at some unspecified
     * time in the future. This method, which may be called from any thread, will return 
     * immediately to the caller. If this method is called more than once, then the
-    * `Runnable` objects are executed in the order they are posted. 
+    * {@code Runnable} objects are executed in the order they are posted. 
     *
     * @param target the object whose {@code run} method is invoked on the JavaFX 
     *               Application Thread
