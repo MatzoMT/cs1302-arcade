@@ -715,6 +715,44 @@ a useful resource as well.
 
    The easiest way to do that is to pull changes from the team repository, resolve
    merge conflicts if necessary, then push.
+   
+1. **Is there an easier way to delegate code to threads?**
+
+   Keeping track of what code is running on a new thread and what code is running on
+   the JavaFX Application Thread can be challenging at first. One of the reasons for this
+   is perhaps due to the different way that we send `Runnable` object references to each.
+   To simplify this, I recommend that you use the methods described below (or something 
+   similar):
+   
+   ```java
+   /** 
+    * Creates and immediately starts a new thread that executes {@code r.run()}.
+    * This method, which may be called from any thread, will return immediately to the
+    * caller.
+    *
+    * @param daemon if true, marks the new thread as a daemon thread
+    * @param target the object whose run method is invoked when this thread is started
+    */
+   public static void runOnNewThread(boolean daemon, Runnable target) {
+       Thread t = new Thread(target);
+       t.setDaemon(daemon);
+       t.start(); 
+   } // runOnNewThread
+   ```
+   
+   ```java
+   /** 
+    * Executes {@code r.run()} on the JavaFX Application Thread at some unspecified time 
+    * in the future. This method, which may be called from any thread, will return 
+    * immediately to the caller.
+    *
+    * @param daemon if true, marks the new thread as a daemon thread
+    * @param target the object whose run method is invoked when this thread is started
+    */
+   public static void runOnFxThread(Runnable target) {
+       Platform.runLater(target);
+   } // runOnFxThread
+   ```
 
 Have a question? Please post it on the course Piazza.
 
