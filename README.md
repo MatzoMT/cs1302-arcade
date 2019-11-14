@@ -635,7 +635,7 @@ a useful resource as well.
 
    If you are using a single `Timeline` object for your main game loop, then duration of all
    key frames in the main game loop should sum to exactly `1000 / x` ms (e.g.,
-   `Duration.ofMillis(1000 / 60)`).
+   `Duration.millis(1000.0 / 60.0)`).
    The easiest way to ensure this is to have only one key frame with that duration.
 
 1. **What is a good GUI container for games?**
