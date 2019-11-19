@@ -685,7 +685,9 @@ a useful resource as well.
    [`javafx.scene.shape`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/package-summary.html)
    package.
 
-1. **Git won't let me `git pull` my team's repository!?**
+<a name="non-fast-forward"/>
+
+1. **Git won't let me `git push` my team's repository!?**
 
    When you tried to `git push`, you likely received some output similar to following
 
