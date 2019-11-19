@@ -271,8 +271,8 @@ point total. That is, they are all or nothing.
   2. The work you plan to complete before the next deadline (except for the last submission); and
   3. What problems, if any, you have encountered related to this project.
 
-  **These changes, including your work in progress, must be committed to your
-  repository.** The commit should also be tagged using Git. For example:
+  **These changes, including your work in progress, must be committed to your repository.** 
+  The commit should also be tagged using Git. For example:
 
   ```
   $ git tag -am "Partial Submission 1" deadline1
