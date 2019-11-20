@@ -270,7 +270,7 @@ point total. That is, they are all or nothing.
   1. That work that has been done since the last update (you may summarize your Git log);
   2. The work you plan to complete before the next deadline (except for the last submission); and
   3. What problems, if any, you have encountered related to this project.
-
+  
   **These changes, including your work in progress, must be committed to your repository.** 
   The commit should also be tagged using Git. For example:
 
