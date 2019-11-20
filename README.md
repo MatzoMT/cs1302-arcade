@@ -282,6 +282,8 @@ point total. That is, they are all or nothing.
   For each reflection update, you will be graded on the existence of the related
   Git tag and the germaneness of the content included in your `REFLECTION.md`
   file.
+  
+  **Partial submissiosn do not need to be submitted via the `submit` command.**
 
 ### Absolute Requirements
 
