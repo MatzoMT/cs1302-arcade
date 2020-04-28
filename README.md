@@ -1,7 +1,11 @@
-# CSCI 1302 - Arcade App v2019.fa
+# CSCI 1302 - Arcade App v2020.sp
+
+![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
+![Instruction: Online](https://img.shields.io/badge/Instruction-Online-important)
+![Note: Redacted](https://img.shields.io/badge/Note-Redacted-red)
 
 This document contains the description for the `cs1302-arcade` project
-assigned to the students in the Fall 2019 CSCI 1302 classes
+assigned to the students in the Spring 2020 CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
@@ -9,14 +13,21 @@ beginning your project.**
 
 ## Due Dates
 
+* TODO: write
+
+<!--
 * [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_etSoMZ0TxIzvcln) due by **TUE 2019-11-12 @ 11:55 PM**.
 * Partial Submission 1 (including [reflections](#reflections)) due by **TUE 2019-11-19 @ 11:55 PM**.
 * Partial Submission 2 (including [reflections](#reflections)) due by **TUE 2019-11-26 @ 11:55 PM**.
 * Partial Submission 3 (including [reflections](#reflections)) due by **WED 2019-12-04 @ 11:55 PM**.
 * Final Submission (including [reflections](#reflections)) due by **WED 2019-12-11 @ 3:30 PM**.
+//-->
 
 ## Important Final Project Policies
 
+* TODO: write
+
+<!--
 * Please note the Final Submission date/time.
   For this project, **no late submissions will be accepted after 11:55PM on WED 2019-12-11**.
   Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on WED 2019-12-11**,
@@ -34,6 +45,7 @@ beginning your project.**
 
   Your instructors will have access to your private repository's history. This
   means that they can see who did what and when based on the log.
+//-->
 
 ## Table of Contents
 
@@ -715,49 +727,6 @@ a useful resource as well.
 
    The easiest way to do that is to pull changes from the team repository, resolve
    merge conflicts if necessary, then push.
-   
-   <a id="delegate"/>
-   
-1. **Is there an easier way to delegate code to threads?**
-
-   Keeping track of what code is running on a new thread and what code is running on
-   the JavaFX Application Thread can be challenging at first. One of the reasons for this
-   is perhaps due to the different ways that we send `Runnable` object references around
-   in each scenario. To simplify this, I recommend that you use the methods described 
-   below (or something similar); they will make it easier for you to identify where the
-   code in your `Runnable` is being executed.
-   
-   ```java
-   /** 
-    * Creates and immediately starts a new thread that executes {@code target.run()}.
-    * This method, which may be called from any thread, will return immediately to the
-    * caller.
-    *
-    * @param daemon if true, marks the new thread as a daemon thread
-    * @param target the object whose {@code run} method is invoked when this thread is
-    *               started
-    */
-   public static void runOnNewThread(boolean daemon, Runnable target) {
-       Thread t = new Thread(target);
-       t.setDaemon(daemon);
-       t.start(); 
-   } // runOnNewThread
-   ```
-   
-   ```java
-   /** 
-    * Executes {@code target.run()} on the JavaFX Application Thread at some unspecified
-    * time in the future. This method, which may be called from any thread, will return 
-    * immediately to the caller. If this method is called more than once, then the
-    * {@code Runnable} objects are executed in the order they are posted. 
-    *
-    * @param target the object whose {@code run} method is invoked on the JavaFX 
-    *               Application Thread
-    */
-   public static void runOnFxThread(Runnable target) {
-       Platform.runLater(target);
-   } // runOnFxThread
-   ```
 
 Have a question? Please post it on the course Piazza.
 
