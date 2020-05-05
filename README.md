@@ -5,7 +5,7 @@
 ![Note: Redacted](https://img.shields.io/badge/Note-Redacted-red)
 
 This document contains the description for the `cs1302-arcade` project
-assigned to the students in the Spring 2020 CSCI 1302 classes
+that is typically assigned to the students in the CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
@@ -13,31 +13,25 @@ beginning your project.**
 
 ## Due Dates
 
-* TODO: write
-
-<!--
-* [Team Application](https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_etSoMZ0TxIzvcln) due by **TUE 2019-11-12 @ 11:55 PM**.
-* Partial Submission 1 (including [reflections](#reflections)) due by **TUE 2019-11-19 @ 11:55 PM**.
-* Partial Submission 2 (including [reflections](#reflections)) due by **TUE 2019-11-26 @ 11:55 PM**.
-* Partial Submission 3 (including [reflections](#reflections)) due by **WED 2019-12-04 @ 11:55 PM**.
-* Final Submission (including [reflections](#reflections)) due by **WED 2019-12-11 @ 3:30 PM**.
-//-->
+* This project was not assigned in Spring 2020.
+* Usually there are multiple **partial submission** deadlines for this project. 
 
 ## Important Final Project Policies
-
-* TODO: write
 
 <!--
 * Please note the Final Submission date/time.
   For this project, **no late submissions will be accepted after 11:55PM on WED 2019-12-11**.
   Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on WED 2019-12-11**,
   which will incur the standard penalty for one day late.
+//-->
 
+<!--
 * Submissions from teams who do not submit a completed team application on time will
   not be accepted for grading. Exceptions will only be made under extenuating circumstances,
   such as family or medical emergencies, and must be approved by the instructor.
+//-->
 
-* Teams are required to add the following users as collaborators to the private
+* Usually, teams are required to add the following users as collaborators to the private
   GitHub-hosted Git repository that they setup for their project:
 
   * [`mepcotterell`](https://github.com/mepcotterell) -- Dr. Cotterell
@@ -45,7 +39,6 @@ beginning your project.**
 
   Your instructors will have access to your private repository's history. This
   means that they can see who did what and when based on the log.
-//-->
 
 ## Table of Contents
 
