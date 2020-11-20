@@ -80,6 +80,7 @@ in an immediate zero for the assignment.
 * [Important Final Project Policies](#important-final-project-policies)
   * [Final Submission Deadline](#final-submission-deadline)
   * [Private GitHub-hosted Git Repository](#private-github-hosted-git-repository)
+  * [Working a Local Machine](#working-a-local-machine)
 * [Academic Honesty](#academic-honesty)
 * [Updates](#updates)
 * [Project Description](#project-description)
