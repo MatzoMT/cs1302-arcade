@@ -43,9 +43,10 @@ and further described in the project's [Non-Functional Requirements](#non-functi
 
 ## Academic Honesty
 
-You agree to the Academic Honesty policy as outlined in the course syllabus,
-course website, and your team application. Furthermore, you must adhere to
-the copyright notice and licensing information at the bottom of this document.
+You agree to the Academic Honesty policy as outlined in the course syllabus and the
+University honesty website. 
+Furthermore, you must adhere to the copyright notice and licensing information 
+at the bottom of this document.
 
 Additionally, we recognize that free and open-source software implementations
 of the games described in this project are available. You are expected to write
@@ -228,8 +229,8 @@ for this project.**
 * **Extra Credit 1 (5 points):** Add some kind of animated intro to your application.
   One potential way to accomplish this is by using a separate scene for your intro.
   This intro should include, in addition to some kind of animated element, the
-  application title (i.e., `cs1302-arcade`), your team name, and the name of each
-  team member. An animated GIF, by itself, does not meet this requirement. We
+  application title (i.e., `cs1302-arcade`) and your name. An animated GIF, by itself, 
+  does not meet this requirement. We
   want one or more nodes in the scene to move around. **If you want the grader to
   check for this requirement, then you must make sure it is included in your
   last update to `REFLECTION.md`.**
@@ -403,8 +404,8 @@ an additional 10 points via extra credit.
 
 ## How to Download the Project
 
-These instructions assume that both team members have
-[setup their SSH keys](https://git.io/fjLzB#setting-up-ssh-keys)
+These instructions assume that you have
+[setup your SSH keys](https://git.io/fjLzB#setting-up-ssh-keys)
 on Odin and GitHub.
 
 1. If you have not done so already, you should create a
