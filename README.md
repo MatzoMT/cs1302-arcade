@@ -52,6 +52,10 @@ i) setup SSH keys on Odin and GitHub (only need to do once);
 ii) create a private repository; and
 iii) add collaborators.
 
+**Specific instructions for connecting your project on Odin with
+your private repository** are provided 
+[later in this document](#how-to-download-the-project).
+
 ### Working a Local Machine
 
 If you decide to work on part or all of the project on your local machine,
