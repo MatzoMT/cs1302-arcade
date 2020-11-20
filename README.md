@@ -57,7 +57,7 @@ iii) add collaborators.
 * [Due Dates](#due-dates)
 * [Important Final Project Policies](#important-final-project-policies)
   * [Final Submission Deadline](#final-submission-deadline)
-  * [Private GitHub-hosted Git Repository](#functional-requirements)
+  * [Private GitHub-hosted Git Repository](#private-github-hosted-git-repository)
 * [Academic Honesty](#academic-honesty)
 * [Updates](#updates)
 * [Project Description](#project-description)
