@@ -55,7 +55,9 @@ iii) add collaborators.
 ## Table of Contents
 
 * [Due Dates](#due-dates)
-* [Important Final Project Policies](#due-dates)
+* [Important Final Project Policies](#important-final-project-policies)
+  * [Final Submission Deadline](#final-submission-deadline)
+  * [Private GitHub-hosted Git Repository](#functional-requirements)
 * [Academic Honesty](#academic-honesty)
 * [Updates](#updates)
 * [Project Description](#project-description)
