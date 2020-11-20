@@ -52,6 +52,24 @@ i) setup SSH keys on Odin and GitHub (only need to do once);
 ii) create a private repository; and
 iii) add collaborators.
 
+### Working a Local Machine
+
+If you decide to work on part or all of the project on your local machine,
+then it's your responsibility to ensure that your environment is compatible
+with the versions of software on Odin. No technical assistance will be provided 
+by the instructional staff to accomodate this beyond the information provided
+in this policy statement. A list of the relevant software versions currently 
+in use on Odin is provided below for convenience. 
+
+* **Apache Maven 3.6.3**
+* **Java 11.0.8** (vendor: Oracle Corporation; **not OpenJDK**)
+* **OpenJFX 11** (note: should get handled by Maven)
+
+Remember, **your code still needs to compile and run on Odin** per the 
+"Development Environment" [absolute requirement](#absolute-requirements).
+That is, if your submission does not compile on Odin, then that will result
+in an immediate zero for the assignment. 
+
 ## Table of Contents
 
 * [Due Dates](#due-dates)
