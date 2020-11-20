@@ -236,7 +236,7 @@ for this project.**
   last update to `REFLECTION.md`.**
 
 * **Extra Credit 2 (5 points):** Add a [high score table](https://en.wikipedia.org/wiki/Score_(game)#High_score)
-  to your application, accessible via your application's menu (menu bar or otherwise).
+  to your application's initial title window.
   The table needs to actually keep track of the high scores for each game and include
   player initials. This may involve modifications in other areas of your application to
   accommodate this. In order to receive full credit for this extra credit functional
