@@ -452,6 +452,8 @@ on the work that you have done and the work that you have remaining.
   on GitHub. Under the green "Code" button on your repository's GitHub page, you should see a link
   that says something like, "XYZ commits." If you click it, it will show you log for your `master`
   branch -- compare it with `git log` or `git adog` to make sure it's actually up to date.
+  If you need to make more commits and retag, then use an `a`, `b`, `c`, ... suffix in
+  the tag names (e.g., `deadline1a`).
 
 * Evidence of branching and merging is not required for this deadline, but it is for future 
   deadlines.
@@ -490,6 +492,8 @@ the use of branching and merging. Here are the specific requirements:
   on GitHub. Under the green "Code" button on your repository's GitHub page, you should see a link
   that says something like, "XYZ commits." If you click it, it will show you log for your `master`
   branch -- compare it with `git log` or `git adog` to make sure it's actually up to date.
+  If you need to make more commits and retag, then use an `a`, `b`, `c`, ... suffix in
+  the tag names (e.g., `deadline2a`).
 
 * Evidence of branching and merging **is required** for this deadline. When inspecting your
   Git log, the graders would like to see that you made proper use of `branch`, `checkout`,
@@ -535,10 +539,10 @@ the use of branching and merging. Here are the specific requirements:
   your `master` branch.
   
 * Take special care to ensure that your fully-committed `master` branch reflects the project
-  you wish to submit. Compare your log to the log on GitHub. If you do not have
+  you wish to submit. Compare your log to the log on GitHub. If your GitHub repository does not have
   the most recent version of your project, then you may need to do a
-  `git pull`. Finally, using `git status` should not indicate any untracked files. If you 
-  need to make more commits and retag, then use an `a`, `b`, `c`, ... suffix in
+  `git push origin master` while on your `master` branch. Finally, using `git status` should not indicate 
+  any untracked files. If you need to make more commits and retag, then use an `a`, `b`, `c`, ... suffix in
   the tag names (e.g., `deadline3a`).
 
 **CRITICAL:** For this deadline, you also need to submit on Odin! 
