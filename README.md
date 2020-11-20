@@ -434,7 +434,8 @@ on the work that you have done and the work that you have remaining.
 
   1. Work that has been done since you started the project, if any.
   2. The work you plan to complete before the next deadline (except for the last submission); and
-  3. What problems, if any, you have encountered related to this project.
+  3. Based on your plan, what features do you anticipate making branches for to 
+     satisfy the "demonstrate branching and merging" requirement for Deadline 2?
   
   **These changes, including your work in progress, must be committed and tagged in the `master` branch of your repository.** 
   
@@ -456,7 +457,8 @@ on the work that you have done and the work that you have remaining.
   the tag names (e.g., `deadline1a`).
 
 * Evidence of branching and merging is not required for this deadline, but it is for future 
-  deadlines.
+  deadlines. **Please take some time now to read those requirements** so that you're not
+  thrown off guard and try to do them at the last minute.
 
 ### Deadline 2
 
@@ -473,8 +475,7 @@ the use of branching and merging. Here are the specific requirements:
      differs from the plan you presented in your Deadline 1 reflection; 
      if it helps, you may summarize your Git log for part of this description;
   2. The work you plan to complete before the next deadline; and
-  3. What steps have taken to try to resolve the issue you mentioned in your
-     Deadline 1 reflection? Have you encountered any new problems?
+  3. What issues have you encountered while working on this project?
      
   **These changes, including your work in progress, must be committed and tagged in the `master` branch of your repository.** 
   
@@ -514,8 +515,8 @@ the use of branching and merging. Here are the specific requirements:
   1. Work that has been done since Deadline 2 and how it
      differs from the plan you presented in your Deadline 2 reflection; 
      if it helps, you may summarize your Git log for part of this description;
-  2. What steps have taken to try to resolve the issue you mentioned in your
-     Deadline 1 reflection? Have you encountered any new problems?
+  2. What steps have taken to try to resolve the issue(s) you mentioned in your
+     last reflection update? Have you encountered any new issues?
   3. **What extra credit opportunities should the graders check for in your submission?**
      If you don't include this, then the graders will not check for any
      extra credit, even if it's obvious that it's present in your
