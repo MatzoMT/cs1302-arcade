@@ -180,7 +180,7 @@ for this project.**
 * **Main Application Requirements (10 points):** The main part of your
   application needs to fulfill the following functional requirements:
 
-  * *Game List (5 points):* Your application should present
+  * *Initial Title Window** (5 points):* Your application should present
     the user with a visual / graphical list of available games. Starting a game should
     either swap the scene in the current stage or create a new application modal stage
     on which to display the game's scene graph.
