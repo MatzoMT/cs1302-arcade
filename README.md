@@ -457,7 +457,7 @@ Piazza as soon as possible.
 
 # Appendix - Useful Links
 
-## JavaFX 8
+## JavaFX 11
 
 * [JavaFX 11 API Documentation](https://openjfx.io/javadoc/11/)
 * [JavaFX 11 Bookmarks](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md)
