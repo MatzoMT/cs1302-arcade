@@ -332,7 +332,7 @@ point total. That is, they are all or nothing.
   Git tag and the germaneness of the content included in your `REFLECTION.md`
   file.
   
-  **Partial submissiosn do not need to be submitted via the `submit` command.**
+  **Partial submissions do not need to be submitted via the `submit` command.**
 
 ### Absolute Requirements
 
