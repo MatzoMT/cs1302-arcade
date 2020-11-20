@@ -20,6 +20,46 @@ and further described in the project's [Non-Functional Requirements](#non-functi
 * **Deadline 2** (*Required*): **TUE 2020-12-08 (Dec 08) @ 11:55 PM**
 * **Deadline 3** (*Required*): **WED 2020-12-16 (Dec 16) @ 12:00 PM (NOON)**
 
+## Table of Contents
+
+* [Due Dates](#due-dates)
+* [Academic Honesty](#academic-honesty)
+* [Updates](#updates)
+* [Important Final Project Policies](#important-final-project-policies)
+  * [Final Submission Deadline](#final-submission-deadline)
+  * [Private GitHub-hosted Git Repository](#private-github-hosted-git-repository)
+  * [Working a Local Machine](#working-a-local-machine)
+* [Project Description](#project-description)
+* [Project Requirements & Grading](#project-requirements--grading)
+  * [Functional Requirements](#functional-requirements)
+  * [Non-Functional Requirements](#non-functional-requirements)
+  * [Absolute Requirements](#absolute-requirements)
+* [How to Download the Project](#how-to-download-the-project)
+* [Submission Instructions](#submission-instructions)
+* [Appendix - Useful Links](#appendix---useful-links)
+* [Appendix - Starter Code](#appendix---starter-code)
+* [Appendix - Workflow](#appendix---workflow)
+* [Appendix - FAQ](#appendix---faq)
+
+## Academic Honesty
+
+You agree to the Academic Honesty policy as outlined in the course syllabus,
+course website, and your team application. Furthermore, you must adhere to
+the copyright notice and licensing information at the bottom of this document.
+
+Additionally, we recognize that free and open-source software implementations
+of the games described in this project are available. You are expected to write
+your games from scratch. The only exception to this is the use of existing
+art / visual assets, provided that you include proper attribution to the
+author(s) of any creative works you incorporate into your submission.
+
+## Updates
+
+Updates will be posted here.
+If there has been an update and you have already cloned the project to Nike,
+then you can update your copy of the project using the `$ git pull skeleton master`
+command while inside of your project directory.
+
 ## Important Final Project Policies
 
 ### Final Submission Deadline
@@ -73,46 +113,6 @@ Remember, **your code still needs to compile and run on Odin** per the
 "Development Environment" [absolute requirement](#absolute-requirements).
 That is, if your submission does not compile on Odin, then that will result
 in an immediate zero for the assignment. 
-
-## Table of Contents
-
-* [Due Dates](#due-dates)
-* [Important Final Project Policies](#important-final-project-policies)
-  * [Final Submission Deadline](#final-submission-deadline)
-  * [Private GitHub-hosted Git Repository](#private-github-hosted-git-repository)
-  * [Working a Local Machine](#working-a-local-machine)
-* [Academic Honesty](#academic-honesty)
-* [Updates](#updates)
-* [Project Description](#project-description)
-* [Project Requirements & Grading](#project-requirements--grading)
-  * [Functional Requirements](#functional-requirements)
-  * [Non-Functional Requirements](#non-functional-requirements)
-  * [Absolute Requirements](#absolute-requirements)
-* [How to Download the Project](#how-to-download-the-project)
-* [Submission Instructions](#submission-instructions)
-* [Appendix - Useful Links](#appendix---useful-links)
-* [Appendix - Starter Code](#appendix---starter-code)
-* [Appendix - Workflow](#appendix---workflow)
-* [Appendix - FAQ](#appendix---faq)
-
-## Academic Honesty
-
-You agree to the Academic Honesty policy as outlined in the course syllabus,
-course website, and your team application. Furthermore, you must adhere to
-the copyright notice and licensing information at the bottom of this document.
-
-Additionally, we recognize that free and open-source software implementations
-of the games described in this project are available. You are expected to write
-your games from scratch. The only exception to this is the use of existing
-art / visual assets, provided that you include proper attribution to the
-author(s) of any creative works you incorporate into your submission.
-
-## Updates
-
-Updates will be posted here.
-If there has been an update and you have already cloned the project to Nike,
-then you can update your copy of the project using the `$ git pull skeleton master`
-command while inside of your project directory.
 
 ## Project Description
 
