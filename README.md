@@ -541,9 +541,9 @@ the use of branching and merging. Here are the specific requirements:
   need to make more commits and retag, then use an `a`, `b`, `c`, ... suffix in
   the tag names (e.g., `deadline3a`).
 
-* **CRITICAL:** For this deadline, you also need to submit on Odin! 
-  Change into the parent directory of your local copy of the repository and
-  submit it using the `submit` command:
+**CRITICAL:** For this deadline, you also need to submit on Odin! 
+Change into the parent directory of your local copy of the repository and
+submit it using the `submit` command:
 
    ```
    $ submit cs1302-arcade csci-1302
