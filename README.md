@@ -14,11 +14,12 @@ beginning your project.**
 ## Due Dates
 
 This project has **three due dates**, which are briefly described below
-and further described in the project's [Non-Functional Requirements](#non-functional-requirements).
+and further described later in this document. You can also reach
+the requirements for each deadline by clicking it in the list below.
 
-* **Deadline 1** (*Required*): **TUE 2020-12-01 (Dec 01) @ 11:55 PM** 
-* **Deadline 2** (*Required*): **TUE 2020-12-08 (Dec 08) @ 11:55 PM**
-* **Deadline 3** (*Required*): **WED 2020-12-16 (Dec 16) @ 12:00 PM (NOON)**
+* [**Deadline 1**](#deadline-1) (*Required*): **TUE 2020-12-01 (Dec 01) @ 11:55 PM** 
+* [**Deadline 2**](#deadline-2) (*Required*): **TUE 2020-12-08 (Dec 08) @ 11:55 PM**
+* [**Deadline 3**](#deadline-3) (*Required*): **WED 2020-12-16 (Dec 16) @ 12:00 PM (NOON)**
 
 ## Table of Contents
 
@@ -311,28 +312,13 @@ point total. That is, they are all or nothing.
   * Creative Commons Attribution 3.0 Unported (CC BY 3.0)
   ```
 
-* <a name="reflections"/>**(20 points; 10 points each) Reflection Updates:** Before each submission
-  deadline mentioned towards the beginning of this document, you
-  will need to update your project's `REFLECTION.md` file to include a new
-  section describing:
-
-  1. That work that has been done since the last update (you may summarize your Git log);
-  2. The work you plan to complete before the next deadline (except for the last submission); and
-  3. What problems, if any, you have encountered related to this project.
-  
-  **These changes, including your work in progress, must be committed to your repository.** 
-  The commit should also be tagged using Git. For example:
-
-  ```
-  $ git tag -am "Partial Submission 1" deadline1
-  $ git push origin --tags
-  ```
-
-  For each reflection update, you will be graded on the existence of the related
-  Git tag and the germaneness of the content included in your `REFLECTION.md`
-  file.
-  
-  **Partial submissions do not need to be submitted via the `submit` command.**
+* <a name="reflections"/>**(30 points; 10 points each) Reflections in Deadline Submissions:** 
+  Each deadline submission has its own specific requirement, which are outlined in the
+  [Submission Instructions](#submission-instructions). For each deadline, satisfaction 
+  of this non-functional requirement will be determined based on the existence of an 
+  updated `RELECTION.md` file on your `master` branch prior to the deadline, 
+  the related Git tag, and germaneness of the content included in your `REFLECTION.md` file,
+  and evidence of branching and merging in your Git log.
 
 ### Absolute Requirements
 
@@ -435,7 +421,125 @@ on Odin and GitHub.
 
 ## Submission Instructions
 
-You will be submitting your project via Odin before the final deadline.
+### Deadline 1
+
+For this deadline, you're required to include the **starter code** and an **initial update 
+to your `REQUIREMENTS.md` file.** You are not expected to have made any changes to the 
+starter code at this time, but it's perfectly okay if you have. The `REFLECTION.md` is 
+just a text file that you will update prior to this and subsequent deadlines to reflect 
+on the work that you have done and the work that you have remaining. 
+
+* Update your project's `REFLECTION.md` and tag your `master` branch prior to
+  this deadline. Your reflection update should include the following:
+
+  1. Work that has been done since you started the project, if any.
+  2. The work you plan to complete before the next deadline (except for the last submission); and
+  3. What problems, if any, you have encountered related to this project.
+  
+  **These changes, including your work in progress, must be committed and tagged in the `master` branch of your repository.** 
+  
+  1. Ensure that whatever branch you are on is **fully committed** (i.e., `git status` says there is nothing to commit); 
+  2. Checkout the `master` branch;
+  3. If needed, merge in changes from the branch you were working on; then
+     execute the commands below:
+
+     ```
+     $ git tag -am "Deadline 1" deadline1
+     $ git push --all origin --tags
+     ```
+  
+  After pushing, all commits that you've made so far should be visible in your private repository
+  on GitHub. Under the green "Code" button on your repository's GitHub page, you should see a link
+  that says something like, "XYZ commits." If you click it, it will show you log for your `master`
+  branch -- compare it with `git log` or `git adog` to make sure it's actually up to date.
+
+* Evidence of branching and merging is not required for this deadline, but it is for future 
+  deadlines.
+
+### Deadline 2
+
+For this deadline, you're required to include your **updated project code** and an 
+**update to your `REQUIREMENTS.md` file.** You are not expected to have made some
+progress based on your Deadline 1 reflection; however, it's okay if the work you
+did differed from your original plan. 
+
+* Update your project's `REFLECTION.md` and tag your `master` branch prior to
+  this deadline. Your reflection update should include the following:
+
+  1. Work that has been done since you started the project and how it
+     differs from the plan you presented in your Deadline 1 reflect; 
+     you may summarize your Git log for part of this description;
+  2. The work you plan to complete before the next deadline; and
+  3. What steps have taken to try to resolve the issue you mentioned in your
+     Deadline 1 reflection? Have you encountered any new problems?
+     
+  **These changes, including your work in progress, must be committed and tagged in the `master` branch of your repository.** 
+  
+  1. Ensure that whatever branch you are on is **fully committed** (i.e., `git status` says there is nothing to commit); 
+  2. Checkout the `master` branch;
+  3. If needed, merge in changes from the branch you were working on; then
+     execute the commands below:
+
+     ```
+     $ git tag -am "Deadline 2" deadline2
+     $ git push --all origin --tags
+     ```
+     
+  After pushing, all commits that you've made so far should be visible in your private repository
+  on GitHub. Under the green "Code" button on your repository's GitHub page, you should see a link
+  that says something like, "XYZ commits." If you click it, it will show you log for your `master`
+  branch -- compare it with `git log` or `git adog` to make sure it's actually up to date.
+
+* Evidence of branching and merging **is required** for this deadline. When inspecting your
+  Git log, the graders would like to see that you made proper use of `branch`, `checkout`,
+  and `merge` to work on portions of your project prior to including those changes in
+  your `master` branch.
+
+### Deadline 3
+
+For this deadline, you're required to include your **final project code** and an 
+**update to your `REQUIREMENTS.md` file.** You are not expected to have made some
+progress based on your Deadline 1 reflection; however, it's okay if the work you
+did differed from your original plan. 
+
+* Update your project's `REFLECTION.md` and tag your `master` branch prior to
+  this deadline. Your reflection update should include the following:
+
+  1. Work that has been done since you started the project and how it
+     differs from the plan you presented in your Deadline 1 reflect; 
+     you may summarize your Git log for part of this description;
+  2. The work you plan to complete before the next deadline; and
+  3. What steps have taken to try to resolve the issue you mentioned in your
+     Deadline 1 reflection? Have you encountered any new problems?
+     
+  **These changes, including your work in progress, must be committed and tagged in the `master` branch of your repository.** 
+  
+  1. Ensure that whatever branch you are on is **fully committed** (i.e., `git status` says there is nothing to commit); 
+  2. Checkout the `master` branch;
+  3. If needed, merge in changes from the branch you were working on; then
+     execute the commands below:
+
+     ```
+     $ git tag -am "Deadline 2" deadline2
+     $ git push --all origin --tags
+     ```
+     
+  After pushing, all commits that you've made so far should be visible in your private repository
+  on GitHub. Under the green "Code" button on your repository's GitHub page, you should see a link
+  that says something like, "XYZ commits." If you click it, it will show you log for your `master`
+  branch -- compare it with `git log` or `git adog` to make sure it's actually up to date.
+
+* Evidence of branching and merging **is required** for this deadline. When inspecting your
+  Git log, the graders would like to see that you made proper use of `branch`, `checkout`,
+  and `merge` to work on portions of your project prior to including those changes in
+  your `master` branch.
+
+
+
+  
+  
+  **Partial submissions do not need to be submitted via the `submit` command.**
+
 
 1. **CRITICAL:** Make sure that all tracked files are staged and committed with
    a good log message and that the `master` branch is checked out. Take special
