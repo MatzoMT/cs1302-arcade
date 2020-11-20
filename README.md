@@ -1,8 +1,6 @@
 # CSCI 1302 - Arcade App v2020.fa
 
-![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
-![Instruction: Online](https://img.shields.io/badge/Instruction-Online-important)
-![Note: Redacted](https://img.shields.io/badge/Note-Redacted-red)
+![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
 
 This document contains the description for the `cs1302-arcade` project
 that is assigned to the students in the CSCI 1302 classes
