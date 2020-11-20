@@ -1,11 +1,11 @@
-# CSCI 1302 - Arcade App v2020.sp
+# CSCI 1302 - Arcade App v2020.fa
 
 ![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
 ![Instruction: Online](https://img.shields.io/badge/Instruction-Online-important)
 ![Note: Redacted](https://img.shields.io/badge/Note-Redacted-red)
 
 This document contains the description for the `cs1302-arcade` project
-that is typically assigned to the students in the CSCI 1302 classes
+that is assigned to the students in the CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
@@ -13,35 +13,49 @@ beginning your project.**
 
 ## Due Dates
 
-* This project was not assigned in Spring 2020.
-* Usually there are multiple **partial submission** deadlines for this project. 
+This project has **three due dates**, which are briefly described below
+and further described in the project's [Non-Functional Requirements](#non-functional-requirements).
+
+* **Deadline 1** (*Required*): **TUE 2020-12-01 (Dec 01) @ 11:55 PM** 
+* **Deadline 2** (*Required*): **TUE 2020-12-08 (Dec 08) @ 11:55 PM**
+* **Deadline 3** (*Required*): **WED 2020-12-16 (Dec 16) @ 12:00 PM (NOON)**
 
 ## Important Final Project Policies
 
-<!--
-* Please note the Final Submission date/time.
-  For this project, **no late submissions will be accepted after 11:55PM on WED 2019-12-11**.
-  Late submissions will be accepted between **03:30:01 PM -- 11:55:00 PM on WED 2019-12-11**,
-  which will incur the standard penalty for one day late.
-//-->
+### Final Submission Deadline
 
-<!--
-* Submissions from teams who do not submit a completed team application on time will
-  not be accepted for grading. Exceptions will only be made under extenuating circumstances,
-  such as family or medical emergencies, and must be approved by the instructor.
-//-->
+Please take care to note the date/time for **Deadline 3**, the 
+**final submission deadline** for this project. For both logistical and
+policy-related reasons, the usual late work policy will not apply,
+and **no late submissions will be accepted after 05:00:00 PM on 
+WED 2020-12-16 (Dec 16)**. Late submissions will only be accepted 
+between **12:00:01 PM -- 05:00:00 PM on WED 2020-12-16 (Dec 16)**;
+submissions received during that time frame will incur the standard 
+penalty for one day late.
 
-* Usually, teams are required to add the following users as collaborators to the private
-  GitHub-hosted Git repository that they setup for their project:
+### Private GitHub-hosted Git Repository
+
+Each student is required to setup a private GitHub-hosted Git repository 
+for their project with the following users both added as collaborators:
 
   * [`mepcotterell`](https://github.com/mepcotterell) -- Dr. Cotterell
   * [`bjb211`](https://github.com/bjb211) -- Dr. Barnes
 
-  Your instructors will have access to your private repository's history. This
-  means that they can see who did what and when based on the log.
+Your instructors will have access to your private repository's history. This
+means that they can see what you did and when it was committed based on 
+the log.
+
+**To setup this repository,** students should refer to their notes for the
+[required tutorial reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/github-setup.md),
+which covers how to: 
+i) setup SSH keys on Odin and GitHub (only need to do once);
+ii) create a private repository; and
+iii) add collaborators.
 
 ## Table of Contents
 
+* [Due Dates](#due-dates)
+* [Important Final Project Policies](#due-dates)
 * [Academic Honesty](#academic-honesty)
 * [Updates](#updates)
 * [Project Description](#project-description)
