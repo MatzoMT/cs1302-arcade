@@ -429,7 +429,7 @@ starter code at this time, but it's perfectly okay if you have. The `REFLECTION.
 just a text file that you will update prior to this and subsequent deadlines to reflect 
 on the work that you have done and the work that you have remaining. 
 
-* Update your project's `REFLECTION.md` and tag your `master` branch prior to
+* Update your project's `REFLECTION.md` and tag your `master` branch (details below) prior to
   this deadline. Your reflection update should include the following:
 
   1. Work that has been done since you started the project, if any.
@@ -459,16 +459,17 @@ on the work that you have done and the work that you have remaining.
 ### Deadline 2
 
 For this deadline, you're required to include your **updated project code** and an 
-**update to your `REQUIREMENTS.md` file.** You are not expected to have made some
+**update to your `REQUIREMENTS.md` file.** You **are expected** to have made some
 progress based on your Deadline 1 reflection; however, it's okay if the work you
-did differed from your original plan. 
+did differed from your original plan. You are **also expected** to demonstrate
+the use of branching and merging. Here are the specific requirements:
 
-* Update your project's `REFLECTION.md` and tag your `master` branch prior to
+* Update your project's `REFLECTION.md` and tag your `master` branch (details below) prior to
   this deadline. Your reflection update should include the following:
 
   1. Work that has been done since you started the project and how it
-     differs from the plan you presented in your Deadline 1 reflect; 
-     you may summarize your Git log for part of this description;
+     differs from the plan you presented in your Deadline 1 reflection; 
+     if it helps, you may summarize your Git log for part of this description;
   2. The work you plan to complete before the next deadline; and
   3. What steps have taken to try to resolve the issue you mentioned in your
      Deadline 1 reflection? Have you encountered any new problems?
@@ -498,21 +499,25 @@ did differed from your original plan.
 ### Deadline 3
 
 For this deadline, you're required to include your **final project code** and an 
-**update to your `REQUIREMENTS.md` file.** You are not expected to have made some
-progress based on your Deadline 1 reflection; however, it's okay if the work you
-did differed from your original plan. 
+**update to your `REQUIREMENTS.md` file.** You **are expected** to have made
+progress based on your Deadline 2 reflection; however, it's okay if the work you
+did differed from your earlier plan. You are **also expected** to demonstrate
+the use of branching and merging. Here are the specific requirements: 
 
-* Update your project's `REFLECTION.md` and tag your `master` branch prior to
+* Update your project's `REFLECTION.md` and tag your `master` branch (details below) prior to
   this deadline. Your reflection update should include the following:
 
-  1. Work that has been done since you started the project and how it
-     differs from the plan you presented in your Deadline 1 reflect; 
-     you may summarize your Git log for part of this description;
-  2. The work you plan to complete before the next deadline; and
-  3. What steps have taken to try to resolve the issue you mentioned in your
+  1. Work that has been done since Deadline 2 and how it
+     differs from the plan you presented in your Deadline 2 reflection; 
+     if it helps, you may summarize your Git log for part of this description;
+  2. What steps have taken to try to resolve the issue you mentioned in your
      Deadline 1 reflection? Have you encountered any new problems?
-     
-  **These changes, including your work in progress, must be committed and tagged in the `master` branch of your repository.** 
+  3. **What extra credit opportunities should the graders check for in your submission?**
+     If you don't include this, then the graders will not check for any
+     extra credit, even if it's obvious that it's present in your
+     final program.
+
+ **These changes, including your completed work, must be committed and tagged in the `master` branch of your repository.** 
   
   1. Ensure that whatever branch you are on is **fully committed** (i.e., `git status` says there is nothing to commit); 
   2. Checkout the `master` branch;
@@ -520,36 +525,25 @@ did differed from your original plan.
      execute the commands below:
 
      ```
-     $ git tag -am "Deadline 2" deadline2
+     $ git tag -am "Deadline 3" deadline3
      $ git push --all origin --tags
      ```
      
-  After pushing, all commits that you've made so far should be visible in your private repository
-  on GitHub. Under the green "Code" button on your repository's GitHub page, you should see a link
-  that says something like, "XYZ commits." If you click it, it will show you log for your `master`
-  branch -- compare it with `git log` or `git adog` to make sure it's actually up to date.
-
 * Evidence of branching and merging **is required** for this deadline. When inspecting your
   Git log, the graders would like to see that you made proper use of `branch`, `checkout`,
   and `merge` to work on portions of your project prior to including those changes in
   your `master` branch.
-
-
-
   
-  
-  **Partial submissions do not need to be submitted via the `submit` command.**
+* Take special care to ensure that your fully-committed `master` branch reflects the project
+  you wish to submit. Compare your log to the log on GitHub. If you do not have
+  the most recent version of your project, then you may need to do a
+  `git pull`. Finally, using `git status` should not indicate any untracked files. If you 
+  need to make more commits and retag, then use an `a`, `b`, `c`, ... suffix in
+  the tag names (e.g., `deadline3a`).
 
-
-1. **CRITICAL:** Make sure that all tracked files are staged and committed with
-   a good log message and that the `master` branch is checked out. Take special
-   care to ensure that your fully-committed `master` branch reflects the project
-   you wish to submit. Compare your log to the log on GitHub. If you do not have
-   the most recent version of your project, then you may need to do a
-   `git pull`. Finally, Using `git status` should not indicate any untracked files.
-
-1. Change into the parent directory of your local copy of the repository and
-   submit it using the `submit` command:
+* **CRITICAL:** For this deadline, you also need to submit on Odin! 
+  Change into the parent directory of your local copy of the repository and
+  submit it using the `submit` command:
 
    ```
    $ submit cs1302-arcade csci-1302
