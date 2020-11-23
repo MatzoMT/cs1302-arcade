@@ -122,7 +122,7 @@ in an immediate zero for the assignment.
 Your goal is to implement, from scratch, a single GUI application
 in Java 11 using JavaFX 11 that provides a playable game.
 
-You must choose one game from each of the following groups:
+You must choose one game total from either of the following groups:
 
 * **Group 1**
 
