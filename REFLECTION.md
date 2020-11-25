@@ -1,18 +1,14 @@
 # Reflection
 
-Add to this file to satisfy the "Reflection Updates" non-functional requirement
-for this project. Please keep this document organized using Markdown. If you
+Add to this file to satisfy the "Reflections in Deadline Submissions" non-functional 
+requirement for this project. Please keep this document organized using Markdown. If you
 click on this file in your team's GitHub repository website, then you will see
 that the Markdown is transformed into nice looking HTML.
 
 Here is a sample entry (delete this line; also: feel free to copy/paste/modify):
 
-## SUN 2019-04-05 @ 11:55 PM EST
+## Deadline 1 - TUE 2020-12-01 (Dec 01)
 
-1. **DONE:** Downloaded the skeleton code.
-
-2. **TODO:** Finish reading the project description.
-
-3. **PROB:** Had a hard time scheduling physicial meetings with each other at
-   first, but now that we've settled on a regular day/time things are looking
-   great!
+1. replace with your text
+2. replace with your text
+3. replace with your text
