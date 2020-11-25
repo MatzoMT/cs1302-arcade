@@ -184,9 +184,12 @@ for this project.**
     either swap the scene in the current stage or create a new application modal stage
     on which to display the game's scene graph.
 
-  * *Multiple Games per Execution (5 points):* Your application should allow
-    users to exit one game (without exiting the entire application) and start
-    the same game again (with its state reset) or start the other game.
+  * *Multiple Games per Execution (5 points):* After the application is started and
+    and the title screen/window is displayed, your application should allow a user
+    to start and end an instance of the game without exiting the entire application.
+    Furthermore, after a game instance has ended, it should be possible for the user to 
+    start and end another instance of the game. There is no limit to how many times
+    the user may do this.
 
 * **Game Requirements (90 points):**
 
@@ -422,7 +425,7 @@ on Odin and GitHub.
 ### Deadline 1
 
 For this deadline, you're required to include the **starter code** and an **initial update 
-to your `REQUIREMENTS.md` file.** You are not expected to have made any changes to the 
+to your `REFLECTION.md` file.** You are not expected to have made any changes to the 
 starter code at this time, but it's perfectly okay if you have. The `REFLECTION.md` is 
 just a text file that you will update prior to this and subsequent deadlines to reflect 
 on the work that you have done and the work that you have remaining. 
@@ -461,7 +464,7 @@ on the work that you have done and the work that you have remaining.
 ### Deadline 2
 
 For this deadline, you're required to include your **updated project code** and an 
-**update to your `REQUIREMENTS.md` file.** You **are expected** to have made some
+**update to your `REFLECTION.md` file.** You **are expected** to have made some
 progress based on your Deadline 1 reflection; however, it's okay if the work you
 did differed from your original plan. You are **also expected** to demonstrate
 the use of branching and merging. Here are the specific requirements:
@@ -502,7 +505,7 @@ the use of branching and merging. Here are the specific requirements:
 ### Deadline 3
 
 For this deadline, you're required to include your **final project code** and an 
-**update to your `REQUIREMENTS.md` file.** You **are expected** to have made
+**update to your `REFLECTION.md` file.** You **are expected** to have made
 progress based on your Deadline 2 reflection; however, it's okay if the work you
 did differed from your earlier plan. You are **also expected** to demonstrate
 the use of branching and merging. Here are the specific requirements: 
