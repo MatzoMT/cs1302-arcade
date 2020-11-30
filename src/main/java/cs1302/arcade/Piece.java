@@ -1,3 +1,5 @@
+package cs1302.arcade;
+
 /**
  * Defines the attributes of a chess piece in a chess game. The {@code Piece} class defines
  * different methods and values a {@code Piece} can have.
