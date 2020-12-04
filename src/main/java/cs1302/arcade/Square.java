@@ -7,8 +7,14 @@ public class Square {
     private int x;
     private int y;
 
+    public Square(Piece thePiece, int theX, int theY) {
+        this.piece = thePiece;
+        this.x = theX;
+        this.y = theY;
+    } // Square
+
     public Piece getPiece() {
-        return this.Piece;
+        return this.piece;
     } // getPiece
 
     public int getX() {
@@ -23,11 +29,11 @@ public class Square {
         this.piece = newPiece;
     } // setPiece
 
-    public int setX(int newX) {
+    public void setX(int newX) {
         this.x = newX;
     } // setX
 
-    public int setY(int newY) {
+    public void setY(int newY) {
         this.y = newY;
     } // setY
 
