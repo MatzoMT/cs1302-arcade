@@ -26,4 +26,12 @@ public abstract class Piece {
      */
     public abstract boolean canCapture(int toX, int toY);
 
+    public int getX() {
+        return this.x;
+    } // getX
+
+    public int getY() {
+        return this.y;
+    } // getY
+
 } // Piece
