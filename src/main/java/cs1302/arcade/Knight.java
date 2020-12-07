@@ -5,6 +5,15 @@ package cs1302.arcade;
  */
 public class Knight extends Piece {
 
+    /**
+     * Constructor for the {@code Knight}.
+     *
+     * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     */
+    public Knight(boolean isWhiteColor) {
+        super(isWhiteColor);
+    } // Piece
+
     /** Determines whether the piece is able to move to the desired square according to the game
      * rules and situation.
      *

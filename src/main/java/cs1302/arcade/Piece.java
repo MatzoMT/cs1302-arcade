@@ -54,4 +54,21 @@ public abstract class Piece {
         return this.y;
     } // getY
 
+    /**
+     * Returns the color of the calling {@code Piece}.
+     *
+     * @return true if the piece is white
+     */
+    public boolean getWhite() {
+        return this.isWhite;
+    } // getWhite
+
+    /**
+     * Sets the color of the calling {@code Piece}.
+     *
+     * @param the color to set the piece to (true if white)
+     */
+    public void setWhite(boolean white) {
+        this.isWhite = white;
+    } // setWhite
 } // Piece

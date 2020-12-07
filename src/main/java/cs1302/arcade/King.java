@@ -8,6 +8,16 @@ public class King extends Piece {
     boolean hasMoved = false;
     boolean canCastle = true;
 
+    /**
+     * Constructor for the {@code King}.
+     *
+     * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     */
+    public King(boolean isWhiteColor) {
+        super(isWhiteColor);
+    } // Piece
+
+
     /** Determines whether the piece is able to move to the desired square according to the game
      * rules and situation.
      *
