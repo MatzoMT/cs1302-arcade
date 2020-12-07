@@ -7,8 +7,18 @@ package cs1302.arcade;
 public abstract class Piece {
     private int x;
     private int y;
+    private boolean isWhite = true;
 
-    /** Determines whether the piece is able to move to the desired square according to the game
+    /**
+     * Constructor for the {@code Piece}.
+     *
+     * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     */
+    public Piece(boolean isWhiteColor) {
+        this.isWhite = isWhiteColor;
+    } // Piece
+
+/** Determines whether the piece is able to move to the desired square according to the game
      * rules and situation.
      *
      * @param toX the destination x coordinate
@@ -26,10 +36,20 @@ public abstract class Piece {
      */
     public abstract boolean canCapture(int toX, int toY);
 
+    /**
+     * Returns the x coordinate of the calling {@code Piece}.
+     *
+     * @return the x coordinate
+     */
     public int getX() {
         return this.x;
     } // getX
 
+    /**
+     * Returns the y coordinate of the calling {@code Piece}.
+     *
+     * @return the y coordinate
+     */
     public int getY() {
         return this.y;
     } // getY
