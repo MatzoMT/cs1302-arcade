@@ -4,7 +4,7 @@ package cs1302.arcade;
  * Represents the state of the chessboard.
  */
 public class ChessBoard {
-    Square[][] board;
+    private Square[][] board;
 
     /**
      * Constructor for the chessboard that initializes all chess pieces at original positions.
@@ -47,4 +47,17 @@ public class ChessBoard {
         return board[atX][atY];
     } // getSquare
 
+    public boolean isInCheck() {
+/*
+        int whiteKingX;
+        int whiteKingY;
+        int blackKingX;
+        int blackKingY;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (this.getSquare(i, j).getPiece()
+                    }
+            } // for  */
+            return true;
+    }
 } // ChessBoard
