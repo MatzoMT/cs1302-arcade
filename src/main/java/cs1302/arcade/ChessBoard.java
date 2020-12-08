@@ -5,7 +5,8 @@ package cs1302.arcade;
  */
 public class ChessBoard {
     private Square[][] board = new Square[8][8];
-
+    private King whiteKing = new King(false, 7, 4);
+    private King blackKing = new King(true, 0 ,4);
     /**
      * Constructor for the chessboard that initializes all chess pieces at original positions.
      */
@@ -18,7 +19,7 @@ public class ChessBoard {
         board[0][2] = new Square(new Bishop(false, 0, 2), 0, 2);
         board[0][5] = new Square(new Bishop(false, 0, 5), 0 , 5);
         board[0][3] = new Square(new Queen(false, 0, 3), 0, 3);
-        board[0][4] = new Square(new King(false, 0, 4), 0, 4);
+        board[0][4] = new Square(blackKing, 0, 4);
         for (int i = 0; i < 8; i++) {
             board[1][i] = new Square(new Pawn(false, 1, i), 1, i);
         } // for
@@ -31,7 +32,7 @@ public class ChessBoard {
         board[7][2] = new Square(new Bishop(true, 7, 2), 7, 2);
         board[7][5] = new Square(new Bishop(true, 7, 5), 7, 5);
         board[7][3] = new Square(new Queen(true, 7, 3), 7, 3);
-        board[7][4] = new Square(new King(true, 7, 4), 7, 4);
+        board[7][4] = new Square(whiteKing, 7, 4);
         for (int i = 0; i < 8; i++) {
             board[6][i] = new Square(new Pawn(true, 6, i), 6, i);
         } // for
@@ -51,17 +52,11 @@ public class ChessBoard {
         return this.getSquare(atX, atY).getPiece();
     } // getPiece
 
-    public boolean isInCheck() {
-/*
-        int whiteKingX;
-        int whiteKingY;
-        int blackKingX;
-        int blackKingY;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (this.getSquare(i, j).getPiece()
-                    }
-            } // for  */
-            return true;
+    public King getWhiteKing() {
+        return this.whiteKing;
+    }
+
+    public King getBlackKing() {
+        return this.blackKing;
     }
 } // ChessBoard

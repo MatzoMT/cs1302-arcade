@@ -19,8 +19,8 @@ public class ChessGame {
             System.out.print(i);
             for (int j = 0; j < 8; j++) {
                 /* if (board.getPiece(i, j) != null) {
-                    System.out.println(board.getPiece(i, j).getClass());
-                } */
+                   System.out.println(board.getPiece(i, j).getClass());
+                   } */
                 if (board.getPiece(i, j) instanceof Pawn) {
                     System.out.print("P");
                 } else if (board.getPiece(i, j) instanceof Rook) {
@@ -52,42 +52,24 @@ public class ChessGame {
         int toY = keyboard.nextInt();
         Square toSquare = board.getSquare(toX, toY);
 
-        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) && ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            /*  toSquare.setPiece(thePiece);
-                theSquare.setPiece(null);
-                isWhiteTurn = false;
-            */
+        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
             if (toSquare.getPiece() == null) {
                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
             } else {
                 if (toSquare.getPiece().getWhite() == false) {
-                confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                /*
-                    toSquare.setPiece(thePiece);
-                    theSquare.setPiece(null);
-                    isWhiteTurn = false;
-                */
- } else {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                } else {
                     System.out.println("ILLEGAL 1");
                 }
             }
-        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) && ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            /*  toSquare.setPiece(thePiece);
-                theSquare.setPiece(null);
-                isWhiteTurn = true;
-            */
+        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
             if (toSquare.getPiece() == null) {
                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
-/*  toSquare.setPiece(thePiece);
-                theSquare.setPiece(null);
-                isWhiteTurn = true; */
             } else {
                 if (toSquare.getPiece().getWhite() == true) {
                     confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                    /*
-                      toSquare.setPiece(thePiece);
-                    theSquare.setPiece(null);
-                    isWhiteTurn = true; */
                 } else {
                     System.out.println("ILLEGAL 2");
                 }
@@ -95,11 +77,33 @@ public class ChessGame {
         } else {
             System.out.println("ILLEGALLLLL");
         }
-
-
-
     } // promptUser
 
+    public boolean isInCheck(boolean whiteKing) {
+        int kingX;
+        int kingY;
+        if (whiteKing == true) {
+            kingX = board.getWhiteKing().getX();
+            kingY = board.getWhiteKing().getY();
+        } else {
+            kingX = board.getBlackKing().getX();
+            kingY = board.getBlackKing().getY();
+        }
+
+        // for whiteKing
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                Piece attackingPiece = board.getPiece(i, j);
+                if (attackingPiece != null) {
+                    if ((attackingPiece.getWhite() == !whiteKing) && (attackingPiece.canCapture(kingX, kingY))) {
+                        System.out.println("CHECK!!!!!");
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
     private void confirmMove(Square origin, Square dest, Piece thePiece, int toX, int toY) {
         dest.setPiece(thePiece);
@@ -112,4 +116,6 @@ public class ChessGame {
         thePiece.setX(toX);
         thePiece.setY(toY);
     } // confirmMove
+
+
 }

@@ -8,7 +8,10 @@ public class ChessDriver {
         while (true) {
 
             game.printBoard();
+            game.isInCheck(true);
+            game.isInCheck(false);
             game.promptUser();
+
         }
     }
 } // ChessDriver

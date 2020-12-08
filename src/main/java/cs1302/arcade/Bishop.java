@@ -25,6 +25,13 @@ public class Bishop extends Piece {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
         if (absX - absY == 0) {
+/*
+            if (toX > this.getX()) {
+
+            } else {
+
+            }
+*/
             return true;
         } else {
             return false;
