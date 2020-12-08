@@ -13,8 +13,8 @@ public class Rook extends Piece {
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
      */
-    public Rook(boolean isWhiteColor) {
-        super(isWhiteColor);
+    public Rook(boolean isWhiteColor, int theX, int theY) {
+        super(isWhiteColor, theX, theY);
     } // Piece
 
     /** Determines whether the piece is able to move to the desired square according to the game
@@ -44,6 +44,7 @@ public class Rook extends Piece {
      * @return true if the piece can capture the piece on the destination square
      */
     public boolean canCapture(int toX, int toY) {
+
         return true;
     } // canCapture
 

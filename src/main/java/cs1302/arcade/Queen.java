@@ -10,8 +10,8 @@ public class Queen extends Piece {
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
      */
-    public Queen(boolean isWhiteColor) {
-        super(isWhiteColor);
+    public Queen(boolean isWhiteColor, int theX, int theY) {
+        super(isWhiteColor, theX, theY);
     } // Piece
 
     /** Determines whether the piece is able to move to the desired square according to the game

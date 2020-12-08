@@ -13,8 +13,8 @@ public class King extends Piece {
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
      */
-    public King(boolean isWhiteColor) {
-        super(isWhiteColor);
+    public King(boolean isWhiteColor, int theX, int theY) {
+        super(isWhiteColor, theX, theY);
     } // Piece
 
 

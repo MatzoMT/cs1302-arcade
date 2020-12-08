@@ -14,8 +14,10 @@ public abstract class Piece {
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
      */
-    public Piece(boolean isWhiteColor) {
+    public Piece(boolean isWhiteColor, int theX, int theY) {
         this.isWhite = isWhiteColor;
+        this.x = theX;
+        this.y = theY;
     } // Piece
 
 /** Determines whether the piece is able to move to the desired square according to the game
