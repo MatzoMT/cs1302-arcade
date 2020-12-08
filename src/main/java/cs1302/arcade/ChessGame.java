@@ -61,10 +61,13 @@ public class ChessGame {
                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
             } else {
                 if (toSquare.getPiece().getWhite() == false) {
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                /*
                     toSquare.setPiece(thePiece);
                     theSquare.setPiece(null);
                     isWhiteTurn = false;
-                } else {
+                */
+ } else {
                     System.out.println("ILLEGAL 1");
                 }
             }
@@ -74,14 +77,17 @@ public class ChessGame {
                 isWhiteTurn = true;
             */
             if (toSquare.getPiece() == null) {
-                toSquare.setPiece(thePiece);
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+/*  toSquare.setPiece(thePiece);
                 theSquare.setPiece(null);
-                isWhiteTurn = true;
+                isWhiteTurn = true; */
             } else {
                 if (toSquare.getPiece().getWhite() == true) {
-                    toSquare.setPiece(thePiece);
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                    /*
+                      toSquare.setPiece(thePiece);
                     theSquare.setPiece(null);
-                    isWhiteTurn = true;
+                    isWhiteTurn = true; */
                 } else {
                     System.out.println("ILLEGAL 2");
                 }
@@ -98,7 +104,11 @@ public class ChessGame {
     private void confirmMove(Square origin, Square dest, Piece thePiece, int toX, int toY) {
         dest.setPiece(thePiece);
         origin.setPiece(null);
-        isWhiteTurn = false;
+        if (isWhiteTurn == true) {
+            isWhiteTurn = false;
+        } else {
+            isWhiteTurn = true;
+        }
         thePiece.setX(toX);
         thePiece.setY(toY);
     } // confirmMove

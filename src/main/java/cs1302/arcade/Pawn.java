@@ -31,6 +31,8 @@ public class Pawn extends Piece {
                 if (absX == 2) {
                     hasMoved = true;
                     return true;
+                } else if (absX == 1) {
+                    return true;
                 } else {
                     return false;
                 }
