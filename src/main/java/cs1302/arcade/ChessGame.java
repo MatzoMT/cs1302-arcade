@@ -11,7 +11,12 @@ public class ChessGame {
     Scanner keyboard = new Scanner(System.in);
 
     public void printBoard() {
+        System.out.print(" ");
+        for (int i = 0; i < 8; i++)
+            System.out.print(i);
+        System.out.println();
         for (int i = 0; i < 8; i++) {
+            System.out.print(i);
             for (int j = 0; j < 8; j++) {
                 /* if (board.getPiece(i, j) != null) {
                     System.out.println(board.getPiece(i, j).getClass());
@@ -47,15 +52,13 @@ public class ChessGame {
         int toY = keyboard.nextInt();
         Square toSquare = board.getSquare(toX, toY);
 
-        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) && (thePiece.canMoveTo(toX, toY))) {
-            toSquare.setPiece(thePiece);
-            theSquare.setPiece(null);
-            isWhiteTurn = false;
-
-/*            if (toSquare.getPiece() == null) {
-                toSquare.setPiece(thePiece);
+        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) && ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            /*  toSquare.setPiece(thePiece);
                 theSquare.setPiece(null);
                 isWhiteTurn = false;
+            */
+            if (toSquare.getPiece() == null) {
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
             } else {
                 if (toSquare.getPiece().getWhite() == false) {
                     toSquare.setPiece(thePiece);
@@ -64,13 +67,13 @@ public class ChessGame {
                 } else {
                     System.out.println("ILLEGAL 1");
                 }
-                } */
-        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) && (thePiece.canMoveTo(toX, toY))) {
-                toSquare.setPiece(thePiece);
+            }
+        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) && ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            /*  toSquare.setPiece(thePiece);
                 theSquare.setPiece(null);
                 isWhiteTurn = true;
-
-            /*     if (toSquare.getPiece() == null) {
+            */
+            if (toSquare.getPiece() == null) {
                 toSquare.setPiece(thePiece);
                 theSquare.setPiece(null);
                 isWhiteTurn = true;
@@ -82,7 +85,7 @@ public class ChessGame {
                 } else {
                     System.out.println("ILLEGAL 2");
                 }
-                } */
+            }
         } else {
             System.out.println("ILLEGALLLLL");
         }
@@ -91,4 +94,12 @@ public class ChessGame {
 
     } // promptUser
 
+
+    private void confirmMove(Square origin, Square dest, Piece thePiece, int toX, int toY) {
+        dest.setPiece(thePiece);
+        origin.setPiece(null);
+        isWhiteTurn = false;
+        thePiece.setX(toX);
+        thePiece.setY(toY);
+    } // confirmMove
 }

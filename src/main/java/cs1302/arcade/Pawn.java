@@ -53,7 +53,16 @@ public class Pawn extends Piece {
      * @return true if the piece can capture the piece on the destination square
      */
     public boolean canCapture(int toX, int toY) {
-        return true;
+        int absX = Math.abs(this.getX() - toX);
+        int absY = Math.abs(this.getY() - toY);
+        System.out.println(this.getX() + " " + this.getY());
+        System.out.println(absX + " " + absY);
+        if ((absX == 1) && (absY == 1)) {
+
+            return true;
+        } else {
+            return false;
+        }
     } // canCapture
 
 } // Pawn

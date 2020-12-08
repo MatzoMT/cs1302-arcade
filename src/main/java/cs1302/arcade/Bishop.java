@@ -31,15 +31,5 @@ public class Bishop extends Piece {
         }
     } // canMoveTo
 
-    /** Determines whether the piece is able to capture another piece on the desired square
-     * according to the game rules and situation.
-     *
-     * @param toX the x coordinate of the piece to capture
-     * @param toY the y coordinate of the piece to capture
-     * @return true if the piece can capture the piece on the destination square
-     */
-    public boolean canCapture(int toX, int toY) {
-        return true;
-    } // canCapture
 
 } // Bishop
