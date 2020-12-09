@@ -14,8 +14,10 @@ public abstract class Piece {
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
      */
-    public Piece(boolean isWhiteColor) {
+    public Piece(boolean isWhiteColor, int theX, int theY) {
         this.isWhite = isWhiteColor;
+        this.x = theX;
+        this.y = theY;
     } // Piece
 
 /** Determines whether the piece is able to move to the desired square according to the game
@@ -34,7 +36,13 @@ public abstract class Piece {
      * @param toY the y coordinate of the piece to capture
      * @return true if the piece can capture the piece on the destination square
      */
-    public abstract boolean canCapture(int toX, int toY);
+    public boolean canCapture(int toX, int toY) {
+        if (this.canMoveTo(toX, toY) == true) {
+            return true;
+        } else {
+            return false;
+        }
+    } // canCapture
 
     /**
      * Returns the x coordinate of the calling {@code Piece}.
@@ -62,6 +70,14 @@ public abstract class Piece {
     public boolean getWhite() {
         return this.isWhite;
     } // getWhite
+
+    public void setX(int toX) {
+        this.x = toX;
+    }
+
+    public void setY(int toY) {
+        this.y = toY;
+    }
 
     /**
      * Sets the color of the calling {@code Piece}.

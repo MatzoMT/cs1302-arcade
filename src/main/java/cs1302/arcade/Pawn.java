@@ -12,8 +12,8 @@ public class Pawn extends Piece {
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
      */
-    public Pawn(boolean isWhiteColor) {
-        super(isWhiteColor);
+    public Pawn(boolean isWhiteColor, int theX, int theY) {
+        super(isWhiteColor, theX, theY);
     } // Piece
 
     /** Determines whether the piece is able to move to the desired square according to the game
@@ -30,6 +30,8 @@ public class Pawn extends Piece {
             if (hasMoved == false) {
                 if (absX == 2) {
                     hasMoved = true;
+                    return true;
+                } else if (absX == 1) {
                     return true;
                 } else {
                     return false;
@@ -53,7 +55,14 @@ public class Pawn extends Piece {
      * @return true if the piece can capture the piece on the destination square
      */
     public boolean canCapture(int toX, int toY) {
-        return true;
+        int absX = Math.abs(this.getX() - toX);
+        int absY = Math.abs(this.getY() - toY);
+        if ((absX == 1) && (absY == 1)) {
+
+            return true;
+        } else {
+            return false;
+        }
     } // canCapture
 
 } // Pawn
