@@ -79,6 +79,10 @@ public class ChessGame {
         }
     } // promptUser
 
+    public ChessBoard getBoard() {
+        return this.board;
+    }
+
     public boolean isInCheck(boolean whiteKing) {
         int kingX;
         int kingY;
