@@ -23,3 +23,20 @@ Here is a sample entry (delete this line; also: feel free to copy/paste/modify):
    Piece. As it is likely that I will encounter bugs not previously addressed or may have forgotten
    a component in one of the chess piece classes, this will likely mean that I will branch a lot in
    this aspect in order to return to previous code to revise them.
+
+## Deadline 2 - TUE 2020-12-08 (Dec 08)
+
+1. Work that has been completed for this deadline included finishing all technical aspect of each
+   piece class, as well as creating a tester class to test the movement and capturing ability of
+   each piece that has not yet been finished. This deadline has also seen the creation of a
+   ChessBoard class representing the state of the board in terms of piece location as well as a
+   ChessGame class defining key methods that form the gameplay, such as methods checking for check
+   positions. The work for this deadline differed from the first deadline plan in that I was unable
+   to complete all aspects of gameplay, and as a result, I have not yet started on GUI programming,
+   even though that was the intended goal for this deadline.
+2. For the next deadline, it is imperative that all parts of my chess gameplay are complete and that
+   I have a working GUI for my chess application.
+3. The main issues I have encountered is being able to check whether the king is in check, since the
+   only method I can think about has been incredibly difficult to implement. Another issue is dealing
+   with JavaFX since I have only experimented very briefly with JavaFX and the starter code since the
+   rest of my chess game is incomplete.
