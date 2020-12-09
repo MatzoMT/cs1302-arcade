@@ -1,7 +1,5 @@
 package cs1302.arcade;
 
-import java.io.File;
-
 import java.util.Random;
 
 import javafx.application.Application;
@@ -11,14 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+
 
 /**
  * Application subclass for {@code ArcadeApp}.
@@ -26,13 +24,14 @@ import javafx.scene.layout.VBox;
  */
 public class ArcadeApp extends Application {
 
+    StackPane stackpane = new StackPane();
+    HBox[] hbox = new HBox[8];
+    VBox vbox = new VBox();
     Group group = new Group();           // main container
     Random rng = new Random();           // random number generator
-    Rectangle r = new Rectangle(20, 20); // some rectangle
-
-    File bishopFile = new File("/resources/Chess_bdt60.png");
-    Image bishop = new Image(bishopFile.toURI().toString());
-    ImageView iv = new ImageView(bishop);
+    Rectangle r = new Rectangle(50, 50); // some rectangle
+    Rectangle r2 = new Rectangle(50, 50);
+    Rectangle[][] rectangles = new Rectangle[8][8];
 
     /**
      * Return a mouse event handler that moves to the rectangle to a random
@@ -80,16 +79,41 @@ public class ArcadeApp extends Application {
          * (rectangle) in a group.
          */
 
-
+        for (int i = 0; i < 8; i++) {
+            hbox[i] = new HBox();
+            for (int j = 0; j < 8; j++) {
+                rectangles[i][j] = new Rectangle(50, 50);
+                if (i % 2 == 0) {
+                    if ((j % 2 == 0)) {
+                        rectangles[i][j].setFill(Color.WHEAT);
+                    } else {
+                        rectangles[i][j].setFill(Color.SIENNA);
+                    }
+                    hbox[i].getChildren().add(rectangles[i][j]);
+                } else {
+                    if ((j % 2 != 0)) {
+                        rectangles[i][j].setFill(Color.WHEAT);
+                    } else {
+                        rectangles[i][j].setFill(Color.SIENNA);
+                    }
+                    hbox[i].getChildren().add(rectangles[i][j]);
+                }
+            }
+        } // for
+        r.setFill(Color.WHEAT);
+        r2.setFill(Color.SIENNA);
         r.setX(50);                                // 50px in the x direction (right)
         r.setY(50);                                // 50ps in the y direction (down)
-        group.getChildren().add(r);                // add to main container
+        //     group.getChildren().add(r);                // add to main container
+        //    hbox.getChildren().addAll(r, r2);
         r.setOnMouseClicked(createMouseHandler()); // clicks on the rectangle move it randomly
-        group.setOnKeyPressed(createKeyHandler()); // left-right key presses move the rectangle
+        // group.setOnKeyPressed(createKeyHandler()); // left-right key presses move the rectangle
 
-
-
-        Scene scene = new Scene(group, 640, 480);
+        //   Scene scene = new Scene(group, 640, 480);
+        for (int i = 0; i < 8; i++) {
+            vbox.getChildren().add(hbox[i]);
+        }
+        Scene scene = new Scene(vbox, 640, 480);
         stage.setTitle("cs1302-arcade!");
         stage.setScene(scene);
         stage.sizeToScene();
