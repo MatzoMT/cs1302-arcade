@@ -10,7 +10,7 @@ public class ChessDriver {
             game.printBoard();
             game.isInCheck(true);
             game.isInCheck(false);
-            game.promptUser();
+//            game.promptUser();
 
         }
     }

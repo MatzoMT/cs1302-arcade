@@ -1,6 +1,8 @@
 package cs1302.arcade;
 
 import java.util.Scanner;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 
 /**
  * Defines methods and gameplay mechanics for running a game of chess.
@@ -41,17 +43,15 @@ public class ChessGame {
         } // for
     }
 
-    public void promptUser() {
+    public void promptUser(int fromX, int fromY) {
 
-        int x = keyboard.nextInt();
-        int y = keyboard.nextInt();
-        Piece thePiece = board.getPiece(x, y);
-        Square theSquare = board.getSquare(x, y);
+        Piece thePiece = board.getPiece(fromX, fromY);
+        Square theSquare = board.getSquare(fromX, fromY);
 
         int toX = keyboard.nextInt();
         int toY = keyboard.nextInt();
         Square toSquare = board.getSquare(toX, toY);
-
+        System.out.println("ADADADADA");
         if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
             if (toSquare.getPiece() == null) {
@@ -78,6 +78,51 @@ public class ChessGame {
             System.out.println("ILLEGALLLLL");
         }
     } // promptUser
+
+    private void promptUserTo(int toX, int toY) {
+
+    } // promptUserTo
+
+    /*
+      public void promptUser() {
+
+      int x = keyboard.nextInt();
+      int y = keyboard.nextInt();
+      Piece thePiece = board.getPiece(x, y);
+      Square theSquare = board.getSquare(x, y);
+
+      int toX = keyboard.nextInt();
+      int toY = keyboard.nextInt();
+      Square toSquare = board.getSquare(toX, toY);
+
+      if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+      ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+      if (toSquare.getPiece() == null) {
+      confirmMove(theSquare, toSquare, thePiece, toX, toY);
+      } else {
+      if (toSquare.getPiece().getWhite() == false) {
+      confirmMove(theSquare, toSquare, thePiece, toX, toY);
+      } else {
+      System.out.println("ILLEGAL 1");
+      }
+      }
+      } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+      ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+      if (toSquare.getPiece() == null) {
+      confirmMove(theSquare, toSquare, thePiece, toX, toY);
+      } else {
+      if (toSquare.getPiece().getWhite() == true) {
+      confirmMove(theSquare, toSquare, thePiece, toX, toY);
+      } else {
+      System.out.println("ILLEGAL 2");
+      }
+      }
+      } else {
+      System.out.println("ILLEGALLLLL");
+      }
+      } // promptUser
+    */
+
 
     public ChessBoard getBoard() {
         return this.board;
@@ -121,5 +166,9 @@ public class ChessGame {
         thePiece.setY(toY);
     } // confirmMove
 
-
+    private EventHandler<? super MouseEvent> registerClick(int x, int y) {
+        return event -> {
+            System.out.print(x + " " + y);
+        };
+    } // registerClick
 }
