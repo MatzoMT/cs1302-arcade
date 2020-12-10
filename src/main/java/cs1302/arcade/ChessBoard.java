@@ -5,8 +5,8 @@ package cs1302.arcade;
  */
 public class ChessBoard {
     private Square[][] board = new Square[8][8];
-    private King whiteKing = new King(false, 7, 4);
-    private King blackKing = new King(true, 0 ,4);
+    private King whiteKing = new King(true, 7, 4);
+    private King blackKing = new King(false, 0 ,4);
     /**
      * Constructor for the chessboard that initializes all chess pieces at original positions.
      */

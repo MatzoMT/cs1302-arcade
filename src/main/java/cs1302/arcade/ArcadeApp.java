@@ -104,7 +104,7 @@ public class ArcadeApp extends Application {
         for (int i = 0; i < 8; i++) {
             hbox[i] = new HBox();
             for (int j = 0; j < 8; j++) {
-                pieces[i][j] = new ImageView(knightW);
+                //   pieces[i][j] = new ImageView(knightW);
                 rectangles[i][j] = new Rectangle(50, 50);
                 stackpane[i][j] = new StackPane();
                 if (i % 2 == 0) {
@@ -121,11 +121,36 @@ public class ArcadeApp extends Application {
                     }
                 }
                 if (board.getPiece(i, j) != null) {
-                    if ((board.getPiece(i, j).getWhite() == true) && (board.getPiece(i, j) instanceof Knight)) {
-                        stackpane[i][j].getChildren().addAll(rectangles[i][j], pieces[i][j]);
+                    if (board.getPiece(i, j).getWhite() == true) {
+                        if (board.getPiece(i, j) instanceof Pawn) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(pawnW));
+                        } else if (board.getPiece(i, j) instanceof Bishop) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(bishopW));
+                        } else if (board.getPiece(i, j) instanceof Knight) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(knightW));
+                        } else if (board.getPiece(i, j) instanceof Rook) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(rookW));
+                        } else if (board.getPiece(i, j) instanceof Queen) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(queenW));
+                        } else if (board.getPiece(i, j) instanceof King) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(kingW));
+                        }
                     } else {
-                        stackpane[i][j].getChildren().add(rectangles[i][j]);
+                        if (board.getPiece(i, j) instanceof Pawn) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(pawnB));
+                        } else if (board.getPiece(i, j) instanceof Bishop) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(bishopB));
+                        } else if (board.getPiece(i, j) instanceof Knight) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(knightB));
+                        } else if (board.getPiece(i, j) instanceof Rook) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(rookB));
+                        } else if (board.getPiece(i, j) instanceof Queen) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(queenB));
+                        } else if (board.getPiece(i, j) instanceof King) {
+                            stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(kingB));
+                        }
                     }
+
                 } else {
                     stackpane[i][j].getChildren().add(rectangles[i][j]);
                 }
