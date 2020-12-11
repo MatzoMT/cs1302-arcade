@@ -58,8 +58,23 @@ public class Pawn extends Piece {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
         if ((absX == 1) && (absY == 1)) {
-
-            return true;
+            if (this.getWhite() == true) {
+                if ((this.getX() - toX > 0) && (this.getY() - toY < 0)) {
+                    return true;
+                } else if ((this.getX() - toX > 0) && (this.getY() - toY > 0)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                if ((this.getX() - toX < 0) && (this.getY() - toY < 0)) {
+                    return true;
+                } else if ((this.getX() - toX < 0) && (this.getY() - toY > 0)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         } else {
             return false;
         }
