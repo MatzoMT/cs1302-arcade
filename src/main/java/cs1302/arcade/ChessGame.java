@@ -43,13 +43,17 @@ public class ChessGame {
         } // for
     }
 
-    public void promptUser(int fromX, int fromY) {
+    public void promptUser(String goodMove) {
+        Scanner scanString = new Scanner(goodMove);
+        int fromX = scanString.nextInt();
+        int fromY = scanString.nextInt();
+        int toX = scanString.nextInt();
+        int toY = scanString.nextInt();
+        System.out.println(fromX + "" + fromY + "" + toX + "" + toY);
 
         Piece thePiece = board.getPiece(fromX, fromY);
         Square theSquare = board.getSquare(fromX, fromY);
 
-        int toX = keyboard.nextInt();
-        int toY = keyboard.nextInt();
         Square toSquare = board.getSquare(toX, toY);
         System.out.println("ADADADADA");
         if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
@@ -166,9 +170,4 @@ public class ChessGame {
         thePiece.setY(toY);
     } // confirmMove
 
-    private EventHandler<? super MouseEvent> registerClick(int x, int y) {
-        return event -> {
-            System.out.print(x + " " + y);
-        };
-    } // registerClick
 }
