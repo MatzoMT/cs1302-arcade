@@ -25,11 +25,7 @@ public class ChessGame {
         Square theSquare = board.getSquare(fromX, fromY);
 
         Square toSquare = board.getSquare(toX, toY);
-
-        if (nothingInWay(fromX, fromY, toX, toY) == true) {
-            if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
-                    ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            /*
+/*
             if (thePiece instanceof Pawn) {
                 System.out.println(thePiece.canMoveTo(toX, toY));
                 System.out.println(toSquare.getPiece() == null);
@@ -41,6 +37,10 @@ public class ChessGame {
                     System.out.println("ILLEGAL PAWN");
                 }
             } else */
+
+        if (nothingInWay(fromX, fromY, toX, toY) == true) {
+            if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+                    ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                 if ((toSquare.getPiece() == null)) {
                     confirmMove(theSquare, toSquare, thePiece, toX, toY);
                 } else {
@@ -62,7 +62,7 @@ public class ChessGame {
                     }
                 }
             } else {
-                System.out.println("ILLEGALLLLL");
+                System.out.println("UHHH OHHH");
             }
 
         }
@@ -123,13 +123,87 @@ public class ChessGame {
         int tempX;
         int tempY;
         if (thePiece instanceof Bishop) {
-            tempX = fromX;
-            tempY = fromY;
-            if ((fromX > toX) && (fromY > toY)) {
-                while ((tempX > toX) && (tempY >toY)) {
-                    tempX--;
+            System.out.println("RETURNING");
+           return bishopWay(fromX, fromY, toX, toY);
+        } else if (thePiece instanceof Rook) {
+            return rookWay(fromX, fromY, toX, toY);
+        } else if (thePiece instanceof Queen) {
+            if ((fromX == toX) || (fromY == toY)) {
+                return rookWay(fromX, fromY, toX, toY);
+            } else {
+                return bishopWay(fromX, fromY, toX, toY);
+            }
+        } else {
+            return true;
+        }
+
+    } // nothingInWay
+
+
+    private boolean bishopWay(int fromX, int fromY, int toX, int toY) {
+        System.out.println("BISHOP WAY");
+        int tempX = fromX;
+        int tempY = fromY;
+        if ((fromX > toX) && (fromY > toY)) {
+            while ((tempX > toX) && (tempY >toY)) {
+                tempX--;
+                tempY--;
+                if ((tempX != toX) || (tempY != toY)) {
+                    if (board.getPiece(tempX, tempY) != null) {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            }
+        } else if ((fromX > toX) && (fromY < toY)) {
+            while ((tempX > toX) && (tempY < toY)) {
+                tempX--;
+                tempY++;
+                if ((tempX != toX) || (tempY != toY)) {
+                    if (board.getPiece(tempX, tempY) != null) {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            }
+        } else if ((fromX < toX) && (fromY < toY)) {
+            while ((tempX < toX) && (tempY < toY)) {
+                tempX++;
+                tempY++;
+                if ((tempX != toX) || (tempY != toY)) {
+                    if (board.getPiece(tempX, tempY) != null) {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            }
+        } else if ((fromX < toX) && (fromY > toY)) {
+            while ((tempX < toX) && (tempY > toY)) {
+                tempX++;
+                tempY--;
+                if ((tempX != toX) || (tempY != toY)) {
+                    if (board.getPiece(tempX, tempY) != null) {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            }
+        }
+        return true;
+    } // bishopWay
+
+    private boolean rookWay(int fromX, int fromY, int toX, int toY) {
+        int tempX = fromX;
+        int tempY = fromY;
+        if (tempX == toX) {
+            if (fromY > toY) {
+                while (tempY > toY) {
                     tempY--;
-                    if ((tempX != toX) || (tempY != toY)) {
+                    if (tempY != toY) {
                         if (board.getPiece(tempX, tempY) != null) {
                             return false;
                         }
@@ -137,35 +211,10 @@ public class ChessGame {
                         return true;
                     }
                 }
-            } else if ((fromX > toX) && (fromY < toY)) {
-                while ((tempX > toX) && (tempY < toY)) {
-                    tempX--;
+            } else {
+                while (tempY < toY) {
                     tempY++;
-                    if ((tempX != toX) || (tempY != toY)) {
-                        if (board.getPiece(tempX, tempY) != null) {
-                            return false;
-                        }
-                    } else {
-                        return true;
-                    }
-                }
-            } else if ((fromX < toX) && (fromY < toY)) {
-                while ((tempX < toX) && (tempY < toY)) {
-                    tempX++;
-                    tempY++;
-                    if ((tempX != toX) || (tempY != toY)) {
-                        if (board.getPiece(tempX, tempY) != null) {
-                            return false;
-                        }
-                    } else {
-                        return true;
-                    }
-                }
-            } else if ((fromX < toX) && (fromY > toY)) {
-                while ((tempX < toX) && (tempY > toY)) {
-                    tempX++;
-                    tempY--;
-                    if ((tempX != toX) || (tempY != toY)) {
+                    if (tempY != toY) {
                         if (board.getPiece(tempX, tempY) != null) {
                             return false;
                         }
@@ -174,11 +223,34 @@ public class ChessGame {
                     }
                 }
             }
-        } else {
-            return true;
+        } else if (tempY == toY) {
+            if (fromX > toX) {
+                while (tempX > toX) {
+                    tempX--;
+                    if (tempX != toX) {
+                        if (board.getPiece(tempX, tempY) != null) {
+                            System.out.println("SOMETHING IN THE WAY!!!");
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            } else {
+                while (tempX < toX) {
+                    tempX++;
+                    if (tempX != toX) {
+                        if (board.getPiece(tempX, tempY) != null) {
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            }
         }
         return true;
-    } // nothingInWay
+    } // rookWay
 
     // isincheck - check each opposite color piece if it can attack the opposite king with attack method
 }
