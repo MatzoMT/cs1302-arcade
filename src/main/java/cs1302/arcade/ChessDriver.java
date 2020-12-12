@@ -7,7 +7,7 @@ public class ChessDriver {
         ChessGame game = new ChessGame();
         while (true) {
 
-            game.printBoard();
+//            game.printBoard();
             game.isInCheck(true);
             game.isInCheck(false);
 //            game.promptUser();

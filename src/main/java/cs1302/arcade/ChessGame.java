@@ -12,36 +12,6 @@ public class ChessGame {
     private ChessBoard board = new ChessBoard();
     Scanner keyboard = new Scanner(System.in);
 
-    public void printBoard() {
-        System.out.print(" ");
-        for (int i = 0; i < 8; i++)
-            System.out.print(i);
-        System.out.println();
-        for (int i = 0; i < 8; i++) {
-            System.out.print(i);
-            for (int j = 0; j < 8; j++) {
-                /* if (board.getPiece(i, j) != null) {
-                   System.out.println(board.getPiece(i, j).getClass());
-                   } */
-                if (board.getPiece(i, j) instanceof Pawn) {
-                    System.out.print("P");
-                } else if (board.getPiece(i, j) instanceof Rook) {
-                    System.out.print("R");
-                } else if (board.getPiece(i, j) instanceof Knight) {
-                    System.out.print("N");
-                } else if (board.getPiece(i, j) instanceof Bishop) {
-                    System.out.print("B");
-                } else if (board.getPiece(i, j) instanceof King) {
-                    System.out.print("K");
-                } else if (board.getPiece(i, j) instanceof Queen) {
-                    System.out.print("Q");
-                } else {
-                    System.out.print("-");
-                }
-            } // for
-            System.out.println();
-        } // for
-    }
 
     public void promptUser(String goodMove) {
         Scanner scanString = new Scanner(goodMove);
@@ -55,77 +25,54 @@ public class ChessGame {
         Square theSquare = board.getSquare(fromX, fromY);
 
         Square toSquare = board.getSquare(toX, toY);
-        System.out.println("ADADADADA");
-        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
-        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            if (toSquare.getPiece() == null) {
-                confirmMove(theSquare, toSquare, thePiece, toX, toY);
-            } else {
-                if (toSquare.getPiece().getWhite() == false) {
+
+        if (nothingInWay(fromX, fromY, toX, toY) == true) {
+            if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+                    ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            /*
+            if (thePiece instanceof Pawn) {
+                System.out.println(thePiece.canMoveTo(toX, toY));
+                System.out.println(toSquare.getPiece() == null);
+                if ((thePiece.canMoveTo(toX, toY)) && (toSquare.getPiece() == null)) {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                } else if ((thePiece.canCapture(toX, toY)) && (toSquare.getPiece() != null)) {
                     confirmMove(theSquare, toSquare, thePiece, toX, toY);
                 } else {
-                    System.out.println("ILLEGAL 1");
+                    System.out.println("ILLEGAL PAWN");
                 }
-            }
-        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
-        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            if (toSquare.getPiece() == null) {
-                confirmMove(theSquare, toSquare, thePiece, toX, toY);
-            } else {
-                if (toSquare.getPiece().getWhite() == true) {
+            } else */
+                if ((toSquare.getPiece() == null)) {
                     confirmMove(theSquare, toSquare, thePiece, toX, toY);
                 } else {
-                    System.out.println("ILLEGAL 2");
+                    if (toSquare.getPiece().getWhite() == false) {
+                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                    } else {
+                        System.out.println("ILLEGAL 1");
+                    }
                 }
+            } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+                    ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+                if (toSquare.getPiece() == null) {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                } else {
+                    if (toSquare.getPiece().getWhite() == true) {
+                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                    } else {
+                        System.out.println("ILLEGAL 2");
+                    }
+                }
+            } else {
+                System.out.println("ILLEGALLLLL");
             }
-        } else {
-            System.out.println("ILLEGALLLLL");
+
         }
+
     } // promptUser
 
     private void promptUserTo(int toX, int toY) {
 
     } // promptUserTo
 
-    /*
-      public void promptUser() {
-
-      int x = keyboard.nextInt();
-      int y = keyboard.nextInt();
-      Piece thePiece = board.getPiece(x, y);
-      Square theSquare = board.getSquare(x, y);
-
-      int toX = keyboard.nextInt();
-      int toY = keyboard.nextInt();
-      Square toSquare = board.getSquare(toX, toY);
-
-      if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
-      ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-      if (toSquare.getPiece() == null) {
-      confirmMove(theSquare, toSquare, thePiece, toX, toY);
-      } else {
-      if (toSquare.getPiece().getWhite() == false) {
-      confirmMove(theSquare, toSquare, thePiece, toX, toY);
-      } else {
-      System.out.println("ILLEGAL 1");
-      }
-      }
-      } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
-      ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-      if (toSquare.getPiece() == null) {
-      confirmMove(theSquare, toSquare, thePiece, toX, toY);
-      } else {
-      if (toSquare.getPiece().getWhite() == true) {
-      confirmMove(theSquare, toSquare, thePiece, toX, toY);
-      } else {
-      System.out.println("ILLEGAL 2");
-      }
-      }
-      } else {
-      System.out.println("ILLEGALLLLL");
-      }
-      } // promptUser
-    */
 
 
     public ChessBoard getBoard() {
@@ -168,6 +115,70 @@ public class ChessGame {
         }
         thePiece.setX(toX);
         thePiece.setY(toY);
+
     } // confirmMove
 
+    public boolean nothingInWay(int fromX, int fromY, int toX, int toY) {
+        Piece thePiece = board.getPiece(fromX, fromY);
+        int tempX;
+        int tempY;
+        if (thePiece instanceof Bishop) {
+            tempX = fromX;
+            tempY = fromY;
+            if ((fromX > toX) && (fromY > toY)) {
+                while ((tempX > toX) && (tempY >toY)) {
+                    tempX--;
+                    tempY--;
+                    if ((tempX != toX) || (tempY != toY)) {
+                        if (board.getPiece(tempX, tempY) != null) {
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            } else if ((fromX > toX) && (fromY < toY)) {
+                while ((tempX > toX) && (tempY < toY)) {
+                    tempX--;
+                    tempY++;
+                    if ((tempX != toX) || (tempY != toY)) {
+                        if (board.getPiece(tempX, tempY) != null) {
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            } else if ((fromX < toX) && (fromY < toY)) {
+                while ((tempX < toX) && (tempY < toY)) {
+                    tempX++;
+                    tempY++;
+                    if ((tempX != toX) || (tempY != toY)) {
+                        if (board.getPiece(tempX, tempY) != null) {
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            } else if ((fromX < toX) && (fromY > toY)) {
+                while ((tempX < toX) && (tempY > toY)) {
+                    tempX++;
+                    tempY--;
+                    if ((tempX != toX) || (tempY != toY)) {
+                        if (board.getPiece(tempX, tempY) != null) {
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            }
+        } else {
+            return true;
+        }
+        return true;
+    } // nothingInWay
+
+    // isincheck - check each opposite color piece if it can attack the opposite king with attack method
 }
