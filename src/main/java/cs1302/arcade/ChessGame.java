@@ -37,35 +37,39 @@ public class ChessGame {
                     System.out.println("ILLEGAL PAWN");
                 }
             } else */
+        if (thePiece == null) {
+            System.out.println("Invalid move. Try again.");
+        } else {
+            if (nothingInWay(fromX, fromY, toX, toY) == true) {
+                if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+                        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+                    if ((toSquare.getPiece() == null)) {
+                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                    } else {
+                        if (toSquare.getPiece().getWhite() == false) {
+                            confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                        } else {
+                            System.out.println("ILLEGAL 1");
+                        }
+                    }
+                } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+                        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+                    if (toSquare.getPiece() == null) {
+                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                    } else {
+                        if (toSquare.getPiece().getWhite() == true) {
+                            confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                        } else {
+                            System.out.println("ILLEGAL 2");
+                        }
+                    }
+                } else {
+                    System.out.println("UHHH OHHH");
+                }
 
-        if (nothingInWay(fromX, fromY, toX, toY) == true) {
-            if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
-                    ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-                if ((toSquare.getPiece() == null)) {
-                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                } else {
-                    if (toSquare.getPiece().getWhite() == false) {
-                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                    } else {
-                        System.out.println("ILLEGAL 1");
-                    }
-                }
-            } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
-                    ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-                if (toSquare.getPiece() == null) {
-                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                } else {
-                    if (toSquare.getPiece().getWhite() == true) {
-                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                    } else {
-                        System.out.println("ILLEGAL 2");
-                    }
-                }
-            } else {
-                System.out.println("UHHH OHHH");
             }
-
         }
+        isInCheck();
 
     } // promptUser
 
@@ -79,24 +83,32 @@ public class ChessGame {
         return this.board;
     }
 
-    public boolean isInCheck(boolean whiteKing) {
-        int kingX;
-        int kingY;
-        if (whiteKing == true) {
-            kingX = board.getWhiteKing().getX();
-            kingY = board.getWhiteKing().getY();
-        } else {
-            kingX = board.getBlackKing().getX();
-            kingY = board.getBlackKing().getY();
-        }
-
-        // for whiteKing
+    public boolean isInCheck() {
+        int whiteX = 0;
+        int whiteY = 0;
+        int blackX = 0;
+        int blackY = 0;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                Piece attackingPiece = board.getPiece(i, j);
-                if (attackingPiece != null) {
-                    if ((attackingPiece.getWhite() == !whiteKing) && (attackingPiece.canCapture(kingX, kingY))) {
+                if (board.getPiece(i, j) != null) {
+                    if ((board.getPiece(i,j) instanceof King) && (board.getPiece(i, j).getWhite() == true)) {
+                        whiteX = i;
+                        whiteY = j;
+                    } else if ((board.getPiece(i,j) instanceof King) && (board.getPiece(i, j).getWhite() == false)) {
+                        blackX = i;
+                        blackY = j;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board.getPiece(i, j) != null) {
+                    if ((board.getPiece(i, j).getWhite() == false) && (nothingInWay(i, j, whiteX, whiteY) == true) && (board.getPiece(i, j).canCapture(whiteX, whiteY))) {
                         System.out.println("CHECK!!!!!");
+                        return true;
+                    } else if ((board.getPiece(i, j).getWhite() == true) && (nothingInWay(i, j, blackX, blackY) == true) && (board.getPiece(i, j).canCapture(blackX, blackY))) {
+                        System.out.println("CHECK!!!!!!!!!!!!!!!!!!!!!");
                         return true;
                     }
                 }
@@ -133,6 +145,8 @@ public class ChessGame {
             } else {
                 return bishopWay(fromX, fromY, toX, toY);
             }
+        } else if (thePiece instanceof Pawn) {
+            return true;
         } else {
             return true;
         }
