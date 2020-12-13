@@ -13,7 +13,6 @@ public class ChessGame {
     private ChessBoard board = new ChessBoard();
 
 
-
     public void promptUser(String goodMove) {
         Scanner scanString = new Scanner(goodMove);
         int fromX = scanString.nextInt();
@@ -45,9 +44,11 @@ public class ChessGame {
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if ((toSquare.getPiece() == null)) {
                         confirmMove(theSquare, toSquare, thePiece, toX, toY);
+
                     } else {
                         if (toSquare.getPiece().getWhite() == false) {
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
+
                         } else {
                             System.out.println("ILLEGAL 1");
                         }
@@ -56,9 +57,11 @@ public class ChessGame {
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if (toSquare.getPiece() == null) {
                         confirmMove(theSquare, toSquare, thePiece, toX, toY);
+
                     } else {
                         if (toSquare.getPiece().getWhite() == true) {
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
+
                         } else {
                             System.out.println("ILLEGAL 2");
                         }
@@ -294,4 +297,37 @@ public class ChessGame {
     public boolean getInCheck() {
         return this.inCheck;
     }
+
+    public boolean nextMoveCheck(Square origin, Square dest, Piece thePiece, int toX, int toY) {
+        int originalX = thePiece.getX();
+        int originalY = thePiece.getY();
+        Piece destPiece = dest.getPiece();
+        dest.setPiece(thePiece);
+        origin.setPiece(null);
+        thePiece.setX(toX);
+        thePiece.setY(toY);
+        if (isInCheck() == true) {
+            if (destPiece != null) {
+                dest.setPiece(destPiece);
+            } else {
+                dest.setPiece(null);
+            }
+            origin.setPiece(thePiece);
+            thePiece.setX(originalX);
+            thePiece.setY(originalY);
+            System.out.println("ILLEGAL MOVE");
+            return true;
+        }
+        return false;
+    }
+
+    public void undoMove() {
+
+    }
+
+    public boolean getWhiteTurn() {
+        return this.isWhiteTurn;
+    } // getTurn
+
+
 }
