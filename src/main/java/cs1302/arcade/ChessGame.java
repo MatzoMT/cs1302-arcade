@@ -285,6 +285,12 @@ public class ChessGame {
         }
     }
 
+    public void newBoard() {
+        this.board = new ChessBoard();
+        isWhiteTurn = true;
+        inCheck = false;
+    }
+
     public boolean getInCheck() {
         return this.inCheck;
     }

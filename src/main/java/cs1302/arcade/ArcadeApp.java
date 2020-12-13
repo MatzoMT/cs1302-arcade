@@ -5,24 +5,29 @@ import java.util.Random;
 import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -161,6 +166,13 @@ public class ArcadeApp extends Application {
          * simple sample code for mouse and keyboard interactions with a node
          * (rectangle) in a group.
          */
+        MenuButton menu = new MenuButton("Menu");
+        MenuItem returnToTitle = new MenuItem("Return to Title");
+        MenuItem reset = new MenuItem("Reset Game");
+        MenuItem close = new MenuItem("Exit Application");
+
+
+        vbox.getChildren().add(menu);
 
         for (int i = 0; i < 8; i++) {
             hbox[i] = new HBox();
@@ -266,22 +278,30 @@ public class ArcadeApp extends Application {
                 pathTransitions[i].setNode(sView2);
             }
             pathTransitions[i].setPath(paths[i]);
-            pathTransitions[i].setCycleCount(Short.MAX_VALUE);
+            pathTransitions[i].setCycleCount(Integer.MAX_VALUE);
             pathTransitions[i].setAutoReverse(true);
             pathTransitions[i].play();
             defaultX = defaultX;
         }
 
-        Button newGame = new Button("New Game");
+        Text name = new Text("By: Matthew Tzou");
+        Button playGame = new Button("Play");
+        Button help = new Button("Help");
         Button exit = new Button("Exit");
-        newGame.setMinWidth(100);
+        playGame.setMinWidth(100);
+        help.setMinWidth(100);
         exit.setMinWidth(100);
 
+        name.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 20));
+
+
+
         titleVbox.getChildren().addAll(cView, hView, eView, sView1, sView2);
-        buttonBox.getChildren().addAll(newGame, exit);
+        buttonBox.getChildren().addAll(name, playGame, help, exit);
         buttonBox.setAlignment(Pos.CENTER);
         buttonBox.setTranslateY(150);
         boxes.getChildren().addAll(titleVbox, buttonBox);
+        boxes.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
         Scene title = new Scene(boxes, 300, 400);
         stage.setScene(title);
 
@@ -292,8 +312,17 @@ public class ArcadeApp extends Application {
         stage.show();
 
         // Title buttons
-        newGame.setOnAction(event -> stage.setScene(scene));
+        playGame.setOnAction(event -> stage.setScene(scene));
         exit.setOnAction(event -> System.exit(0));
+
+        returnToTitle.setOnAction(event -> stage.setScene(title));
+        reset.setOnAction(event -> {
+            game.newBoard();
+            board = game.getBoard();
+            updateBoard();
+        });
+        close.setOnAction(event -> System.exit(0));
+        menu.getItems().addAll(returnToTitle, reset, close);
 
         try {
             runNow(() -> game.checkStatus());
