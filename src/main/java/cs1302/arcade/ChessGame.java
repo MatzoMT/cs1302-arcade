@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
  */
 public class ChessGame {
     private boolean isWhiteTurn = true;
+    private boolean inCheck;
     private ChessBoard board = new ChessBoard();
     Scanner keyboard = new Scanner(System.in);
 
@@ -19,7 +20,6 @@ public class ChessGame {
         int fromY = scanString.nextInt();
         int toX = scanString.nextInt();
         int toY = scanString.nextInt();
-        System.out.println(fromX + "" + fromY + "" + toX + "" + toY);
 
         Piece thePiece = board.getPiece(fromX, fromY);
         Square theSquare = board.getSquare(fromX, fromY);
@@ -69,8 +69,8 @@ public class ChessGame {
 
             }
         }
-        isInCheck();
 
+        scanString.close();
     } // promptUser
 
     private void promptUserTo(int toX, int toY) {
@@ -135,8 +135,7 @@ public class ChessGame {
         int tempX;
         int tempY;
         if (thePiece instanceof Bishop) {
-            System.out.println("RETURNING");
-           return bishopWay(fromX, fromY, toX, toY);
+            return bishopWay(fromX, fromY, toX, toY);
         } else if (thePiece instanceof Rook) {
             return rookWay(fromX, fromY, toX, toY);
         } else if (thePiece instanceof Queen) {
@@ -155,7 +154,6 @@ public class ChessGame {
 
 
     private boolean bishopWay(int fromX, int fromY, int toX, int toY) {
-        System.out.println("BISHOP WAY");
         int tempX = fromX;
         int tempY = fromY;
         if ((fromX > toX) && (fromY > toY)) {
@@ -243,7 +241,6 @@ public class ChessGame {
                     tempX--;
                     if (tempX != toX) {
                         if (board.getPiece(tempX, tempY) != null) {
-                            System.out.println("SOMETHING IN THE WAY!!!");
                             return false;
                         }
                     } else {
@@ -266,5 +263,29 @@ public class ChessGame {
         return true;
     } // rookWay
 
+    /**
+     * Method that allows for the creation of a new {@code Thread} to operate multiple parts of the
+     * code simultaneously.
+     *
+     * @param runnable an object that implements {@code Runnable} or is runnable
+     */
+    private static void runNow(Runnable runnable) throws InterruptedException {
+        Thread t = new Thread(runnable);
+        t.setDaemon(true);
+        t.start();
+    } // runNow
     // isincheck - check each opposite color piece if it can attack the opposite king with attack method
+
+    public void checkStatus() {
+        while (true) {
+            if (isInCheck() == true) {
+                System.out.println("LOOPING");
+                inCheck = true;
+            }
+        }
+    }
+
+    public boolean getInCheck() {
+        return this.inCheck;
+    }
 }
