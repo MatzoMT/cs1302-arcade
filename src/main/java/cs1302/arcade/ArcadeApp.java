@@ -2,6 +2,7 @@ package cs1302.arcade;
 
 import java.util.Random;
 
+import java.util.Scanner;
 import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -68,7 +69,6 @@ public class ArcadeApp extends Application {
 
     String coordinates = "";
     boolean pieceClicked = false;
-    boolean legalMove = false;
 
     // Non-GUI related objects
     ChessGame game = new ChessGame();
@@ -116,17 +116,21 @@ public class ArcadeApp extends Application {
             System.out.print(x + " " + y);
             System.out.print(pieceClicked);
             if ((pieceClicked == false)) {
-                coordinates = coordinates + x + " " + y + " ";
-                pieceClicked = true;
+                System.out.println(validClick(x, y));
+                if (validClick(x, y) == true) {
+                    coordinates = coordinates + x + " " + y + " ";
+                    pieceClicked = true;
+                }
+             //   Platform.runLater(() -> updateBoard());
             } else if ((pieceClicked == true)) {
-                System.out.println("DONT EXECUTE");
                 coordinates = coordinates + x + " " + y;
                 game.promptUser(coordinates);
-                Platform.runLater(() -> updateBoard());
+              //  Platform.runLater(() -> updateBoard());
             //    Platform.runLater(() -> game.getInCheck());
                 coordinates = "";
                 pieceClicked = false;
             }
+            Platform.runLater(() -> updateBoard());
             System.out.println("COOR" + coordinates);
             if (game.getInCheck() == true) {
                 while (true)
@@ -340,8 +344,8 @@ public class ArcadeApp extends Application {
             final Stage dialog = new Stage();
             VBox dialogVbox = new VBox(10);
             dialogVbox.getChildren().add(new Text("Welcome to Matthew Tzou's JavaFX chess! This chess \ngame" +
-            " is operated via click commands and follows \nconventional chess gameplay rules. Start a game" +
-            "\nwhenever you are ready!"));
+                    " is operated via click commands and follows \nconventional chess gameplay rules. Start a game" +
+                    "\nwhenever you are ready!"));
             Scene dialogScene = new Scene(dialogVbox, 350, 250);
             dialog.setScene(dialogScene);
             dialog.show();
@@ -374,6 +378,13 @@ public class ArcadeApp extends Application {
                     } else {
                         rectangles[i][j].setFill(Color.SIENNA);
                     }
+                }
+                if (pieceClicked == true) {
+                    Scanner coordinateScanner = new Scanner(coordinates);
+                    int x = coordinateScanner.nextInt();
+                    int y = coordinateScanner.nextInt();
+                    rectangles[x][y].setFill(Color.LIMEGREEN);
+                    coordinateScanner.close();
                 }
                 if (board.getPiece(i, j) != null) {
                     if (board.getPiece(i, j).getWhite() == true) {
@@ -433,4 +444,18 @@ public class ArcadeApp extends Application {
         t.setDaemon(true);
         t.start();
     } // runNow
+
+    public boolean validClick(int x, int y) {
+        if (board.getPiece(x, y) != null) {
+            if ((game.getWhiteTurn() == true) && (board.getPiece(x, y).getWhite() == true)) {
+                return true;
+            } else if ((game.getWhiteTurn() == false) && (board.getPiece(x, y).getWhite() == false)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } // validClick
 } // ArcadeApp
