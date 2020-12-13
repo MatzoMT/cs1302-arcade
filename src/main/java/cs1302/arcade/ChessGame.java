@@ -11,7 +11,7 @@ public class ChessGame {
     private boolean isWhiteTurn = true;
     private boolean inCheck;
     private ChessBoard board = new ChessBoard();
-    Scanner keyboard = new Scanner(System.in);
+
 
 
     public void promptUser(String goodMove) {

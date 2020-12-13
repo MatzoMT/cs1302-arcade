@@ -5,6 +5,7 @@ import java.util.Random;
 import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -23,6 +24,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
@@ -334,6 +336,17 @@ public class ArcadeApp extends Application {
         // @see https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html#requestFocus--
         group.requestFocus();
 
+        help.setOnAction(event -> {
+            final Stage dialog = new Stage();
+            VBox dialogVbox = new VBox(10);
+            dialogVbox.getChildren().add(new Text("Welcome to Matthew Tzou's JavaFX chess! This chess \ngame" +
+            " is operated via click commands and follows \nconventional chess gameplay rules. Start a game" +
+            "\nwhenever you are ready!"));
+            Scene dialogScene = new Scene(dialogVbox, 350, 250);
+            dialog.setScene(dialogScene);
+            dialog.show();
+
+        });
 
 
     } // start
