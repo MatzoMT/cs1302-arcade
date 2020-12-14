@@ -393,17 +393,20 @@ public class ChessGame {
         origin.setPiece(null); // 2
         thePiece.setX(toX); // 3
         thePiece.setY(toY); // 4
-        if (isInCheck() == true) {
-            if (destPiece != null) {
-                dest.setPiece(destPiece); // 1
-            } else {
-                dest.setPiece(null);
+        if (((thePiece.getWhite() == false) && (blackInCheck() == true)) || ((thePiece.getWhite() == true) && (whiteInCheck() == true))) {
+            if (isInCheck() == true) {
+                if (destPiece != null) {
+                    dest.setPiece(destPiece); // 1
+                } else {
+                    dest.setPiece(null);
+                }
+                origin.setPiece(thePiece); // 2
+                thePiece.setX(originalX); // 3
+                thePiece.setY(originalY); // 4
+                System.out.println("ILLEGAL MOVE BY NEXTMOVECHECK");
+                return true;
+
             }
-            origin.setPiece(thePiece); // 2
-            thePiece.setX(originalX); // 3
-            thePiece.setY(originalY); // 4
-            System.out.println("ILLEGAL MOVE BY NEXTMOVECHECK");
-            return true;
         }
         return false;
     }
