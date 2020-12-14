@@ -26,18 +26,7 @@ public class ChessGame {
         Square theSquare = board.getSquare(fromX, fromY);
 
         Square toSquare = board.getSquare(toX, toY);
-/*
-            if (thePiece instanceof Pawn) {
-                System.out.println(thePiece.canMoveTo(toX, toY));
-                System.out.println(toSquare.getPiece() == null);
-                if ((thePiece.canMoveTo(toX, toY)) && (toSquare.getPiece() == null)) {
-                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                } else if ((thePiece.canCapture(toX, toY)) && (toSquare.getPiece() != null)) {
-                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                } else {
-                    System.out.println("ILLEGAL PAWN");
-                }
-            } else */
+
         if (thePiece == null) {
             System.out.println("Invalid move. Try again.");
         } else {
@@ -46,13 +35,15 @@ public class ChessGame {
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if ((toSquare.getPiece() == null)) {
                         changeScores(toSquare);
-                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
-
+                        if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
+                            confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                        }
                     } else {
                         if (toSquare.getPiece().getWhite() == false) {
                             changeScores(toSquare);
-                            confirmMove(theSquare, toSquare, thePiece, toX, toY);
-
+                            if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
+                                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                            }
                         } else {
                             System.out.println("ILLEGAL 1");
                         }
@@ -61,12 +52,16 @@ public class ChessGame {
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if (toSquare.getPiece() == null) {
                         changeScores(toSquare);
-                        confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                        if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
+                            confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                        }
 
                     } else {
                         if (toSquare.getPiece().getWhite() == true) {
                             changeScores(toSquare);
-                            confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                            if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
+                                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                            }
 
                         } else {
                             System.out.println("ILLEGAL 2");
@@ -82,14 +77,62 @@ public class ChessGame {
         scanString.close();
     } // promptUser
 
-    private void promptUserTo(int toX, int toY) {
-
-    } // promptUserTo
-
 
 
     public ChessBoard getBoard() {
         return this.board;
+    }
+
+    public boolean blackInCheck() {
+        int blackX = 0;
+        int blackY = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board.getPiece(i, j) != null) {
+                    if ((board.getPiece(i,j) instanceof King) && (board.getPiece(i, j).getWhite() == false)) {
+                        blackX = i;
+                        blackY = j;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board.getPiece(i, j) != null) {
+                    if ((board.getPiece(i, j).getWhite() == true) && (nothingInWay(i, j, blackX, blackY) == true) && (board.getPiece(i, j).canCapture(blackX, blackY))) {
+                        System.out.println("CHECK!!!!!");
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean whiteInCheck() {
+        int whiteX = 0;
+        int whiteY = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board.getPiece(i, j) != null) {
+                    if ((board.getPiece(i,j) instanceof King) && (board.getPiece(i, j).getWhite() == true)) {
+                        whiteX = i;
+                        whiteY = j;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board.getPiece(i, j) != null) {
+                    if ((board.getPiece(i, j).getWhite() == false) && (nothingInWay(i, j, whiteX, whiteY) == true) && (board.getPiece(i, j).canCapture(whiteX, whiteY))) {
+                        System.out.println("CHECK!!!!!");
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     public boolean isInCheck() {
@@ -126,6 +169,15 @@ public class ChessGame {
         return false;
     }
 
+    /**
+     * Finalizes the intended move for a piece.
+     *
+     * @param origin the starting square
+     * @param dest the destination square
+     * @param thePiece the piece that is performing the movement
+     * @param toX the final x position
+     * @param toY the final y position
+     */
     private void confirmMove(Square origin, Square dest, Piece thePiece, int toX, int toY) {
         dest.setPiece(thePiece);
         origin.setPiece(null);
@@ -139,6 +191,15 @@ public class ChessGame {
 
     } // confirmMove
 
+    /**
+     * Determines whether there is a piece in the way for a calling piece's movement.
+     *
+     * @param fromX the starting x position of the calling {@code Piece}
+     * @param fromY the starting y position of the calling {@code Piece}
+     * @param toX the final x position of the calling {@code Piece}
+     * @param toY the final y position of the calling {@code Piece}
+     * @return
+     */
     public boolean nothingInWay(int fromX, int fromY, int toX, int toY) {
         Piece thePiece = board.getPiece(fromX, fromY);
         int tempX;
@@ -161,7 +222,15 @@ public class ChessGame {
 
     } // nothingInWay
 
-
+    /**
+     * Determines whether there is a piece in the way for a bishop's movement.
+     *
+     * @param fromX the starting x position of the calling {@code Bishop}
+     * @param fromY the starting y position of the calling {@code Bishop}
+     * @param toX the final x position of the calling {@code Bishop}
+     * @param toY the final y position of the calling {@code Bishop}
+     * @return
+     */
     private boolean bishopWay(int fromX, int fromY, int toX, int toY) {
         int tempX = fromX;
         int tempY = fromY;
@@ -217,6 +286,15 @@ public class ChessGame {
         return true;
     } // bishopWay
 
+    /**
+     * Determines whether there is a piece in the way for a rook's movement.
+     *
+     * @param fromX the starting x position of the calling {@code Rook}
+     * @param fromY the starting y position of the calling {@code Rook}
+     * @param toX the final x position of the calling {@code Rook}
+     * @param toY the final y position of the calling {@code Rook}
+     * @return
+     */
     private boolean rookWay(int fromX, int fromY, int toX, int toY) {
         int tempX = fromX;
         int tempY = fromY;
@@ -311,20 +389,20 @@ public class ChessGame {
         int originalX = thePiece.getX();
         int originalY = thePiece.getY();
         Piece destPiece = dest.getPiece();
-        dest.setPiece(thePiece);
-        origin.setPiece(null);
-        thePiece.setX(toX);
-        thePiece.setY(toY);
+        dest.setPiece(thePiece); // 1
+        origin.setPiece(null); // 2
+        thePiece.setX(toX); // 3
+        thePiece.setY(toY); // 4
         if (isInCheck() == true) {
             if (destPiece != null) {
-                dest.setPiece(destPiece);
+                dest.setPiece(destPiece); // 1
             } else {
                 dest.setPiece(null);
             }
-            origin.setPiece(thePiece);
-            thePiece.setX(originalX);
-            thePiece.setY(originalY);
-            System.out.println("ILLEGAL MOVE");
+            origin.setPiece(thePiece); // 2
+            thePiece.setX(originalX); // 3
+            thePiece.setY(originalY); // 4
+            System.out.println("ILLEGAL MOVE BY NEXTMOVECHECK");
             return true;
         }
         return false;
@@ -339,6 +417,7 @@ public class ChessGame {
     } // getTurn
 
     public boolean calculateCheckmate() {
+
         return true;
     }
 
