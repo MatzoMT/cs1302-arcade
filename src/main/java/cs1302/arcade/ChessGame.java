@@ -11,6 +11,8 @@ public class ChessGame {
     private boolean isWhiteTurn = true;
     private boolean inCheck;
     private ChessBoard board = new ChessBoard();
+    private int whiteScore = 0;
+    private int blackScore = 0;
 
 
     public void promptUser(String goodMove) {
@@ -43,10 +45,12 @@ public class ChessGame {
                 if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if ((toSquare.getPiece() == null)) {
+                        changeScores(toSquare);
                         confirmMove(theSquare, toSquare, thePiece, toX, toY);
 
                     } else {
                         if (toSquare.getPiece().getWhite() == false) {
+                            changeScores(toSquare);
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
 
                         } else {
@@ -56,10 +60,12 @@ public class ChessGame {
                 } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if (toSquare.getPiece() == null) {
+                        changeScores(toSquare);
                         confirmMove(theSquare, toSquare, thePiece, toX, toY);
 
                     } else {
                         if (toSquare.getPiece().getWhite() == true) {
+                            changeScores(toSquare);
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
 
                         } else {
@@ -280,12 +286,15 @@ public class ChessGame {
     // isincheck - check each opposite color piece if it can attack the opposite king with attack method
 
     public void checkStatus() {
+        /*
         while (true) {
             if (isInCheck() == true) {
                 System.out.println("LOOPING");
                 inCheck = true;
             }
         }
+
+         */
     }
 
     public void newBoard() {
@@ -329,5 +338,48 @@ public class ChessGame {
         return this.isWhiteTurn;
     } // getTurn
 
+    public boolean calculateCheckmate() {
+        return true;
+    }
 
+    public int getWhiteScore() {
+        return this.whiteScore;
+    }
+
+    public int getBlackScore() {
+        return this.blackScore;
+    }
+
+    public void changeScores(Square toSquare) {
+        if (toSquare.getPiece() != null) {
+            if (toSquare.getPiece().getWhite() == false) {
+                if (toSquare.getPiece() instanceof Pawn) {
+                    whiteScore++;
+                } else if ((toSquare.getPiece() instanceof Knight) || (toSquare.getPiece() instanceof Bishop)) {
+                    whiteScore = whiteScore + 3;
+                } else if (toSquare.getPiece() instanceof Rook) {
+                    whiteScore = whiteScore + 5;
+                } else if (toSquare.getPiece() instanceof Queen) {
+                    whiteScore = whiteScore + 9;
+                }
+            } else {
+                if (toSquare.getPiece() instanceof Pawn) {
+                    blackScore++;
+                } else if ((toSquare.getPiece() instanceof Knight) || (toSquare.getPiece() instanceof Bishop)) {
+                    blackScore = blackScore + 3;
+                } else if (toSquare.getPiece() instanceof Rook) {
+                    blackScore = blackScore + 5;
+                } else if (toSquare.getPiece() instanceof Queen) {
+                    blackScore = blackScore + 9;
+                }
+            }
+        }
+        System.out.print("WHITE " + whiteScore);
+        System.out.print("BLACK " + blackScore);
+    } // changeScores
+
+    public void resetScores() {
+        whiteScore = 0;
+        blackScore = 0;
+    }
 }
