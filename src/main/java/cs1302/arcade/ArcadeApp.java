@@ -2,22 +2,37 @@ package cs1302.arcade;
 
 import java.util.Random;
 
+import java.util.Scanner;
+import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.shape.LineTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 
 /**
@@ -54,11 +69,48 @@ public class ArcadeApp extends Application {
 
     String coordinates = "";
     boolean pieceClicked = false;
+<<<<<<< HEAD
     boolean legalMove = false;
+=======
+>>>>>>> guiwork
 
     // Non-GUI related objects
     ChessGame game = new ChessGame();
     ChessBoard board = game.getBoard();
+
+    // Title Screen objects
+    Image letterC = new Image("file:resources/letterC.png", 50, 50, true, true);
+    Image letterH = new Image("file:resources/letterH.png", 50, 50, true, true);
+    Image letterE = new Image("file:resources/letterE.png", 50, 50, true, true);
+    Image letterS = new Image("file:resources/letterS.png", 50, 50, true, true);
+
+    ImageView cView = new ImageView(letterC);
+    ImageView hView = new ImageView(letterH);
+    ImageView eView = new ImageView(letterE);
+    ImageView sView1 = new ImageView(letterS);
+    ImageView sView2 = new ImageView(letterS);
+
+    Path path1 = new Path();
+    Path path2 = new Path();
+
+    Path[] paths = new Path[5];
+    MoveTo[] moveTos = new MoveTo[5];
+    LineTo[] lineTos = new LineTo[5];
+    PathTransition[] pathTransitions = new PathTransition[5];
+
+    int defaultX = 50;
+    int tempY1 = 75;
+    int tempY2 = 100;
+
+    MenuButton menu = new MenuButton("Menu");
+    MenuItem returnToTitle = new MenuItem("Return to Title");
+    MenuItem reset = new MenuItem("Reset Game");
+    MenuItem close = new MenuItem("Exit Application");
+    Button whiteResign = new Button("Resign for White");
+    Button blackResign = new Button("Resign for Black");
+    Text whiteScoring = new Text("White's Score: " + game.getWhiteScore());
+    Text blackScoring = new Text("Black's Score: " + game.getBlackScore());
+
 
     /**
      * Return a mouse event handler that moves to the rectangle to a random
@@ -78,6 +130,7 @@ public class ArcadeApp extends Application {
             System.out.print(x + " " + y);
             System.out.print(pieceClicked);
             if ((pieceClicked == false)) {
+<<<<<<< HEAD
                 coordinates = coordinates + x + " " + y + " ";
                 pieceClicked = true;
                 System.out.println("jkzcxzxcvajsdnfiodsanfadf");
@@ -108,6 +161,31 @@ public class ArcadeApp extends Application {
         };
     } // registerClick
     */
+=======
+                System.out.println(validClick(x, y));
+                if (validClick(x, y) == true) {
+                    coordinates = coordinates + x + " " + y + " ";
+                    pieceClicked = true;
+                }
+             //   Platform.runLater(() -> updateBoard());
+            } else if ((pieceClicked == true)) {
+                coordinates = coordinates + x + " " + y;
+                game.promptUser(coordinates);
+              //  Platform.runLater(() -> updateBoard());
+            //    Platform.runLater(() -> game.getInCheck());
+                coordinates = "";
+                pieceClicked = false;
+            }
+            Platform.runLater(() -> updateBoard());
+            System.out.println("COOR" + coordinates);
+            if (game.getInCheck() == true) {
+                while (true)
+                System.out.println("NOTHING");
+            }
+        };
+    } // registerClick
+
+>>>>>>> guiwork
 
     /**
      * Return a key event handler that moves to the rectangle to the left
@@ -136,11 +214,14 @@ public class ArcadeApp extends Application {
     @Override
     public void start(Stage stage) {
 
-        /* You are allowed to rewrite this start method, add other methods,
-         * files, classes, etc., as needed. This currently contains some
-         * simple sample code for mouse and keyboard interactions with a node
-         * (rectangle) in a group.
-         */
+        whiteScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
+        blackScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
+
+
+        HBox topBar = new HBox();
+        topBar.getChildren().addAll(menu, whiteResign, blackResign);
+
+        vbox.getChildren().addAll(topBar);
 
         for (int i = 0; i < 8; i++) {
             hbox[i] = new HBox();
@@ -196,38 +277,173 @@ public class ArcadeApp extends Application {
                 }
 
                 hbox[i].getChildren().add(stackpane[i][j]);
+
+            } // for
+            if (i == 0) {
+                hbox[i].getChildren().add(blackScoring);
+            } else if (i == 7) {
+                hbox[i].getChildren().add(whiteScoring);
             }
         } // for
 
+<<<<<<< HEAD
         //     group.getChildren().add(r);                // add to main container
         //    hbox.getChildren().addAll(r, r2);
 
+=======
+>>>>>>> guiwork
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                     stackpane[i][j].setOnMouseClicked(registerClick(i, j));
             }
         }
         r.setOnMouseClicked(createMouseHandler()); // clicks on the rectangle move it randomly
-        // group.setOnKeyPressed(createKeyHandler()); // left-right key presses move the rectangle
 
-        //   Scene scene = new Scene(group, 640, 480);
         for (int i = 0; i < 8; i++) {
             vbox.getChildren().add(hbox[i]);
         }
-        //   vbox.getChildren().add(imageview);
-        Scene scene = new Scene(vbox, 640, 480);
+        Scene scene = new Scene(vbox, 600, 480);
+
+        // Title
+        VBox boxes = new VBox();
+   //     Group boxes = new Group();
+        HBox titleVbox = new HBox();
+        VBox buttonBox = new VBox();
+    //    Group textBox = new Group();
+        for (int i = 0; i < 5; i++) {
+            paths[i] = new Path();
+            moveTos[i] = new MoveTo(defaultX, tempY1);
+            lineTos[i] = new LineTo(defaultX, tempY2);
+            paths[i].getElements().addAll(moveTos[i], lineTos[i]);
+
+            pathTransitions[i] = new PathTransition();
+            pathTransitions[i].setDuration(Duration.millis(1000));
+            //       pathTransitions[i].setNode(cView);
+            if (i == 0) {
+                pathTransitions[i].setNode(cView);
+                tempY1 = 100;
+                tempY2 = 75;
+            } else if (i == 1) {
+                pathTransitions[i].setNode(hView);
+                tempY1 = 75;
+                tempY2 = 100;
+            } else if (i == 2) {
+                pathTransitions[i].setNode(eView);
+                tempY1 = 100;
+                tempY2 = 75;
+            } else if (i == 3) {
+                pathTransitions[i].setNode(sView1);
+                tempY1 = 75;
+                tempY2 = 100;
+            } else if (i == 4) {
+                pathTransitions[i].setNode(sView2);
+            }
+            pathTransitions[i].setPath(paths[i]);
+            pathTransitions[i].setCycleCount(Integer.MAX_VALUE);
+            pathTransitions[i].setAutoReverse(true);
+            pathTransitions[i].play();
+            defaultX = defaultX;
+        }
+
+        Text name = new Text("By: Matthew Tzou");
+        Button playGame = new Button("Play");
+        Button help = new Button("Help");
+        Button exit = new Button("Exit");
+        playGame.setMinWidth(100);
+        help.setMinWidth(100);
+        exit.setMinWidth(100);
+
+        name.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 20));
+
+
+
+        titleVbox.getChildren().addAll(cView, hView, eView, sView1, sView2);
+        buttonBox.getChildren().addAll(name, playGame, help, exit);
+        buttonBox.setAlignment(Pos.CENTER);
+        buttonBox.setTranslateY(150);
+        boxes.getChildren().addAll(titleVbox, buttonBox);
+        boxes.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
+        Scene title = new Scene(boxes, 300, 400);
+        stage.setScene(title);
+
+
         stage.setTitle("cs1302-arcade!");
-        stage.setScene(scene);
+        //   stage.setScene(scene);
         stage.sizeToScene();
         stage.show();
+
+        // Title buttons
+        playGame.setOnAction(event -> stage.setScene(scene));
+        exit.setOnAction(event -> System.exit(0));
+
+        returnToTitle.setOnAction(event -> stage.setScene(title));
+        reset.setOnAction(event -> {
+            game.newBoard();
+            board = game.getBoard();
+            game.resetScores();
+            updateBoard();
+        });
+        close.setOnAction(event -> System.exit(0));
+        whiteResign.setOnAction(event -> {
+            final Stage dialog = new Stage();
+            VBox dialogVbox = new VBox(10);
+            dialogVbox.getChildren().add(new Text("White resigned. Black won!"));
+            Scene dialogScene = new Scene(dialogVbox, 200, 150);
+            dialog.setScene(dialogScene);
+            dialog.show();
+            game.newBoard();
+            board = game.getBoard();
+            game.resetScores();
+            updateBoard();
+        });
+        blackResign.setOnAction(event -> {
+            final Stage dialog = new Stage();
+            VBox dialogVbox = new VBox(10);
+            dialogVbox.getChildren().add(new Text("Black resigned. White won!"));
+            Scene dialogScene = new Scene(dialogVbox, 200, 150);
+            dialog.setScene(dialogScene);
+            dialog.show();
+            game.newBoard();
+            board = game.getBoard();
+            game.resetScores();
+            updateBoard();
+        });
+
+        menu.getItems().addAll(returnToTitle, reset, close);
+
+        try {
+            runNow(() -> game.checkStatus());
+        } catch (InterruptedException ie) {
+            System.out.println("INTERRUPTED EXCEPTION");
+        }
 
         // the group must request input focus to receive key events
         // @see https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html#requestFocus--
         group.requestFocus();
 
+        help.setOnAction(event -> {
+            final Stage dialog = new Stage();
+            VBox dialogVbox = new VBox(10);
+            dialogVbox.getChildren().add(new Text("Welcome to Matthew Tzou's JavaFX chess! This chess \ngame" +
+                    " is operated via click commands and follows \nconventional chess gameplay " +
+                    "rules. Scoring works based on \nuniversally-recognized chess piece values," +
+                    " where a pawn = 1 \npoint, knight and bishop = 3 points, rook = 5 points, and" +
+                    " \nqueen = 9 points. Start a game" +
+                    " whenever you are ready!"));
+            Scene dialogScene = new Scene(dialogVbox, 350, 250);
+            dialog.setScene(dialogScene);
+            dialog.show();
+
+        });
+
+
     } // start
 
     public void updateBoard() {
+        whiteScoring = new Text("White's Score: " + game.getWhiteScore());
+        blackScoring = new Text("Black's Score: " + game.getBlackScore());
+        whiteScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
+        blackScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
 
         for (int i = 0; i < 8; i++) {
             hbox[i].getChildren().clear();
@@ -251,6 +467,13 @@ public class ArcadeApp extends Application {
                         rectangles[i][j].setFill(Color.SIENNA);
                     }
                 }
+                if (pieceClicked == true) {
+                    Scanner coordinateScanner = new Scanner(coordinates);
+                    int x = coordinateScanner.nextInt();
+                    int y = coordinateScanner.nextInt();
+                    rectangles[x][y].setFill(Color.LIMEGREEN);
+                    coordinateScanner.close();
+                }
                 if (board.getPiece(i, j) != null) {
                     if (board.getPiece(i, j).getWhite() == true) {
                         if (board.getPiece(i, j) instanceof Pawn) {
@@ -283,14 +506,16 @@ public class ArcadeApp extends Application {
                     }
                 } else {
                     stackpane[i][j].getChildren().add(rectangles[i][j]);
-                    System.out.println("RECTANGLE");
                 }
                 hbox[i].getChildren().add(stackpane[i][j]);
+            } // for
+            if (i == 0) {
+                hbox[i].getChildren().add(blackScoring);
+            } else if (i == 7) {
+                hbox[i].getChildren().add(whiteScoring);
             }
         } // for
 
-        //     group.getChildren().add(r);                // add to main container
-        //    hbox.getChildren().addAll(r, r2);
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
 
@@ -301,8 +526,21 @@ public class ArcadeApp extends Application {
         for (int i = 0; i < 8; i++) {
             vbox.getChildren().add(hbox[i]);
         }
+    } // updateBoard
 
+    /**
+     * Method that allows for the creation of a new {@code Thread} to operate multiple parts of the
+     * code simultaneously.
+     *
+     * @param runnable an object that implements {@code Runnable} or is runnable
+     */
+    private static void runNow(Runnable runnable) throws InterruptedException {
+        Thread t = new Thread(runnable);
+        t.setDaemon(true);
+        t.start();
+    } // runNow
 
+<<<<<<< HEAD
         System.out.println("BOBO!!!");
 
     } // updateBoard
@@ -362,4 +600,19 @@ public class ArcadeApp extends Application {
     } // confirmMove
 
 */
+=======
+    public boolean validClick(int x, int y) {
+        if (board.getPiece(x, y) != null) {
+            if ((game.getWhiteTurn() == true) && (board.getPiece(x, y).getWhite() == true)) {
+                return true;
+            } else if ((game.getWhiteTurn() == false) && (board.getPiece(x, y).getWhite() == false)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } // validClick
+>>>>>>> guiwork
 } // ArcadeApp

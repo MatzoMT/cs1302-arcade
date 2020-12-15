@@ -27,9 +27,9 @@ public class Rook extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
-        if ((absX > 1) && (absY == 0)) {
+        if ((absX >= 1) && (absY == 0)) {
             return true;
-        } else if ((absY > 1) && (absX == 0)) {
+        } else if ((absY >= 1) && (absX == 0)) {
             return true;
         } else {
             return false;
