@@ -24,6 +24,8 @@ public class Knight extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
+        // Checks whether there is movement by two squares via multiplication, where only movement
+        // by one square and two squares in the other direction produces 2
         if (absX * absY == 2) {
             return true;
         } else {

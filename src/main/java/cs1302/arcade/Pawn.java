@@ -26,8 +26,12 @@ public class Pawn extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
+        System.out.println("NUMBERS " + absX + " " + absY);
         if (absY == 0) {
+            // Checks whether the pawn has already moved
             if (hasMoved == false) {
+                // Returns true if pawn has not yet moved and wants to move two squares or one
+                // square
                 if (absX == 2) {
                     hasMoved = true;
                     return true;
@@ -36,6 +40,7 @@ public class Pawn extends Piece {
                 } else {
                     return false;
                 }
+                // Returns true if the pawn wants to move one square
             } else if (absX == 1) {
                 hasMoved = true;
                 return true;
@@ -57,8 +62,11 @@ public class Pawn extends Piece {
     public boolean canCapture(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
+        // Checks whether equal diagonal movement is detected by one square
         if ((absX == 1) && (absY == 1)) {
+            // Capturing mechanics for white pawns
             if (this.getWhite() == true) {
+                // Determines whether the white pawn is moving up the board and left or right
                 if ((this.getX() - toX > 0) && (this.getY() - toY < 0)) {
                     return true;
                 } else if ((this.getX() - toX > 0) && (this.getY() - toY > 0)) {
@@ -66,7 +74,9 @@ public class Pawn extends Piece {
                 } else {
                     return false;
                 }
+                // Capturing mechanics for black pawns
             } else {
+                // Determines whether the black pawn is moving down the board and left or right
                 if ((this.getX() - toX < 0) && (this.getY() - toY < 0)) {
                     return true;
                 } else if ((this.getX() - toX < 0) && (this.getY() - toY > 0)) {
@@ -79,5 +89,6 @@ public class Pawn extends Piece {
             return false;
         }
     } // canCapture
+
 
 } // Pawn

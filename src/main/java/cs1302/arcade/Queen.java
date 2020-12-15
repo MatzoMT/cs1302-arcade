@@ -24,20 +24,17 @@ public class Queen extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
-        if ((absX > 0) && (absY > 0)) {
-            if (absX - absY == 0) {
-                return true;
-            } else {
-                return false;
-            }
+        // Checks whether there is equal diagonal movement by the same amount of squares in x
+        // and y
+        if (absX - absY == 0) {
+            return true;
+            // Checks whether there is movement in x or y direction only implying rook movement
+        } else if ((absX >= 1) && (absY == 0)) {
+            return true;
+        } else if ((absY >= 1) && (absX == 0)) {
+            return true;
         } else {
-            if ((absX > 1) && (absY == 0)) {
-                return true;
-            } else if ((absY > 1) && (absX == 0)) {
-                return true;
-            } else {
-                return false;
-            }
+            return false;
         }
     } // canMoveTo
 

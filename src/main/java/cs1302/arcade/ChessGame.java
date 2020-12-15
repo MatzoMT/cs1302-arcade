@@ -408,6 +408,14 @@ public class ChessGame {
 
             }
         }
+        if (destPiece != null) {
+            dest.setPiece(destPiece); // 1
+        } else {
+            dest.setPiece(null);
+        }
+        origin.setPiece(thePiece); // 2
+        thePiece.setX(originalX); // 3
+        thePiece.setY(originalY); // 4
         return false;
     }
 
@@ -419,10 +427,67 @@ public class ChessGame {
         return this.isWhiteTurn;
     } // getTurn
 
-    public boolean calculateCheckmate() {
-
+    public boolean blackInCheckmate() {
+        for (int pieceX = 0; pieceX < 8; pieceX++) {
+            for (int pieceY = 0; pieceY < 8; pieceY++) {
+                Piece thePiece = board.getPiece(pieceX, pieceY);
+                Square origin = board.getSquare(pieceX, pieceY);
+                if ((thePiece != null) && (thePiece.getWhite() == false)) {
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            if (board.getPiece(i, j) == null) {
+                                if ((thePiece.canMoveTo(i, j)) || (thePiece.canCapture(i, j))) {
+                                    if (nextMoveCheck(origin, board.getSquare(i, j), thePiece, i, j) == false) {
+                                        return false;
+                                    }
+                                }
+                            } else if (board.getPiece(i, j).getWhite() == true) {
+                                if ((thePiece.canMoveTo(i, j)) || (thePiece.canCapture(i, j))) {
+                                    if (nextMoveCheck(origin, board.getSquare(i, j), thePiece, i, j) == false) {
+                                        return false;
+                                    }
+                                }
+                            }
+                        } // for
+                    } // for
+                }
+            }
+        }
+        System.out.println("CCCHHHEEECCCKKKMMMAATTTTEEE!!!!");
         return true;
     }
+
+    public boolean whiteInCheckmate() {
+        for (int pieceX = 0; pieceX < 8; pieceX++) {
+            for (int pieceY = 0; pieceY < 8; pieceY++) {
+                Piece thePiece = board.getPiece(pieceX, pieceY);
+                Square origin = board.getSquare(pieceX, pieceY);
+                if ((thePiece != null) && (thePiece.getWhite() == true)) {
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            if (board.getPiece(i, j) == null) {
+                                if ((thePiece.canMoveTo(i, j)) || (thePiece.canCapture(i, j))) {
+                                    if (nextMoveCheck(origin, board.getSquare(i, j), thePiece, i, j) == false) {
+                                        return false;
+                                    }
+                                }
+                            } else if (board.getPiece(i, j).getWhite() == false) {
+                                if ((thePiece.canMoveTo(i, j)) || (thePiece.canCapture(i, j))) {
+                                    if (nextMoveCheck(origin, board.getSquare(i, j), thePiece, i, j) == false) {
+                                        return false;
+                                    }
+                                }
+                            }
+                        } // for
+                    } // for
+                }
+            }
+        }
+        System.out.println("CCCHHHEEECCCKKKMMMAATTTTEEE!!!!");
+        return true;
+    }
+
+
 
     public int getWhiteScore() {
         return this.whiteScore;

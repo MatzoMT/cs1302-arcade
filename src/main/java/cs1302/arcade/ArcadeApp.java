@@ -6,7 +6,6 @@ import java.util.Scanner;
 import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -25,11 +24,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
@@ -131,20 +128,43 @@ public class ArcadeApp extends Application {
                     coordinates = coordinates + x + " " + y + " ";
                     pieceClicked = true;
                 }
-             //   Platform.runLater(() -> updateBoard());
             } else if ((pieceClicked == true)) {
                 coordinates = coordinates + x + " " + y;
                 game.promptUser(coordinates);
-              //  Platform.runLater(() -> updateBoard());
-            //    Platform.runLater(() -> game.getInCheck());
                 coordinates = "";
                 pieceClicked = false;
             }
             Platform.runLater(() -> updateBoard());
             System.out.println("COOR" + coordinates);
-            if (game.getInCheck() == true) {
-                while (true)
-                System.out.println("NOTHING");
+            if (game.isInCheck() == true) {
+                System.out.println("ISINCHECK TRUE");
+                if (game.blackInCheck() == true) {
+                    if (game.blackInCheckmate() == true) {
+                        final Stage message = new Stage();
+                        VBox messageVbox = new VBox(10);
+                        messageVbox.getChildren().add(new Text("Black was checkmated. White won!"));
+                        Scene dialogScene = new Scene(messageVbox, 200, 150);
+                        message.setScene(dialogScene);
+                        message.show();
+                        game.newBoard();
+                        board = game.getBoard();
+                        game.resetScores();
+                        updateBoard();
+                    }
+                } else if (game.whiteInCheck() == true) {
+                    if (game.whiteInCheckmate() == true) {
+                        final Stage message = new Stage();
+                        VBox messageVbox = new VBox(10);
+                        messageVbox.getChildren().add(new Text("White was checkmated. Black won!"));
+                        Scene dialogScene = new Scene(messageVbox, 200, 150);
+                        message.setScene(dialogScene);
+                        message.show();
+                        game.newBoard();
+                        board = game.getBoard();
+                        game.resetScores();
+                        updateBoard();
+                    }
+                }
             }
         };
     } // registerClick
@@ -342,24 +362,24 @@ public class ArcadeApp extends Application {
         });
         close.setOnAction(event -> System.exit(0));
         whiteResign.setOnAction(event -> {
-            final Stage dialog = new Stage();
-            VBox dialogVbox = new VBox(10);
-            dialogVbox.getChildren().add(new Text("White resigned. Black won!"));
-            Scene dialogScene = new Scene(dialogVbox, 200, 150);
-            dialog.setScene(dialogScene);
-            dialog.show();
+            final Stage message = new Stage();
+            VBox messageVbox = new VBox(10);
+            messageVbox.getChildren().add(new Text("White resigned. Black won!"));
+            Scene dialogScene = new Scene(messageVbox, 200, 150);
+            message.setScene(dialogScene);
+            message.show();
             game.newBoard();
             board = game.getBoard();
             game.resetScores();
             updateBoard();
         });
         blackResign.setOnAction(event -> {
-            final Stage dialog = new Stage();
-            VBox dialogVbox = new VBox(10);
-            dialogVbox.getChildren().add(new Text("Black resigned. White won!"));
-            Scene dialogScene = new Scene(dialogVbox, 200, 150);
-            dialog.setScene(dialogScene);
-            dialog.show();
+            final Stage message = new Stage();
+            VBox messageVbox = new VBox(10);
+            messageVbox.getChildren().add(new Text("Black resigned. White won!"));
+            Scene dialogScene = new Scene(messageVbox, 200, 150);
+            message.setScene(dialogScene);
+            message.show();
             game.newBoard();
             board = game.getBoard();
             game.resetScores();

@@ -27,6 +27,7 @@ public class Rook extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
+        // Determines whether movement has occurred on either the x or y axis only, and not both
         if ((absX >= 1) && (absY == 0)) {
             return true;
         } else if ((absY >= 1) && (absX == 0)) {

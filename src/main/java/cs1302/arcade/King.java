@@ -28,11 +28,14 @@ public class King extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
+        // Checks whether there is only 1 square of movement in the x or y direction
         if (absX + absY == 1) {
+            return true;
+            // Checks whether there is equal diagonal movement by only one square
+        } else if ((absX - absY == 0) && ((absX == 1) || (absY == 1))) {
             return true;
         } else {
             return false;
         }
     } // canMoveTo
-
 } // King
