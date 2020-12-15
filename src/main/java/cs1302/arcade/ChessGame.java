@@ -46,14 +46,6 @@ public class ChessGame {
         int fromY = scanString.nextInt();
         int toX = scanString.nextInt();
         int toY = scanString.nextInt();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        System.out.println(fromX + "" + fromY + "" + toX + "" + toY);
-=======
->>>>>>> guiwork
-
->>>>>>> master
         Piece thePiece = board.getPiece(fromX, fromY);
         Square theSquare = board.getSquare(fromX, fromY);
         Square toSquare = board.getSquare(toX, toY);
@@ -221,8 +213,6 @@ public class ChessGame {
 
     } // confirmMove
 
-<<<<<<< HEAD
-=======
     /**
      * Determines whether there is a piece in the way for a calling piece's movement.
      *
@@ -561,5 +551,4 @@ public class ChessGame {
         whiteScore = 0;
         blackScore = 0;
     }
->>>>>>> guiwork
 }
