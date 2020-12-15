@@ -66,6 +66,10 @@ public class ArcadeApp extends Application {
 
     String coordinates = "";
     boolean pieceClicked = false;
+<<<<<<< HEAD
+    boolean legalMove = false;
+=======
+>>>>>>> guiwork
 
     // Non-GUI related objects
     ChessGame game = new ChessGame();
@@ -123,6 +127,38 @@ public class ArcadeApp extends Application {
             System.out.print(x + " " + y);
             System.out.print(pieceClicked);
             if ((pieceClicked == false)) {
+<<<<<<< HEAD
+                coordinates = coordinates + x + " " + y + " ";
+                pieceClicked = true;
+                System.out.println("jkzcxzxcvajsdnfiodsanfadf");
+            } else if ((pieceClicked == true)) {
+                System.out.println("DONT EXECUTE");
+                coordinates = coordinates + x + " " + y;
+                game.promptUser(coordinates);
+                Platform.runLater(() -> updateBoard());
+                coordinates = "";
+                pieceClicked = false;
+            }
+            System.out.println("COOR" + coordinates);
+          //      game.promptUser(x, y);
+
+        //    Platform.runLater(() -> updateBoard());
+            // call a move method?
+        };
+    } // registerClick
+
+    /*
+    private EventHandler<? super MouseEvent> registerClick2(int x, int y) {
+        return event -> {
+            System.out.print(x + " " + y);
+            promptUser(x, y);
+
+            Platform.runLater(() -> this.updateBoard());
+            // call a move method?
+        };
+    } // registerClick
+    */
+=======
                 System.out.println(validClick(x, y));
                 if (validClick(x, y) == true) {
                     coordinates = coordinates + x + " " + y + " ";
@@ -169,6 +205,7 @@ public class ArcadeApp extends Application {
         };
     } // registerClick
 
+>>>>>>> guiwork
 
     /**
      * Return a key event handler that moves to the rectangle to the left
@@ -269,9 +306,15 @@ public class ArcadeApp extends Application {
             }
         } // for
 
+<<<<<<< HEAD
+        //     group.getChildren().add(r);                // add to main container
+        //    hbox.getChildren().addAll(r, r2);
+
+=======
+>>>>>>> guiwork
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                stackpane[i][j].setOnMouseClicked(registerClick(i, j));
+                    stackpane[i][j].setOnMouseClicked(registerClick(i, j));
             }
         }
         r.setOnMouseClicked(createMouseHandler()); // clicks on the rectangle move it randomly
@@ -495,7 +538,9 @@ public class ArcadeApp extends Application {
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                stackpane[i][j].setOnMouseClicked(registerClick(i, j));
+
+                    stackpane[i][j].setOnMouseClicked(registerClick(i, j));
+
             }
         }
         for (int i = 0; i < 8; i++) {
@@ -515,6 +560,67 @@ public class ArcadeApp extends Application {
         t.start();
     } // runNow
 
+<<<<<<< HEAD
+        System.out.println("BOBO!!!");
+
+    } // updateBoard
+
+/*
+    public void promptUser(int fromX, int fromY) {
+
+        Piece thePiece = board.getPiece(fromX, fromY);
+        Square theSquare = board.getSquare(fromX, fromY);
+
+
+//        int toX = keyboard.nextInt();
+        //       int toY = keyboard.nextInt();
+    } // promptUser
+
+    public void promptUser2(int toX, int toY) {
+       Square toSquare = board.getSquare(toX, toY);
+        System.out.println("ADADADADA");
+        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            if (toSquare.getPiece() == null) {
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+            } else {
+                if (toSquare.getPiece().getWhite() == false) {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                } else {
+                    System.out.println("ILLEGAL 1");
+                }
+            }
+        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            if (toSquare.getPiece() == null) {
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+            } else {
+                if (toSquare.getPiece().getWhite() == true) {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                } else {
+                    System.out.println("ILLEGAL 2");
+                }
+            }
+        } else {
+            System.out.println("ILLEGALLLLL");
+        }
+
+    }
+
+    private void confirmMove(Square origin, Square dest, Piece thePiece, int toX, int toY) {
+        dest.setPiece(thePiece);
+        origin.setPiece(null);
+        if (isWhiteTurn == true) {
+            isWhiteTurn = false;
+        } else {
+            isWhiteTurn = true;
+        }
+        thePiece.setX(toX);
+        thePiece.setY(toY);
+    } // confirmMove
+
+*/
+=======
     public boolean validClick(int x, int y) {
         if (board.getPiece(x, y) != null) {
             if ((game.getWhiteTurn() == true) && (board.getPiece(x, y).getWhite() == true)) {
@@ -528,4 +634,5 @@ public class ArcadeApp extends Application {
             return false;
         }
     } // validClick
+>>>>>>> guiwork
 } // ArcadeApp
