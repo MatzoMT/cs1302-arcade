@@ -40,3 +40,17 @@ Here is a sample entry (delete this line; also: feel free to copy/paste/modify):
    only method I can think about has been incredibly difficult to implement. Another issue is dealing
    with JavaFX since I have only experimented very briefly with JavaFX and the starter code since the
    rest of my chess game is incomplete.
+
+    ## Deadline 3 - WED 2020-12-16 (Dec 16)
+
+i. Work completed since deadline 3 largely included setting up all GUI components of the chess game
+   and fixing any gameplay methods for the chess game. The last significant change was allowing the
+   game to recognize a checkmated scenario. GUI work included setting up pieces, the chess board,
+   other user interface items such as scoring, an animated title screen, and other pop up messages
+   such as showing which user won a game.
+ii. I have been able to fix the check recognition issue mentioned in checkpoint 2, though at the time
+   of this writing, I am having trouble getting the program to recognize when a game has a checkmate.
+   The last issue was resolved largely by being able to see whether an opposite color piece is
+   attacking an enemy king by adding new methods to my ChessGame.java class.
+iii. Graders should check for extra credit opportunity #1 where I animated the "Chess" title for my
+   application.
