@@ -14,6 +14,31 @@ public class ChessGame {
     private int whiteScore = 0;
     private int blackScore = 0;
 
+    private void doPawnMove(Square theSquare, Square toSquare, Piece thePiece, int toX, int toY) {
+        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+                ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            if ((Math.abs(toX - thePiece.getX()) == 1) && (Math.abs(toY - thePiece.getY()) == 1)) {
+                if ((toSquare.getPiece() != null) && (toSquare.getPiece().getWhite() == false)) {
+                    thePiece.canMoveTo(toX, toY);
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                }
+            } else if ((toX < thePiece.getX()) && (toSquare.getPiece() == null)) {
+                thePiece.canMoveTo(toX, toY);
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+            }
+        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+                ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            if ((Math.abs(toX - thePiece.getX()) == 1) && (Math.abs(toY - thePiece.getY()) == 1)) {
+                if ((toSquare.getPiece() != null) && (toSquare.getPiece().getWhite() == true)) {
+                    thePiece.canMoveTo(toX, toY);
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                }
+            } else if ((toX > thePiece.getX()) && (toSquare.getPiece() == null)) {
+                thePiece.canMoveTo(toX, toY);
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+            }
+        }
+    }
 
     public void promptUser(String goodMove) {
         Scanner scanString = new Scanner(goodMove);
@@ -21,26 +46,23 @@ public class ChessGame {
         int fromY = scanString.nextInt();
         int toX = scanString.nextInt();
         int toY = scanString.nextInt();
-
         Piece thePiece = board.getPiece(fromX, fromY);
         Square theSquare = board.getSquare(fromX, fromY);
-
         Square toSquare = board.getSquare(toX, toY);
-
-        if (thePiece == null) {
-            System.out.println("Invalid move. Try again.");
-        } else {
-            if (nothingInWay(fromX, fromY, toX, toY) == true) {
+        if (thePiece != null) {
+            if (thePiece instanceof Pawn) {
+                doPawnMove(theSquare, toSquare, thePiece, toX, toY);
+            } else if (nothingInWay(fromX, fromY, toX, toY) == true) {
                 if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if ((toSquare.getPiece() == null)) {
-                        changeScores(toSquare);
+                   //     changeScores(toSquare);
                         if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
                         }
                     } else {
                         if (toSquare.getPiece().getWhite() == false) {
-                            changeScores(toSquare);
+                      //      changeScores(toSquare);
                             if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
                             }
@@ -51,14 +73,14 @@ public class ChessGame {
                 } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
                         ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if (toSquare.getPiece() == null) {
-                        changeScores(toSquare);
+                   //     changeScores(toSquare);
                         if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
                         }
 
                     } else {
                         if (toSquare.getPiece().getWhite() == true) {
-                            changeScores(toSquare);
+                       //     changeScores(toSquare);
                             if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
                             }
@@ -73,7 +95,6 @@ public class ChessGame {
 
             }
         }
-
         scanString.close();
     } // promptUser
 
@@ -179,6 +200,7 @@ public class ChessGame {
      * @param toY the final y position
      */
     private void confirmMove(Square origin, Square dest, Piece thePiece, int toX, int toY) {
+        changeScores(dest);
         dest.setPiece(thePiece);
         origin.setPiece(null);
         if (isWhiteTurn == true) {
