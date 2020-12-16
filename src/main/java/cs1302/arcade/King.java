@@ -19,14 +19,7 @@ public class King extends Piece {
         super(isWhiteColor, theX, theY);
     } // Piece
 
-
-    /** Determines whether the piece is able to move to the desired square according to the game
-     * rules and situation.
-     *
-     * @param toX the destination x coordinate
-     * @param toY the destination y coordinate
-     * @return true if the piece can move to the destination square
-     */
+    /** {@inheritDoc} */
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);

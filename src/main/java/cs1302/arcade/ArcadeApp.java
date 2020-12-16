@@ -117,19 +117,25 @@ public class ArcadeApp extends Application {
      */
     private EventHandler<? super MouseEvent> registerClick(int x, int y) {
         return event -> {
+            // Checks whether a valid piece had been clicked previously
             if ((pieceClicked == false)) {
+                // Concatenates coordinates if a valid click is registered
                 if (validClick(x, y) == true) {
                     coordinates = coordinates + x + " " + y + " ";
                     pieceClicked = true;
                 }
             } else if ((pieceClicked == true)) {
                 coordinates = coordinates + x + " " + y;
+                // Runs the coordinate processing after four ints have been concatenated
                 game.promptUser(coordinates);
+                // Resets the coordinates and whether a piece had been clicked
                 coordinates = "";
                 pieceClicked = false;
             }
             Platform.runLater(() -> updateBoard());
+            // Checks whether the game is in a check scenario
             if (game.isInCheck() == true) {
+                // Nested if statements check for black being in check and/or checkmated
                 if (game.blackInCheck() == true) {
                     if (game.blackInCheckmate() == true) {
                         Stage message = new Stage();
@@ -143,6 +149,7 @@ public class ArcadeApp extends Application {
                         game.resetScores();
                         updateBoard();
                     }
+                    // Nested if statements check for white being in check and/or checkmated
                 } else if (game.whiteInCheck() == true) {
                     if (game.whiteInCheckmate() == true) {
                         Stage message = new Stage();
@@ -164,15 +171,18 @@ public class ArcadeApp extends Application {
     /** {@inheritDoc} */
     @Override
     public void start(Stage stage) {
+        // Sets the font to rockwell font
         name.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 20));
         whiteScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
         blackScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
         topBar.getChildren().addAll(menu, whiteResign, blackResign);
         vbox.getChildren().addAll(topBar);
         Scene boardScene = new Scene(vbox, 600, 480);
+        // Initializes all hboxes representing chessboard rows
         for (int i = 0; i < 8; i++) {
             hbox[i] = new HBox();
         }
+        // Updates the GUI chess board and sets up title animation
         updateBoard();
         setPathTransitions();
 
@@ -182,13 +192,14 @@ public class ArcadeApp extends Application {
         titleVbox.getChildren().addAll(cView, hView, eView, sView1, sView2);
         buttonBox.getChildren().addAll(name, playGame, help, exit);
         buttonBox.setAlignment(Pos.CENTER);
+        // Adjusts the buttons down as to not overlap with animation
         buttonBox.setTranslateY(150);
         boxes.getChildren().addAll(titleVbox, buttonBox);
+        // Sets title background to white to match animated letters
         boxes.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY,
             Insets.EMPTY)));
         Scene title = new Scene(boxes, 300, 400);
         stage.setScene(title);
-
         stage.setTitle("cs1302-arcade!");
         stage.sizeToScene();
         stage.show();
@@ -200,13 +211,13 @@ public class ArcadeApp extends Application {
         resignButtonActions();
         returnToTitle.setOnAction(event -> stage.setScene(title));
         reset.setOnAction(event -> {
+            // Resets the board, scores, and GUI chess board
             game.newBoard();
             board = game.getBoard();
             game.resetScores();
             updateBoard();
         });
         close.setOnAction(event -> System.exit(0));
-
         help.setOnAction(event -> helpButtonAction());
         menu.getItems().addAll(returnToTitle, reset, close);
         // the group must request input focus to receive key events
@@ -227,6 +238,7 @@ public class ArcadeApp extends Application {
             Scene dialogScene = new Scene(messageVbox, 200, 150);
             message.setScene(dialogScene);
             message.show();
+            // Resets the board, scores, and GUI chess board
             game.newBoard();
             board = game.getBoard();
             game.resetScores();
@@ -239,6 +251,7 @@ public class ArcadeApp extends Application {
             Scene dialogScene = new Scene(messageVbox, 200, 150);
             message.setScene(dialogScene);
             message.show();
+            // Resets the board, scores, and GUI chess board
             game.newBoard();
             board = game.getBoard();
             game.resetScores();
@@ -253,9 +266,9 @@ public class ArcadeApp extends Application {
     private void helpButtonAction() {
         final Stage dialog = new Stage();
         VBox dialogVbox = new VBox(10);
-        dialogVbox.getChildren().add(new Text("Welcome to Matthew Tzou's JavaFX chess! This " +
-            "chess \ngame is operated via click commands and follows \nconventional chess " +
-            "gameplay rules. Scoring works based on \nuniversally-recognized chess piece values," +
+        dialogVbox.getChildren().add(new Text("Welcome to Matthew Tzou's JavaFX chess! This chess" +
+            " \ngame is operated via click commands and follows \nconventional chess gameplay " +
+            "rules. Scoring works based on \nuniversally-recognized chess piece values," +
             " where a pawn = 1 \npoint, knight and bishop = 3 points, rook = 5 points, and" +
             " \nqueen = 9 points. Start a game" +
             " whenever you are ready!"));
@@ -269,39 +282,50 @@ public class ArcadeApp extends Application {
      * pieces on each squares, and the text showing the scores.
      */
     public void updateBoard() {
+        // Re-initializes the scoring each iteration to update scores
         whiteScoring = new Text("White's Score: " + game.getWhiteScore());
         blackScoring = new Text("Black's Score: " + game.getBlackScore());
         whiteScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
         blackScoring.setFont(Font.font("rockwell", FontWeight.BOLD, FontPosture.REGULAR, 14));
+        // Clears previous GUI chessboard
         for (int i = 0; i < 8; i++) {
             hbox[i].getChildren().clear();
         } // for
+        // Nested for loops that initialize hbox, rectangles, and stackpane for displaying squares
         for (int i = 0; i < 8; i++) {
             hbox[i] = new HBox();
             for (int j = 0; j < 8; j++) {
                 rectangles[i][j] = new Rectangle(50, 50);
                 stackpane[i][j] = new StackPane();
                 updateRectangles(i, j);
+                // if statement that checks if a piece has been clicked
                 if (pieceClicked == true) {
+                    // Scanner parses through coordinates to obtain x, y of clicked piece
                     Scanner coordinateScanner = new Scanner(coordinates);
                     int x = coordinateScanner.nextInt();
                     int y = coordinateScanner.nextInt();
+                    // Clicked piece's square set to LIMEGREEN
                     rectangles[x][y].setFill(Color.LIMEGREEN);
                     coordinateScanner.close();
                 }
+                // Updates stackpanes to include all necessary graphics if piece exists on i, j
                 if (board.getPiece(i, j) != null) {
                     updateStackpanes(i ,j);
+                    // Stackpane only includes chess square if no piece present
                 } else {
                     stackpane[i][j].getChildren().add(rectangles[i][j]);
                 }
+                // Adds each stackpane to the hbox representing the board row
                 hbox[i].getChildren().add(stackpane[i][j]);
             } // for
+            // Sets the text for scoring next to the first and last chessboard rows
             if (i == 0) {
                 hbox[i].getChildren().add(blackScoring);
             } else if (i == 7) {
                 hbox[i].getChildren().add(whiteScoring);
             }
         } // for
+        // Nested for loops that set clickability to each stackpane square
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 stackpane[i][j].setOnMouseClicked(registerClick(i, j));
@@ -319,13 +343,17 @@ public class ArcadeApp extends Application {
      * @param j the y coordinate of the square
      */
     private void updateRectangles(int i, int j) {
+        // if statement checks if i representing row is even
         if (i % 2 == 0) {
+            // Alternates each subsequent square by WHEAT and SIENNA
             if ((j % 2 == 0)) {
                 rectangles[i][j].setFill(Color.WHEAT);
             } else {
                 rectangles[i][j].setFill(Color.SIENNA);
             }
+            // else statement for i representing odd
         } else {
+            // Alternates each subsequent square by WHEAT and SIENNA
             if ((j % 2 != 0)) {
                 rectangles[i][j].setFill(Color.WHEAT);
             } else {
@@ -343,11 +371,14 @@ public class ArcadeApp extends Application {
      * @return true if the clicked square contains a piece whose color has the current turn
      */
     public boolean validClick(int x, int y) {
+        // Checks whether the user clicked a square containing a piece
         if (board.getPiece(x, y) != null) {
+            // Checks if it is white to move and a white piece has been clicked
             if ((game.getWhiteTurn() == true) && (board.getPiece(x, y).getWhite() == true)) {
                 return true;
-            } else if ((game.getWhiteTurn() == false) &&
-                (board.getPiece(x, y).getWhite() == false)) {
+                // Checks if it is black to move and a black piece has been clicked
+            } else if ((game.getWhiteTurn() == false) && (board.getPiece(x, y).getWhite()
+                == false)) {
                 return true;
             } else {
                 return false;
@@ -365,7 +396,9 @@ public class ArcadeApp extends Application {
      * @param j the y coordinate of the 2D array representing the chessboard
      */
     private void updateStackpanes(int i, int j) {
+        // Checks if the piece at i, j is white
         if (board.getPiece(i, j).getWhite() == true) {
+            // if-else statements assign the correct image to the square based on the type of piece
             if (board.getPiece(i, j) instanceof Pawn) {
                 stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(pawnW));
             } else if (board.getPiece(i, j) instanceof Bishop) {
@@ -379,7 +412,9 @@ public class ArcadeApp extends Application {
             } else if (board.getPiece(i, j) instanceof King) {
                 stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(kingW));
             }
+            // else for black piece at i, j
         } else {
+            // if-else statements assign the correct image to the square based on the type of piece
             if (board.getPiece(i, j) instanceof Pawn) {
                 stackpane[i][j].getChildren().addAll(rectangles[i][j], new ImageView(pawnB));
             } else if (board.getPiece(i, j) instanceof Bishop) {
@@ -400,36 +435,44 @@ public class ArcadeApp extends Application {
      * Sets up the transitions for the "Chess" letter art in the title.
      */
     private void setPathTransitions() {
+        // for loop that runs 5 times representing 5 letters in "CHESS"
         for (int i = 0; i < 5; i++) {
+            // New path with moveTo and lineTo to move along initialized for each letter
             paths[i] = new Path();
             moveTos[i] = new MoveTo(defaultX, tempY1);
             lineTos[i] = new LineTo(defaultX, tempY2);
             paths[i].getElements().addAll(moveTos[i], lineTos[i]);
-
+            // New PathTransition initialized for each letter to oscillate every second
             pathTransitions[i] = new PathTransition();
             pathTransitions[i].setDuration(Duration.millis(1000));
-            //       pathTransitions[i].setNode(cView);
+            // Sets the first letter to show "C" with starting animation position defined
             if (i == 0) {
                 pathTransitions[i].setNode(cView);
                 tempY1 = 100;
                 tempY2 = 75;
+                // Sets the second letter to show "H" with starting animation position defined
             } else if (i == 1) {
                 pathTransitions[i].setNode(hView);
                 tempY1 = 75;
                 tempY2 = 100;
+                // Sets the third letter to show "E" with starting animation position defined
             } else if (i == 2) {
                 pathTransitions[i].setNode(eView);
                 tempY1 = 100;
                 tempY2 = 75;
+                // Sets the fourth letter to show "S" with starting animation position defined
             } else if (i == 3) {
                 pathTransitions[i].setNode(sView1);
                 tempY1 = 75;
                 tempY2 = 100;
+                // Sets the fifth letter to show "S" with starting animation position defined
             } else if (i == 4) {
                 pathTransitions[i].setNode(sView2);
             }
+            // Sets the transitions to operate an Integer.MAX_VALUE number of times
             pathTransitions[i].setPath(paths[i]);
             pathTransitions[i].setCycleCount(Integer.MAX_VALUE);
+            // Allows the transitions to move back and forth
             pathTransitions[i].setAutoReverse(true);
             pathTransitions[i].play();
         }

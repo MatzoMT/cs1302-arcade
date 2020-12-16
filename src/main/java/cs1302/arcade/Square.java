@@ -1,7 +1,5 @@
 package cs1302.arcade;
 
-import cs1302.arcade.Piece;
-
 /**
  * Defines a specific square of the chess board and its attributes, which update during gameplay.
  */

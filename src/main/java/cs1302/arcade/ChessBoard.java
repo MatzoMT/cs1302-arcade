@@ -25,7 +25,7 @@ public class ChessBoard {
             board[1][i] = new Square(new Pawn(false, 1, i), 1, i);
         } // for
 
-        // Initializes the white pieces on the chessboard. [7][7] represents the bottom right corner.
+        // Initializes the white pieces on the chessboard. [7][7] represents the bottom right corner
         board[7][0] = new Square(new Rook(true, 7, 0), 7, 0);
         board[7][7] = new Square(new Rook(true, 7, 7), 7, 7);
         board[7][1] = new Square(new Knight(true, 7, 1), 7, 1);
