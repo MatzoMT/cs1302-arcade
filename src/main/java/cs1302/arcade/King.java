@@ -12,6 +12,8 @@ public class King extends Piece {
      * Constructor for the {@code King}.
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     * @param theX the x coordinate to place the calling piece
+     * @param theY the y coordinate to place the calling piece
      */
     public King(boolean isWhiteColor, int theX, int theY) {
         super(isWhiteColor, theX, theY);

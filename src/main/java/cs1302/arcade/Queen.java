@@ -9,18 +9,14 @@ public class Queen extends Piece {
      * Constructor for the {@code Queen}.
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     * @param theX the x coordinate to place the calling piece
+     * @param theY the y coordinate to place the calling piece
      */
     public Queen(boolean isWhiteColor, int theX, int theY) {
         super(isWhiteColor, theX, theY);
     } // Piece
 
-    /** Determines whether the piece is able to move to the desired square according to the game
-     * rules and situation.
-     *
-     * @param toX the destination x coordinate
-     * @param toY the destination y coordinate
-     * @return true if the piece can move to the destination square
-     */
+    /** {@inheritDoc} */
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);

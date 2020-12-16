@@ -1,8 +1,6 @@
 package cs1302.arcade;
 
 import java.util.Scanner;
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
 
 /**
  * Defines methods and gameplay mechanics for running a game of chess.
@@ -14,38 +12,18 @@ public class ChessGame {
     private int whiteScore = 0;
     private int blackScore = 0;
 
-    private void doPawnMove(Square theSquare, Square toSquare, Piece thePiece, int toX, int toY) {
-        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
-                ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            if ((Math.abs(toX - thePiece.getX()) == 1) && (Math.abs(toY - thePiece.getY()) == 1)) {
-                if ((toSquare.getPiece() != null) && (toSquare.getPiece().getWhite() == false)) {
-                    thePiece.canMoveTo(toX, toY);
-                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                }
-            } else if ((toX < thePiece.getX()) && (toSquare.getPiece() == null)) {
-                thePiece.canMoveTo(toX, toY);
-                confirmMove(theSquare, toSquare, thePiece, toX, toY);
-            }
-        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
-                ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
-            if ((Math.abs(toX - thePiece.getX()) == 1) && (Math.abs(toY - thePiece.getY()) == 1)) {
-                if ((toSquare.getPiece() != null) && (toSquare.getPiece().getWhite() == true)) {
-                    thePiece.canMoveTo(toX, toY);
-                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
-                }
-            } else if ((toX > thePiece.getX()) && (toSquare.getPiece() == null)) {
-                thePiece.canMoveTo(toX, toY);
-                confirmMove(theSquare, toSquare, thePiece, toX, toY);
-            }
-        }
-    }
-
+    /**
+     * Processes the mouse clicks by the user on the GUI into a move on the chess board.
+     * @param goodMove a {@code String} containing 4 values of type {@code int} to process as
+     *                 fromX, fromY, toX, and toY
+     */
     public void promptUser(String goodMove) {
         Scanner scanString = new Scanner(goodMove);
         int fromX = scanString.nextInt();
         int fromY = scanString.nextInt();
         int toX = scanString.nextInt();
         int toY = scanString.nextInt();
+        scanString.close();
         Piece thePiece = board.getPiece(fromX, fromY);
         Square theSquare = board.getSquare(fromX, fromY);
         Square toSquare = board.getSquare(toX, toY);
@@ -54,56 +32,51 @@ public class ChessGame {
                 doPawnMove(theSquare, toSquare, thePiece, toX, toY);
             } else if (nothingInWay(fromX, fromY, toX, toY) == true) {
                 if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
-                        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+                ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if ((toSquare.getPiece() == null)) {
-                   //     changeScores(toSquare);
                         if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
                         }
                     } else {
                         if (toSquare.getPiece().getWhite() == false) {
-                      //      changeScores(toSquare);
                             if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
                             }
-                        } else {
-                            System.out.println("ILLEGAL 1");
                         }
                     }
                 } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
-                        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+                ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
                     if (toSquare.getPiece() == null) {
-                   //     changeScores(toSquare);
                         if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                             confirmMove(theSquare, toSquare, thePiece, toX, toY);
                         }
-
                     } else {
                         if (toSquare.getPiece().getWhite() == true) {
-                       //     changeScores(toSquare);
                             if (nextMoveCheck(theSquare, toSquare, thePiece, toX, toY) == false) {
                                 confirmMove(theSquare, toSquare, thePiece, toX, toY);
                             }
-
-                        } else {
-                            System.out.println("ILLEGAL 2");
                         }
                     }
-                } else {
-                    System.out.println("UHHH OHHH");
                 }
-
             }
         }
-        scanString.close();
     } // promptUser
 
-
-
+    /**
+     * Returns the chessboard being used for this instance of a chess game.
+     *
+     * @return {@code ChessBoard} object representing the board being used to play
+     */
     public ChessBoard getBoard() {
         return this.board;
-    }
+    } // getBoard
 
+    /**
+     * Calculates whether the black player is in check by seeing whether there are white pieces
+     * that are attacking the black king.
+     *
+     * @return true if there are white pieces attacking the black king
+     */
     public boolean blackInCheck() {
         int blackX = 0;
         int blackY = 0;
@@ -121,15 +94,20 @@ public class ChessGame {
             for (int j = 0; j < 8; j++) {
                 if (board.getPiece(i, j) != null) {
                     if ((board.getPiece(i, j).getWhite() == true) && (nothingInWay(i, j, blackX, blackY) == true) && (board.getPiece(i, j).canCapture(blackX, blackY))) {
-                        System.out.println("CHECK!!!!!");
                         return true;
                     }
                 }
             }
         }
         return false;
-    }
+    } // blackInCheck
 
+    /**
+     * Calculates whether the white player is in check by seeing whether there are black pieces
+     * that are attacking the white king.
+     *
+     * @return true if there are black pieces attacking the white king
+     */
     public boolean whiteInCheck() {
         int whiteX = 0;
         int whiteY = 0;
@@ -147,15 +125,19 @@ public class ChessGame {
             for (int j = 0; j < 8; j++) {
                 if (board.getPiece(i, j) != null) {
                     if ((board.getPiece(i, j).getWhite() == false) && (nothingInWay(i, j, whiteX, whiteY) == true) && (board.getPiece(i, j).canCapture(whiteX, whiteY))) {
-                        System.out.println("CHECK!!!!!");
                         return true;
                     }
                 }
             }
         }
         return false;
-    }
+    } // whiteInCheck
 
+    /**
+     * Calculates whether any of the kings on the board are under attack by pieces of the opposing color.
+     *
+     * @return true if the white or black king is under attack by the opposite color
+     */
     public boolean isInCheck() {
         int whiteX = 0;
         int whiteY = 0;
@@ -178,17 +160,15 @@ public class ChessGame {
             for (int j = 0; j < 8; j++) {
                 if (board.getPiece(i, j) != null) {
                     if ((board.getPiece(i, j).getWhite() == false) && (nothingInWay(i, j, whiteX, whiteY) == true) && (board.getPiece(i, j).canCapture(whiteX, whiteY))) {
-                        System.out.println("CHECK!!!!!");
                         return true;
                     } else if ((board.getPiece(i, j).getWhite() == true) && (nothingInWay(i, j, blackX, blackY) == true) && (board.getPiece(i, j).canCapture(blackX, blackY))) {
-                        System.out.println("CHECK!!!!!!!!!!!!!!!!!!!!!");
                         return true;
                     }
                 }
             }
         }
         return false;
-    }
+    } // isInCheck
 
     /**
      * Finalizes the intended move for a piece.
@@ -220,7 +200,7 @@ public class ChessGame {
      * @param fromY the starting y position of the calling {@code Piece}
      * @param toX the final x position of the calling {@code Piece}
      * @param toY the final y position of the calling {@code Piece}
-     * @return
+     * @return true if the calling piece has no pieces on the way to the destination coordinates
      */
     public boolean nothingInWay(int fromX, int fromY, int toX, int toY) {
         Piece thePiece = board.getPiece(fromX, fromY);
@@ -251,7 +231,7 @@ public class ChessGame {
      * @param fromY the starting y position of the calling {@code Bishop}
      * @param toX the final x position of the calling {@code Bishop}
      * @param toY the final y position of the calling {@code Bishop}
-     * @return
+     * @return true if there is no piece on the way to toX and toY; false if a piece is in the way
      */
     private boolean bishopWay(int fromX, int fromY, int toX, int toY) {
         int tempX = fromX;
@@ -315,7 +295,7 @@ public class ChessGame {
      * @param fromY the starting y position of the calling {@code Rook}
      * @param toX the final x position of the calling {@code Rook}
      * @param toY the final y position of the calling {@code Rook}
-     * @return
+     * @return true if there is no piece on the way to toX and toY; false if a piece is in the way
      */
     private boolean rookWay(int fromX, int fromY, int toX, int toY) {
         int tempX = fromX;
@@ -383,30 +363,28 @@ public class ChessGame {
         t.setDaemon(true);
         t.start();
     } // runNow
-    // isincheck - check each opposite color piece if it can attack the opposite king with attack method
 
-    public void checkStatus() {
-        /*
-        while (true) {
-            if (isInCheck() == true) {
-                System.out.println("LOOPING");
-                inCheck = true;
-            }
-        }
-
-         */
-    }
-
+    /**
+     * Resets the conditions of the board to starting conditions, where it is white to move and no
+     * player is in check.
+     */
     public void newBoard() {
         this.board = new ChessBoard();
         isWhiteTurn = true;
         inCheck = false;
-    }
+    } // newBoard
 
-    public boolean getInCheck() {
-        return this.inCheck;
-    }
-
+    /**
+     * Calculates whether the intended move by the user results in the same user going into check,
+     * which constitutes an illegal move.
+     *
+     * @param origin the square containing the piece intending to move
+     * @param dest the square that the piece intends to move to
+     * @param thePiece the piece intending to move
+     * @param toX the x coordinate of the destination square on the board represented as a 2D array
+     * @param toY the y coordinate of the destination square on the board represented as a 2D array
+     * @return true if the next move results in the user putting themselves into check
+     */
     public boolean nextMoveCheck(Square origin, Square dest, Piece thePiece, int toX, int toY) {
         int originalX = thePiece.getX();
         int originalY = thePiece.getY();
@@ -415,7 +393,8 @@ public class ChessGame {
         origin.setPiece(null); // 2
         thePiece.setX(toX); // 3
         thePiece.setY(toY); // 4
-        if (((thePiece.getWhite() == false) && (blackInCheck() == true)) || ((thePiece.getWhite() == true) && (whiteInCheck() == true))) {
+        if (((thePiece.getWhite() == false) && (blackInCheck() == true)) ||
+        ((thePiece.getWhite() == true) && (whiteInCheck() == true))) {
             if (isInCheck() == true) {
                 if (destPiece != null) {
                     dest.setPiece(destPiece); // 1
@@ -425,7 +404,6 @@ public class ChessGame {
                 origin.setPiece(thePiece); // 2
                 thePiece.setX(originalX); // 3
                 thePiece.setY(originalY); // 4
-                System.out.println("ILLEGAL MOVE BY NEXTMOVECHECK");
                 return true;
 
             }
@@ -439,16 +417,23 @@ public class ChessGame {
         thePiece.setX(originalX); // 3
         thePiece.setY(originalY); // 4
         return false;
-    }
+    } // nextMoveCheck
 
-    public void undoMove() {
-
-    }
-
+    /**
+     * Returns whether it is white to move.
+     *
+     * @return true if it is white to move
+     */
     public boolean getWhiteTurn() {
         return this.isWhiteTurn;
     } // getTurn
 
+    /**
+     * Returns whether black is calculated to be in checkmate. Checkmate is determined if the black
+     * player is in check and has no valid move that gets them out of check.
+     *
+     * @return true if the black player has been checkmated
+     */
     public boolean blackInCheckmate() {
         for (int pieceX = 0; pieceX < 8; pieceX++) {
             for (int pieceY = 0; pieceY < 8; pieceY++) {
@@ -460,12 +445,14 @@ public class ChessGame {
                             if (board.getPiece(i, j) == null) {
                                 if ((thePiece.canMoveTo(i, j)) || (thePiece.canCapture(i, j))) {
                                     if (nextMoveCheck(origin, board.getSquare(i, j), thePiece, i, j) == false) {
+                                        System.out.println(pieceX + " " + pieceY + " " + i + " " + j);
                                         return false;
                                     }
                                 }
                             } else if (board.getPiece(i, j).getWhite() == true) {
                                 if ((thePiece.canMoveTo(i, j)) || (thePiece.canCapture(i, j))) {
                                     if (nextMoveCheck(origin, board.getSquare(i, j), thePiece, i, j) == false) {
+                                        System.out.println(pieceX + " " + pieceY + " " + i + " " + j);
                                         return false;
                                     }
                                 }
@@ -475,10 +462,15 @@ public class ChessGame {
                 }
             }
         }
-        System.out.println("CCCHHHEEECCCKKKMMMAATTTTEEE!!!!");
         return true;
     }
 
+    /**
+     * Returns whether white is calculated to be in checkmate. Checkmate is determined if the white
+     * player is in check and has no valid move that gets them out of check.
+     *
+     * @return true if the white player has been checkmated
+     */
     public boolean whiteInCheckmate() {
         for (int pieceX = 0; pieceX < 8; pieceX++) {
             for (int pieceY = 0; pieceY < 8; pieceY++) {
@@ -505,20 +497,34 @@ public class ChessGame {
                 }
             }
         }
-        System.out.println("CCCHHHEEECCCKKKMMMAATTTTEEE!!!!");
         return true;
     }
 
-
-
+    /**
+     * Returns the score for white.
+     *
+     * @return the white player's score
+     */
     public int getWhiteScore() {
         return this.whiteScore;
     }
 
+    /**
+     * Returns the score for black.
+     *
+     * @return the black player's score
+     */
     public int getBlackScore() {
         return this.blackScore;
     }
 
+    /**
+     * Changes the white or black player's score based on what piece is being captured. The score
+     * for each capturable piece is 1 for pawns, 3 for knights and bishops, 5 for rooks, and 9
+     * for queens.
+     *
+     * @param toSquare the square containing the piece being captured
+     */
     public void changeScores(Square toSquare) {
         if (toSquare.getPiece() != null) {
             if (toSquare.getPiece().getWhite() == false) {
@@ -543,12 +549,46 @@ public class ChessGame {
                 }
             }
         }
-        System.out.print("WHITE " + whiteScore);
-        System.out.print("BLACK " + blackScore);
+
     } // changeScores
 
+    /**
+     * Changes the white and black players' scores to 0.
+     */
     public void resetScores() {
         whiteScore = 0;
         blackScore = 0;
-    }
+    } // resetScores
+
+    /**
+     * Handles move processing for a pawn, which is the only piece that has a capturing mechanism
+     * different from its movement mechanism.
+     *
+     * @param theSquare the square where the pawn intending on moving is located
+     * @param toSquare the square where the pawn intends to move to
+     * @param thePiece the pawn intending on moving
+     * @param toX the x coordinate of the destination square on the board represented as a 2D array
+     * @param toY the y coordinate of the destination square on the board represented as a 2D array
+     */
+    private void doPawnMove(Square theSquare, Square toSquare, Piece thePiece, int toX, int toY) {
+        if ((thePiece.getWhite() == true) && (isWhiteTurn == true) &&
+        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            if ((Math.abs(toX - thePiece.getX()) == 1) && (Math.abs(toY - thePiece.getY()) == 1)) {
+                if ((toSquare.getPiece() != null) && (toSquare.getPiece().getWhite() == false)) {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                }
+            } else if ((toX < thePiece.getX()) && (toSquare.getPiece() == null)) {
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+            }
+        } else if ((thePiece.getWhite() == false) && (isWhiteTurn == false) &&
+        ((thePiece.canMoveTo(toX, toY)) || (thePiece.canCapture(toX, toY)))) {
+            if ((Math.abs(toX - thePiece.getX()) == 1) && (Math.abs(toY - thePiece.getY()) == 1)) {
+                if ((toSquare.getPiece() != null) && (toSquare.getPiece().getWhite() == true)) {
+                    confirmMove(theSquare, toSquare, thePiece, toX, toY);
+                }
+            } else if ((toX > thePiece.getX()) && (toSquare.getPiece() == null)) {
+                confirmMove(theSquare, toSquare, thePiece, toX, toY);
+            }
+        }
+    } // doPawnMove
 }

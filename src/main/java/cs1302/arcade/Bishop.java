@@ -9,6 +9,8 @@ public class Bishop extends Piece {
      * Constructor for the {@code Bishop}.
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     * @param theX the x coordinate to place the calling piece
+     * @param theY the y coordinate to place the calling piece
      */
     public Bishop(boolean isWhiteColor, int theX, int theY) {
         super(isWhiteColor, theX, theY);

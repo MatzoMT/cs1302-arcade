@@ -11,6 +11,8 @@ public class Pawn extends Piece {
      * Constructor for the {@code Pawn}.
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     * @param theX the x coordinate to place the calling piece
+     * @param theY the y coordinate to place the calling piece
      */
     public Pawn(boolean isWhiteColor, int theX, int theY) {
         super(isWhiteColor, theX, theY);
@@ -26,7 +28,6 @@ public class Pawn extends Piece {
     public boolean canMoveTo(int toX, int toY) {
         int absX = Math.abs(this.getX() - toX);
         int absY = Math.abs(this.getY() - toY);
-        System.out.println("NUMBERS " + absX + " " + absY);
         if (absY == 0) {
             // Checks whether the pawn has already moved
             if (hasMoved == false) {
@@ -36,6 +37,7 @@ public class Pawn extends Piece {
                     hasMoved = true;
                     return true;
                 } else if (absX == 1) {
+                    hasMoved = true;
                     return true;
                 } else {
                     return false;

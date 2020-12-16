@@ -5,6 +5,7 @@ package cs1302.arcade;
  * different methods and values a {@code Piece} can have.
  */
 public abstract class Piece {
+    private Square square;
     private int x;
     private int y;
     private boolean isWhite = true;
@@ -13,6 +14,8 @@ public abstract class Piece {
      * Constructor for the {@code Piece}.
      *
      * @param isWhiteColor a {@code boolean} representing whether the piece is white or not
+     * @param theX the x coordinate of the piece on the board represented as a 2D array
+     * @param theY the y coordinate of the piece on the board represented as a 2D array
      */
     public Piece(boolean isWhiteColor, int theX, int theY) {
         this.isWhite = isWhiteColor;
@@ -29,6 +32,7 @@ public abstract class Piece {
      */
     public abstract boolean canMoveTo(int toX, int toY);
 
+
     /** Determines whether the piece is able to capture another piece on the desired square
      * according to the game rules and situation.
      *
@@ -43,6 +47,8 @@ public abstract class Piece {
             return false;
         }
     } // canCapture
+
+
 
     /**
      * Returns the x coordinate of the calling {@code Piece}.
@@ -71,10 +77,20 @@ public abstract class Piece {
         return this.isWhite;
     } // getWhite
 
+    /**
+     * Sets the x coordinate of the calling {@code Piece}.
+     *
+     * @param toX the new x coordinate
+     */
     public void setX(int toX) {
         this.x = toX;
     }
 
+    /**
+     * Sets the y coordinate of the calling {@code Piece}.
+     *
+     * @param toY the new x coordinate
+     */
     public void setY(int toY) {
         this.y = toY;
     }
@@ -82,9 +98,10 @@ public abstract class Piece {
     /**
      * Sets the color of the calling {@code Piece}.
      *
-     * @param the color to set the piece to (true if white)
+     * @param white color to set the piece to (true if white)
      */
     public void setWhite(boolean white) {
         this.isWhite = white;
     } // setWhite
+
 } // Piece
